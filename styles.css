@@ -1,41 +1,72 @@
+/*
+ * color scheme:
+ * #DD6600 - dark orange
+ * #FEA02F - orange
+ * #EAD9C7 - off white
+ * #007A7B - blue
+ * #003F5A - dark blue
+ * #11574F - dark teal
+*/
+
 body {
-    font-family: 'Stoke', Times, serif;
+    font-family: 'Stoke', serif;
+    font-size: 12px;
 }
 
 .jumbotron {
     border-radius: 0;
 }
 
+.jumbotron h1 {
+    font-size: 20px;
+}
+
+.row h3 {
+    font-size: 18px;
+}
+
 /* NAVIGATION MENU */
 .navbar {
-    background-color: yellow;
-    color: black;
+    background-color: #DD6600;
+    padding: 0 30px;
+    margin: 0;
+    z-index: 9999;
+    border: 0;
+    min-height: 50px;
 }
 
 .nav-logo {
-    color: black;
     font-weight: bold;
     font-size: 18px;
     padding-right: 10px;
+    color: #EAD9C7!important;
 }
 
 .nav-item {
-    color: grey;
     font-size: 14px;
+    color: #EAD9C7!important;
+    padding: 15px;
+}
+
+.navbar-collapse.collapsing .nav-item, .navbar-collapse.show .nav-item {
+    padding: 5px;
 }
 
 .active {
-    color: black;
-    text-decoration: underline;
+    background-color: #EAD9C7!important;
+    color: #DD6600!important;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .nav-item:hover {
-    color: black;
+    text-decoration: underline;
 }
 
 .navbar-text {
-    color: grey;
-    font-size: 14px;
+    font-size: 20px;
+    font-family: 'Great Vibes', cursive;
+    color: #EAD9C7!important;
 }
 
 .navbar-light .navbar-toggler {
@@ -46,16 +77,23 @@ body {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.navbar-toggler:focus,
-.navbar-toggler:active,
-.navbar-toggler-icon:focus {
+.navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler-icon:focus {
     outline: none;
     box-shadow: none;
 }
 
+/* INTRO (UNDER NAV) */
+#intro {
+    padding-top: 108px;
+    color: #EAD9C7!important;
+    background-color: #DD6600!important;
+}
+
 /* HOME */
 #home {
-    padding-top: 108px
+    padding-top: 108px;
+    color: #EAD9C7!important;
+    background-color: #11574F!important;
 }
 
 /* RESUME */
