@@ -9,8 +9,8 @@
 */
 
 body {
-    font-family: 'Stoke', serif;
     font-size: 12px;
+    background-color: #EAD9C7;
 }
 
 .jumbotron {
@@ -19,14 +19,22 @@ body {
 
 .jumbotron h1 {
     font-size: 20px;
+    font-family: 'Stoke', serif;
+}
+
+.jumbo-section {
+    color: #EAD9C7!important;
+    background-color: #11574F!important;
 }
 
 .row h3 {
     font-size: 18px;
+    font-family: 'Stoke', serif;
 }
 
 /* NAVIGATION MENU */
 .navbar {
+    font-family: 'Stoke', serif;
     background-color: #DD6600;
     padding: 0 30px;
     margin: 0;
@@ -40,6 +48,8 @@ body {
     font-size: 18px;
     padding-right: 10px;
     color: #EAD9C7!important;
+    padding: 12px 10px 12px 0;
+    font-family: 'Great Vibes', cursive;
 }
 
 .nav-item {
@@ -84,17 +94,15 @@ body {
 
 /* INTRO (UNDER NAV) */
 #intro {
-    padding-top: 108px;
+    padding-top: 80px;
     color: #EAD9C7!important;
     background-color: #DD6600!important;
+    margin-bottom: 0;
+    height: 100vh;
 }
 
 /* HOME */
-#home {
-    padding-top: 108px;
-    color: #EAD9C7!important;
-    background-color: #11574F!important;
-}
+
 
 /* RESUME */
 .progress {
