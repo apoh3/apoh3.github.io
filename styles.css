@@ -21,10 +21,6 @@ footer {
     text-align: center;
 }
 
-/* About Me */
-#about-jumbo {
-}
-
 /* Portfolio */
 #portfolio-container {
     max-width: 75%;
@@ -32,6 +28,42 @@ footer {
 
 .card {
     margin: 0px 15px 30px 15px;
+}
+
+.card-img-div {
+    position: relative;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.card-img {
+    border: 1px solid lightgrey;
+}
+
+.card-img-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    color: black;
+}
+
+.card-img-div:hover>.card-img-text {
+    display: block;
+}
+
+.card-img-div:hover>.card-img {
+    opacity: 0.2;
+}
+
+.card-img:hover {
+    opacity: 0.2;
+}
+
+.card-img:hover~.card-img-text {
+    display: block;
 }
 
 .card-text {
