@@ -11,6 +11,7 @@ body {
     padding-right: 15px;
     border: none;
     border-radius: 0;
+    text-align: center;
 }
 
 footer {
@@ -23,7 +24,7 @@ footer {
 
 /* Portfolio */
 #portfolio-container {
-    max-width: 75%;
+    max-width: 80%;
 }
 
 .card {

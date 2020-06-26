@@ -1,52 +1,5 @@
 /* Personal Site - as of 06/26/2020 */
 
-//Info about each project displayed in portfolio
-var projects = [
-    {
-        title:"nucleoSLIDE",
-        image:"img/nucleoslide.png",
-        text:"A citizen science game developed for the web to help solve the Motif Finding Problem, where a motif is some meaningful, unknown pattern of length <i>k</i> hidden among multiple sequences.",
-        try:true,
-        link:"nucleoslide/index.html"
-    },
-    {
-        title:"Visualizing Missing Data", 
-        image:"img/proj1.jpg",
-        text:"Project 2 involved blah blah blah", 
-        try:true,
-        link:"visMissing/index.html"
-    },
-    {
-        title:"Project 3 Title",
-        image:"img/proj1.jpg",
-        text:"Project 3 involved blah blah blah", 
-        link:"click here for p3"
-    },
-    {
-        title:"Project 4 Title", 
-        image:"img/proj1.jpg",
-        text:"Project 4 involved blah blah blah", 
-        link:"click here for p4"
-    },
-    {
-        title:"Project 5 Title",
-        image:"img/proj1.jpg",
-        text:"Project 5 involved blah blah blah", 
-        link:"click here for p5"
-    },
-    {
-        title:"Project 6 Title", 
-        image:"img/proj1.jpg",
-        text:"Project 6 involved blah blah blah", 
-        link:"click here for p6"
-    },{
-        title:"Project 7 Title",
-        image:"img/proj1.jpg",
-        text:"Project 7 involved blah blah blah", 
-        link:"click here for p7"
-    }
-];
-
 buildResume();
 appendProjectCards();
 
@@ -94,9 +47,9 @@ function appendProjectCards() {
         var cardText = $("<p>").attr("class","card-text").append(projects[i].text);
 
         if(projects[i].try == true)
-            var cardLink = $("<a>").attr("class","card-link").attr("href",projects[i].link).append(playIcon + " click here to try " + projects[i].title + " ...");
+            var cardLink = $("<a>").attr("class","card-link").attr("href",projects[i].link).attr('target','_blank').append(playIcon + " click here to try " + projects[i].title);
         else
-            var cardLink = $("<a>").attr("class","card-link").attr("href",projects[i].link).append(playIcon + " click here to view " + projects[i].title + " ...");
+            var cardLink = $("<a>").attr("class","card-link").attr("href",projects[i].link).attr('target','_blank').append(playIcon + " click here to view " + projects[i].title);
          
         cardBody.append(cardTitle,cardImgDiv,cardText,cardLink);
         card.append(cardBody);

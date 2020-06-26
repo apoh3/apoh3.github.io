@@ -1,18 +1,148 @@
-<!-- Visualizing Missing Data -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------
+	Missing Data Example
+	
+	Plots weather data from bluehill.org. Allows user to select visualization type, amount of data to go missing, and method for visualizing missing data.
+	Uses d3.v4, btnScript, visScript.js, data.js, and styles.css.
+	
+	Allison Poh, last worked on 8/13/2019
+--------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="styles.css">	
+		<script type="text/javascript" src="btnScript.js"></script>	
+		<script type="text/javascript" src="data2.js"></script>	
+		
 		<title>Allison Poh - Proj. 2</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	</head>
-
-	<body>
-		<h1>visualizing missing data</h1>
+	
+	<body>		
+		<h3>Daily Temperature (&deg;F) at the Blue Hill Meteorological Observatory (Milton, MA) for 2018</h3>
+		
+		<!-- VISUALIZATION DIV -->
+		<div id="chartDiv">
+			<div id="dataDiv">
+				<button type="button" class="data" id="monthSelector" title="" onclick="monthDivFunction()">how much data?</button>
+				<div id="monthSelDiv" style="display: none;">
+					<button type="button" class="data month" id="m1" title="" onclick="monthSelectedFunction(1)">1 month</button>
+					<button type="button" class="data month" id="m2" title="" onclick="monthSelectedFunction(2)">2 months</button>
+					<button type="button" class="data month" id="m3" title="" onclick="monthSelectedFunction(3)">3 months</button>
+					<button type="button" class="data month" id="m4" title="" onclick="monthSelectedFunction(4)">6 months</button>
+					<button type="button" class="data month" id="m5" title="" onclick="monthSelectedFunction(5)">12 months</button>
+				</div>
+			</div>
+		</div>
+		
+		<!-- OPTIONS DIV: floating toolbar to the right of visualization (includes visualization type, % of missing data, and methods for representing missing data -->
+		<div id="optionsDiv">
+			<!-- VISUALIZATION BUTTONS -->
+			<div class="innerDivs" id="firstDiv">
+				<p class="sectionTitle">Visualization</p>
+				<button type="button" class="btn vis" id="lineBtn" onclick="visLineChartFunction()">Line Chart</button>
+				<button type="button" class="btn vis" id="barBtn" onclick="visBarChartFunction()">Bar Chart</button>
+			</div>
+			
+			<!-- PERCENT MISSING BUTTONS -->
+			<div class="innerDivs" id="secondDiv">
+				<p class="sectionTitle">% Missing</p>
+				<button type="button" class="btn percent" id="zeroBtn" title="no missing data (reset)" onclick="percZeroFunction()">0&percnt;</button>
+				<button type="button" class="btn percent" id="fiveBtn" title="4 missing values" onclick="percFiveFunction()">5&percnt;</button>
+				<button type="button" class="btn percent" id="tenBtn" title="8 missing values" onclick="percTenFunction()">10&percnt;</button>
+				<button type="button" class="btn percent" id="fiftBtn" title="13 missing values" onclick="percFiftFunction()">15&percnt;</button>
+				<button type="button" class="btn percent" id="twentyBtn" title="17 missing values" onclick="percTwentyFunction()">20&percnt;</button>
+				<button type="button" class="btn percent" id="tweFiveBtn" title="22 missing values" onclick="percTweFiveFunction();">25&percnt;</button>
+			</div>
+			
+			<!-- METHOD BUTTONS -->
+			<div class="innerDivs" id="thirdDiv">
+				<p class="sectionTitle">Method</p>
+				
+				<button type="button" class="btn meth" id="removeBtn" title="visually removes missing data" onclick="methRemoveFunction()">Remove</button>
+				
+			<!-- HIGHLIGHT -->
+				<!-- line chart -->
+				<div class="methodExpansionDiv" id="highlightExpandedDivLine" style="display: none;">
+					<button type="button" class="btn exp" id="colorPointsBtn" onclick="highlightPoints()" title="color points"><img src="icons/colorPtsOnly.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="colorPointsAndLinesBtn" onclick="highlightPointsAndLines()" title="color points and line"><img src="icons/colorPtsAndLines.png" height="32" width="32"></button>
+				</div>
+				
+				<!-- bar chart -->
+				<div class="methodExpansionDiv" id="highlightExpandedDivBar" style="display: none;">
+					<button type="button" class="btn exp" id="colorBarsBtn" onclick="highlightBars()" title="color bars"><img src="icons/colorBars.png" height="32" width="32"></button>
+				</div>
+				
+				<button type="button" class="btn meth" id="highBtn" title="makes missing data more noticable" onclick="methHighlightFunction()">Highlight</button>
+				
+			<!-- DOWNPLAY -->
+				<!-- line chart -->
+				<div class="methodExpansionDiv" id="downplayExpandedDivLine" style="display: none;">
+					<button type="button" class="btn exp" id="unfilledPointsBtn" onclick="downplayPoints()" title="unfilled points"><img src="icons/unfilledPts.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="unfilledPointsAndDashedLinesBtn" onclick="downplayPointsAndLines()" title="unfilled points and dashed lines"><img src="icons/unfilledWithDashes.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="blurredLinesBtn" onclick="downplayBlurredLines()" title="blurred points and lines"><img src="icons/blurredLines.png" height="32" width="32"></button>
+				</div>
+				
+				<!-- bar chart -->
+				<div class="methodExpansionDiv" id="downplayExpandedDivBar" style="display: none;">
+					<button type="button" class="btn exp" id="dashedBarBtn" onclick="downplayDashed()" title="dashed-outlined bars"><img src="icons/dashedBars.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="gradient1BarBtn" onclick="downplayGradient(1)" title="white/blue gradient bars"><img src="icons/gradientBars1.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="gradient2BarBtn" onclick="downplayGradient(2)" title="red/blue gradient bars"><img src="icons/gradientBars2.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="gradient3BarBtn" onclick="downplayGradient(3)" title="white/blue/white gradient bars"><img src="icons/gradientBars3.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="sketchedBarBtn" onclick="downplaySketched()" title="sketched/striped bars"><img src="icons/sketchedBars.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="blurredBarBtn" onclick="downplayBlurredBars()" title="blurred bars"><img src="icons/blurredBars.png" height="32" width="32"></button>
+				</div>
+				
+				<button type="button" class="btn meth" id="downpBtn" title="makes missing data less noticable" onclick="methDownplayFunction()">Downplay</button>
+				
+			<!-- ANNOTATE -->
+				<!-- line chart -->
+				<div class="methodExpansionDiv" id="annotateExpandedDivLine" style="display: none;">
+					<button type="button" class="btn exp" id="errorConnBtn" onclick="addConnErrorBar(0)" title="connected points with error bars"><img src="icons/connErrorsLine.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="errorConnRedBtn" onclick="addConnErrorBar(1)" title="colored connected points with error bars"><img src="icons/connErrorsLineRed.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="errorDisconnBtn" onclick="addDisconnErrorBar()" title="disconnected points with error bars"><img src="icons/disconnErrorsLine.png" height="32" width="32"></button>
+				</div>
+				
+				<!-- bar chart -->
+				<div class="methodExpansionDiv" id="annotateExpandedDivBar" style="display: none;">
+					<button type="button" class="btn exp" id="errorBarsBtn" onclick="addErrorBarsToBars()" title="bars with error bars"><img src="icons/errorBars.png" height="32" width="32"></button>
+					<button type="button" class="btn exp" id="errorPointsBtn" onclick="addErrorPointsToBars()" title="points with error bars"><img src="icons/errorPoints.png" height="32" width="32"></button>
+				</div>
+				
+				<button type="button" class="btn meth" id="annotBtn" title="adds error bars to missing data (+/- 2SE)" onclick="methAnnotateFunction()">Annotate</button>
+			</div>
+			
+			<button type="button" class="btn" id="origBtn" title="pop-up of original dataset" onclick="originalFunction()">View Original</button>
+			<img id="org1_line" src="icons/org1.png" height="200" width="300" style="display: none;">
+			<img id="org2_line" src="icons/org2.png" height="200" width="300" style="display: none;">
+			<img id="org3_line" src="icons/org3.png" height="200" width="300" style="display: none;">
+			<img id="org4_line" src="icons/org4.png" height="200" width="300" style="display: none;">
+			<img id="org5_line" src="icons/org5.png" height="200" width="300" style="display: none;">
+			<img id="org1_bar" src="icons/org1_bar.png" height="200" width="300" style="display: none;">
+			<img id="org2_bar" src="icons/org2_bar.png" height="200" width="300" style="display: none;">
+			<img id="org3_bar" src="icons/org3_bar.png" height="200" width="300" style="display: none;">
+			<img id="org4_bar" src="icons/org4_bar.png" height="200" width="300" style="display: none;">
+			<img id="org5_bar" src="icons/org5_bar.png" height="200" width="300" style="display: none;">
+		</div>	
+		
+		<br>
+		
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script type="text/javascript" src="data.js"></script>
+		<script type="text/javascript" src="visScript.js"></script>
+		<script type="text/javascript" src="logUserInput.js"></script>
+		
+		<!-- BEGIN -->
+		<script>begin();</script>
 	</body>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	
+	<footer>
+		<!-- INSTRUCTIONS/QUESTIONAIRE DIV -->
+		<div id="questDiv">
+			<button type="button" id="ansQsBtn" title="save user interactions to file" onclick="save(1)">save</button>
+		</div>
+		
+		<h5>data source: <a href="http://www.bluehill.org/weatherdata/" target="_blank">bluehill.org/weatherdata</a></h5>
+	</footer>
 </html>
