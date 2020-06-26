@@ -1,6 +1,14 @@
-appendProjCard();
+/* Personal Site - as of 06/26/2020 */
 
-function appendProjCard() {
+BuildResume();
+appendProjectCards();
+
+function BuildResume() {
+
+}
+
+/* Used in portfolio - builds each project card (title, pic, info, link) and formats them grid-like */
+function appendProjectCards() {
     var projects = [
         {
             title:"Project 1 Title",
@@ -35,26 +43,24 @@ function appendProjCard() {
             title:"Project 7 Title",
             text:"Project 7 involved blah blah blah", 
             link:"click here for p7"
-        },
-        {
-            title:"Project 8 Title", 
-            text:"Project 8 involved blah blah blah", 
-            link:"click here for p8"
         }
     ];
 
-    var cardColumns = $("<div>").attr("class","card-columns");
+    var cardColumns = $("<div>").attr("class","row no-gutters");
 
     for(var i = 0; i < projects.length; i++) {
+        var col = $("<div>").attr("class","col-sm-3");
         var card = $("<div>").attr("class","card");
         var cardBody = $("<div>").attr("class","card-body");
         var cardTitle = $("<h4>").attr("class","card-title").append(projects[i].title);
+        var cardImg = $("<img>").attr("class","card-img").attr("src","img/proj1.jpg").attr("alt","card image");
         var cardText = $("<p>").attr("class","card-text").append(projects[i].text);
         var cardLink = $("<a>").attr("class","card-link").attr("href","#").append(projects[i].link);
 
-        cardBody.append(cardTitle,cardText,cardLink);
+        cardBody.append(cardTitle,cardImg,cardText,cardLink);
         card.append(cardBody);
-        cardColumns.append(card);
+        col.append(card);
+        cardColumns.append(col);
     }
 
     $("#portfolio-container").append(cardColumns);

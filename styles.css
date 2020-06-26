@@ -6,7 +6,35 @@ body {
     margin: 0 auto;
 }
 
-.jumbotron, .container-fluid {
+.jumbotron {
     padding-left: 15px;
     padding-right: 15px;
+    border: none;
+    border-radius: 0;
+}
+
+footer {
+    background-color: lightgrey;
+    width: 100%;
+    min-height: 80px;
+    padding: 15px;
+    text-align: center;
+}
+
+/* About Me */
+#about-jumbo {
+}
+
+/* Portfolio */
+#portfolio-container {
+    max-width: 75%;
+}
+
+.card {
+    margin: 0px 15px 30px 15px;
+}
+
+.card-text {
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
