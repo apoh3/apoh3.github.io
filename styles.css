@@ -22,6 +22,15 @@ footer {
     text-align: center;
 }
 
+/* Resume */
+#resume-container {
+    max-width: 80%;
+}
+
+#res-row {
+    margin: 0px 2px 30px 2px;
+}
+
 /* Portfolio */
 #portfolio-container {
     max-width: 80%;

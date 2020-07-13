@@ -11,7 +11,13 @@ $(document).ready(function() {
 });
 
 function buildResume() {
+    var pdfLink = $("<a>").attr("href","resume_apoh.pdf").attr('target','_blank').append("view pdf");
 
+    var leftCol = $("<div>").attr("class","col-sm-4").append("left");
+    var rightCol = $("<div>").attr("class","col-sm-8").append("right");
+    var resRow1 = $("<div>").attr("id","res-row").attr("class","row").append(leftCol,rightCol);
+
+    $("#resume-container").append(pdfLink,resRow1);
 }
 
 /* Used in portfolio - builds each project card (title, pic, info, link) and formats by row/col*/
