@@ -3,10 +3,26 @@
 buildResume();
 appendProjectCards();
 
+
+
 $(document).ready(function() {
-    $('.card-img-div').click(function(e) {  
+    $(".card-img-div").click(function(e) {  
         var num = this.id.charAt(0);
-        window.open(projects[num].image);
+        
+        $("#overlay").css("display","block");
+        $("html,body").css("overflow","hidden");
+
+        var img = $("<img>").attr("id","overlaid_img").attr("src",projects[num].image);
+        var text = $("<div>").attr("id","overlay_close").append("click anywhere to close");
+
+        $("#overlay").prepend(img,text);
+    });
+
+    $('#overlay').click(function(e) {  
+        $("#overlay").children().eq(0).remove(); 
+        $("#overlay").children().eq(0).remove(); 
+        $("#overlay").css("display","none");
+        $("html,body").css("overflow","visible");
     });
 });
 

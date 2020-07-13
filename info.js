@@ -28,22 +28,5 @@ var projects = [
         text:"Puzzle game that tasks players with building keys by banging down groves until the key matches the given mold. When a groove is banged down, both adjacent grooves get its debris causing them to rise.", 
         try:true,
         link:"click here for p4"
-    },
-    {
-        title:"Project 5 Title",
-        image:"img/proj1.jpg",
-        text:"Project 5 involved blah blah blah", 
-        link:"click here for p5"
-    },
-    {
-        title:"Project 6 Title", 
-        image:"img/proj1.jpg",
-        text:"Project 6 involved blah blah blah", 
-        link:"click here for p6"
-    },{
-        title:"Project 7 Title",
-        image:"img/proj1.jpg",
-        text:"Project 7 involved blah blah blah", 
-        link:"click here for p7"
     }
 ];
