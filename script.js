@@ -27,29 +27,29 @@ $(document).ready(function() {
 function buildResume() {
     var pdfLink = $("<a>").attr("href","resume_apoh.pdf").attr('target','_blank').append(playIcon + " view pdf");
 
-    var leftCol = $("<div>").attr("id","res-left-col").attr("class","col-sm-4").append(buildNewResumeSection("Education"),buildNewResumeSection("Skills"));
-    var rightCol = $("<div>").attr("id","res-right-col").attr("class","col-sm-8").append(buildNewResumeSection("Work Experience"),buildNewResumeSection("Projects and Research"));
+    var leftCol = $("<div>").attr("id","res-left-col").attr("class","col-sm-4").append(buildNewResSection("Education"),buildNewResSection("Skills"));
+    var rightCol = $("<div>").attr("id","res-right-col").attr("class","col-sm-8").append(buildNewResSection("Work Experience"),buildNewResSection("Projects and Research"));
     var resRow1 = $("<div>").attr("id","res-row").attr("class","row").append(leftCol,rightCol);
 
     $("#resume-container").append(pdfLink,resRow1);
 }
 
-function buildNewResumeSection(title) {
+function buildNewResSection(title) {
     var div = $("<div>").attr("class","res-section");
     var header = $("<h5>").attr("class","res-header").append(title);
 
     switch(title) {
         case "Education":
-            div.append(header,writeFieldInfo(education));
+            div.append(header,appendFieldInfo(education));
             break;
         case "Skills":
-            div.append(header,writeFieldInfo(skills));
+            div.append(header,appendFieldInfo(skills));
             break;
         case "Work Experience":
-            div.append(header,writeFieldInfo(workExperience));
+            div.append(header,appendFieldInfo(workExperience));
             break;
         case "Projects and Research":
-            div.append(header,writeFieldInfo(projectsAndResearch));
+            div.append(header,appendFieldInfo(projectsAndResearch));
             break;
         default:
             break;
@@ -58,7 +58,7 @@ function buildNewResumeSection(title) {
     return div;
 }
 
-function writeFieldInfo(arr) {
+function appendFieldInfo(arr) {
     var div = $("<div>").attr("class","res-edu-text-section");
 
     var numOfFields = Object.keys(arr).length;
@@ -68,14 +68,13 @@ function writeFieldInfo(arr) {
             var key = Object.keys(arr[i])[j];
             var val = Object.values(arr[i])[j];
 
-            div.append(key + ": " + val + "\n");
+            div.append(key + ": " + val + "<br>");
         }
     }
 
     return div;
 }
 
-/* Used in portfolio - builds each project card (title, pic, info, link) and formats by row/col*/
 function appendProjectCards(arr) {
     var cardColumns = $("<div>").attr("class","row no-gutters");
 
