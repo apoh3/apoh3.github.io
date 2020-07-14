@@ -35,6 +35,32 @@ a:hover {
     margin: 0px 2px 30px 2px;
 }
 
+.res-section-top, .res-section {
+    margin-top: 25px;
+}
+
+.res-section-top {
+    margin-top: 10px;
+}
+
+.res-text-title {
+    font-weight: bold;
+}
+
+.res-text, .res-text-list {
+    padding: 0;
+    padding-left: 25px;
+}
+
+.extra-indent-item {
+    padding-left: 35px;
+}
+
+.res-text-list {
+    margin: 0;
+    list-style-type: none;
+}
+
 /* Portfolio */
 #portfolio-container {
     max-width: 80%;

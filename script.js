@@ -25,7 +25,7 @@ $(document).ready(function() {
 });
 
 function buildResume() {
-    var pdfLink = $("<a>").attr("href","resume_apoh.pdf").attr('target','_blank').append(playIcon + " view pdf");
+    var pdfLink = $("<a>").attr("href","resume_apoh.pdf").attr('target','_blank').append(getIcon("playIcon") + " view pdf");
 
     var leftCol = $("<div>").attr("id","res-left-col").attr("class","col-sm-4").append(buildNewResSection("Education"),buildNewResSection("Skills"));
     var rightCol = $("<div>").attr("id","res-right-col").attr("class","col-sm-8").append(buildNewResSection("Work Experience"),buildNewResSection("Projects and Research"));
@@ -35,21 +35,21 @@ function buildResume() {
 }
 
 function buildNewResSection(title) {
-    var div = $("<div>").attr("class","res-section");
+    var div = $("<div>");
     var header = $("<h5>").attr("class","res-header").append(title);
 
     switch(title) {
         case "Education":
-            div.append(header,appendFieldInfo(education));
+            div.attr("class",".res-section res-section-top").append(header,appendFieldInfo(education));
             break;
         case "Skills":
-            div.append(header,appendFieldInfo(skills));
+            div.attr("class","res-section").append(header,appendFieldInfo(skills));
             break;
         case "Work Experience":
-            div.append(header,appendFieldInfo(workExperience));
+            div.attr("class",".res-section res-section-top").append(header,appendFieldInfo(workExperience));
             break;
         case "Projects and Research":
-            div.append(header,appendFieldInfo(projectsAndResearch));
+            div.attr("class","res-section").append(header,appendFieldInfo(projectsAndResearch));
             break;
         default:
             break;
@@ -59,7 +59,7 @@ function buildNewResSection(title) {
 }
 
 function appendFieldInfo(arr) {
-    var div = $("<div>").attr("class","res-edu-text-section");
+    var div = $("<div>").attr("class","res-field-text");
 
     var numOfFields = Object.keys(arr).length;
     
@@ -68,7 +68,34 @@ function appendFieldInfo(arr) {
             var key = Object.keys(arr[i])[j];
             var val = Object.values(arr[i])[j];
 
-            div.append(key + ": " + val + "<br>");
+            if(val.includes("{{")) {
+                var bullets = val.split(";");
+                var j = 0;
+                var plusIndent = false;
+
+                if(val.charAt(0) != '{') {
+                    div.append($("<text>").attr("class","res-text res-text-"+key).append(bullets[j]+"<br>"));
+                    j++;
+                    plusIndent = true;
+                }   
+
+                var list = $("<ul>").attr("class","res-text-list");
+
+                for(; j < bullets.length; j++) {
+                    if(plusIndent == true)
+                        list.append($("<li>").attr("class","res-text-list-item extra-indent-item").text(bullets[j].replace('{{','').replace('}}','')));
+                    else
+                        list.append($("<li>").attr("class","res-text-list-item").text(bullets[j].replace('{{','').replace('}}','')));
+                }
+
+                div.append(list);
+            } else {
+                if(key === "title")
+                    div.append($("<text>").attr("class","res-text-"+key).append(val+"<br>"));
+                else
+                    div.append($("<text>").attr("class","res-text res-text-"+key).append(getIcon(key) + " " + val+"<br>"));
+            }
+                
         }
     }
 
@@ -94,7 +121,7 @@ function appendProjectCards(arr) {
 
         var card = $("<div>").attr("class","card");
         var cardBody = $("<div>").attr("class","card-body");
-        var cardTitle = $("<h4>").attr("class","card-title").append(arr[i].title);
+        var cardTitle = $("<h5>").attr("class","card-title").append(arr[i].title);
 
         var cardImgDiv = $("<div>").attr("id",i+"-card-img-div").attr("class","card-img-div");
         var cardImgLink = $("<text>").attr("class","card-img-text").append("click to enlarge");
@@ -105,7 +132,7 @@ function appendProjectCards(arr) {
         var cardText = $("<p>").attr("class","card-text").append(arr[i].text);
 
         if(arr[i].try == true)
-            var cardLink = $("<a>").attr("class","card-link").attr("href",arr[i].link).attr('target','_blank').append(playIcon + " click here to try " + arr[i].title);
+            var cardLink = $("<a>").attr("class","card-link").attr("href",arr[i].link).attr('target','_blank').append(getIcon("playIcon") + " click here to try " + arr[i].title);
         else
             var cardLink = $("<text>").attr("class","card-link").append("");
          
@@ -116,4 +143,23 @@ function appendProjectCards(arr) {
     }
 
     $("#portfolio-container").append(cardColumns);
+}
+
+function getIcon(key) {
+    if(key === "awards")
+        return awardIcon;
+    else if(key === "conferral")
+        return gradCapIcon;  
+    else if(key === "gpa")
+        return laurelLeafIcon;
+    else if(key === "languages")
+        return gearIcon;
+    else if(key === "playIcon")
+        return playIcon;
+    else if(key === "roles")
+        return badgeIcon;
+    else if(key === "terms")
+        return calendarIcon;
+    else 
+        return ''; 
 }
