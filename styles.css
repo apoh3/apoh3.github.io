@@ -35,12 +35,13 @@ a:hover {
     margin: 0px 2px 30px 2px;
 }
 
-.res-section-top, .res-section {
-    margin-top: 25px;
+#res-left-col {
+    padding-right: 30px;
 }
 
-.res-section-top {
-    margin-top: 10px;
+.res-section-top, .res-section {
+    margin-top: 25px;
+    line-height: 1.6em;
 }
 
 .res-text-title {
@@ -50,10 +51,30 @@ a:hover {
 .res-text, .res-text-list {
     padding: 0;
     padding-left: 25px;
+    margin: 0;
+}
+
+.progress {
+    height: 25px;
+    margin: 8px;
+}
+
+.progress-bar text {
+    text-align: left;
+    padding-left: 8px;
+    font-size: 15px;
+}
+
+.res-field-text p, .res-field-text ul {
+    margin: 0;
+}
+
+.res-title-bottom {
+    padding-top: 15px;
 }
 
 .extra-indent-item {
-    padding-left: 35px;
+    margin-left: 35px;
 }
 
 .res-text-list {
