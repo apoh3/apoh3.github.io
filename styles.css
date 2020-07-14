@@ -1,4 +1,4 @@
-/* Personal Site - as of 06/26/2020 */
+/* Personal Site - as of 07/14/2020 */
 
 /* General Page Layout */
 body {
@@ -20,6 +20,10 @@ footer {
     min-height: 80px;
     padding: 15px;
     text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 /* Resume */
@@ -92,6 +96,7 @@ footer {
     bottom: 0;
     background-color: rgba(0,0,0,0.9);
     z-index: 2;
+    cursor: pointer;
 }
 
 #overlaid_img, #overlay_close {

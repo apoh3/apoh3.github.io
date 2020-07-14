@@ -1,9 +1,7 @@
-/* Personal Site - as of 06/26/2020 */
+/* Personal Site - as of 07/14/2020 */
 
 buildResume();
-appendProjectCards();
-
-
+appendProjectCards(portfolioProjects);
 
 $(document).ready(function() {
     $(".card-img-div").click(function(e) {  
@@ -12,7 +10,7 @@ $(document).ready(function() {
         $("#overlay").css("display","block");
         $("html,body").css("overflow","hidden");
 
-        var img = $("<img>").attr("id","overlaid_img").attr("src",projects[num].image);
+        var img = $("<img>").attr("id","overlaid_img").attr("src",portfolioProjects[num].image);
         var text = $("<div>").attr("id","overlay_close").append("click anywhere to close");
 
         $("#overlay").prepend(img,text);
@@ -27,22 +25,61 @@ $(document).ready(function() {
 });
 
 function buildResume() {
-    var pdfLink = $("<a>").attr("href","resume_apoh.pdf").attr('target','_blank').append("view pdf");
+    var pdfLink = $("<a>").attr("href","resume_apoh.pdf").attr('target','_blank').append(playIcon + " view pdf");
 
-    var leftCol = $("<div>").attr("class","col-sm-4").append("left");
-    var rightCol = $("<div>").attr("class","col-sm-8").append("right");
+    var leftCol = $("<div>").attr("id","res-left-col").attr("class","col-sm-4").append(buildNewResumeSection("Education"),buildNewResumeSection("Skills"));
+    var rightCol = $("<div>").attr("id","res-right-col").attr("class","col-sm-8").append(buildNewResumeSection("Work Experience"),buildNewResumeSection("Projects and Research"));
     var resRow1 = $("<div>").attr("id","res-row").attr("class","row").append(leftCol,rightCol);
 
     $("#resume-container").append(pdfLink,resRow1);
 }
 
-/* Used in portfolio - builds each project card (title, pic, info, link) and formats by row/col*/
-function appendProjectCards() {
-    var playIcon = '<svg class="bi bi-play-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>';
+function buildNewResumeSection(title) {
+    var div = $("<div>").attr("class","res-section");
+    var header = $("<h5>").attr("class","res-header").append(title);
 
+    switch(title) {
+        case "Education":
+            div.append(header,writeFieldInfo(education));
+            break;
+        case "Skills":
+            div.append(header,writeFieldInfo(skills));
+            break;
+        case "Work Experience":
+            div.append(header,writeFieldInfo(workExperience));
+            break;
+        case "Projects and Research":
+            div.append(header,writeFieldInfo(projectsAndResearch));
+            break;
+        default:
+            break;
+    }
+
+    return div;
+}
+
+function writeFieldInfo(arr) {
+    var div = $("<div>").attr("class","res-edu-text-section");
+
+    var numOfFields = Object.keys(arr).length;
+    
+    for(var i = 0; i < numOfFields; i++) {
+        for(var j = 0; j < Object.keys(arr[i]).length; j++) {
+            var key = Object.keys(arr[i])[j];
+            var val = Object.values(arr[i])[j];
+
+            div.append(key + ": " + val + "\n");
+        }
+    }
+
+    return div;
+}
+
+/* Used in portfolio - builds each project card (title, pic, info, link) and formats by row/col*/
+function appendProjectCards(arr) {
     var cardColumns = $("<div>").attr("class","row no-gutters");
 
-    for(var i = 0; i < projects.length; i++) {
+    for(var i = 0; i < arr.length; i++) {
         var col = $("<div>").attr("class","col-lg-3 d-flex align-items-stretch");
 
         /*
@@ -58,20 +95,20 @@ function appendProjectCards() {
 
         var card = $("<div>").attr("class","card");
         var cardBody = $("<div>").attr("class","card-body");
-        var cardTitle = $("<h4>").attr("class","card-title").append(projects[i].title);
+        var cardTitle = $("<h4>").attr("class","card-title").append(arr[i].title);
 
         var cardImgDiv = $("<div>").attr("id",i+"-card-img-div").attr("class","card-img-div");
         var cardImgLink = $("<text>").attr("class","card-img-text").append("click to enlarge");
-        var cardImg = $("<img>").attr("class","card-img").attr("src",projects[i].image).attr("alt","card image");
+        var cardImg = $("<img>").attr("class","card-img").attr("src",arr[i].image).attr("alt","card image");
         
         cardImgDiv.append(cardImg,cardImgLink);
 
-        var cardText = $("<p>").attr("class","card-text").append(projects[i].text);
+        var cardText = $("<p>").attr("class","card-text").append(arr[i].text);
 
-        if(projects[i].try == true)
-            var cardLink = $("<a>").attr("class","card-link").attr("href",projects[i].link).attr('target','_blank').append(playIcon + " click here to try " + projects[i].title);
+        if(arr[i].try == true)
+            var cardLink = $("<a>").attr("class","card-link").attr("href",arr[i].link).attr('target','_blank').append(playIcon + " click here to try " + arr[i].title);
         else
-            var cardLink = $("<a>").attr("class","card-link").attr("href",projects[i].link).attr('target','_blank').append(playIcon + " click here to view " + projects[i].title);
+            var cardLink = $("<text>").attr("class","card-link").append("");
          
         cardBody.append(cardTitle,cardImgDiv,cardText,cardLink);
         card.append(cardBody);
