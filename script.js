@@ -84,11 +84,13 @@ function appendFieldInfo(arr) {
                 for(; k < bullets.length; k++) {
                     if(plusIndent == true)
                         list.append($("<li>").attr("class","res-text-list-item extra-indent-item").text(bullets[k].replace('##','')));
-                    else if(arr == skills) {
+                    else if(arr == skills && arr[i].title === "Languages") {
+                        var skill = bullets[k].split(",");
+
                         list.append($("<li>").attr("class","res-text-list-item item-with-bar").append(
                             $("<div>").attr("class","progress").append(
-                                $("<div>").attr("class","progress-bar").css("width","50%").append(
-                                    $("<text>").append(getIcon(key) + " " + bullets[k].replace('##',''))
+                                $("<div>").attr("class","progress-bar").css("width",skill[1]+"%").append(
+                                    $("<text>").append(getIcon(key) + " " + skill[0].replace('##',''))
                                 )
                             )
                         ));
