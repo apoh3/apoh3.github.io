@@ -27,8 +27,8 @@ $(document).ready(function() {
 function buildResume() {
     var pdfLink = $("<a>").attr("href","resume_apoh.pdf").attr('target','_blank').append(getIcon("playIcon") + " view pdf");
 
-    var leftCol = $("<div>").attr("id","res-left-col").attr("class","col-sm-4").append(buildNewResSection("Education"),buildNewResSection("Skills"));
-    var rightCol = $("<div>").attr("id","res-right-col").attr("class","col-sm-8").append(buildNewResSection("Work Experience"),buildNewResSection("Projects and Research"));
+    var leftCol = $("<div>").attr("id","res-left-col").attr("class","col-sm-5").append(buildNewResSection("Education"),buildNewResSection("Skills"));
+    var rightCol = $("<div>").attr("id","res-right-col").attr("class","col-sm-7").append(buildNewResSection("Work Experience"),buildNewResSection("Projects and Research"));
     var resRow1 = $("<div>").attr("id","res-row").attr("class","row").append(leftCol,rightCol);
 
     $("#resume-container").append(pdfLink,resRow1);
