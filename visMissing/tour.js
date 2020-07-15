@@ -1,6 +1,7 @@
 /* July 2020 */
 
 var stepCnt = 0;
+
 var steps = [
     {
         text:"Select how much data you would like to display.",
