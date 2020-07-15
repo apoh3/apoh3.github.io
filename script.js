@@ -130,7 +130,8 @@ function createProgressbarList(list,k,bullets,key) {
         $("<div>").attr("id","progress-"+k).attr("class","progress").append(
             $("<div>").attr("class","progress-bar").css("width",skill[1]+"%").append(
                 $("<text>").append(getIcon(key) + " " + skill[0].replace('##','').replace('pound','#').replace('plusplus','++'))
-            )
+            ),
+            $("<div>").attr("class","expand-icon").append(getIcon("expand"))
         )
     ));
 }
@@ -242,6 +243,8 @@ function getIcon(key) {
         return badgeIcon;
     else if(key == "description")
         return infoIcon;
+    else if(key === "expand")
+        return expandIcon;
     else 
         return ''; 
 }
