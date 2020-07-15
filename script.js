@@ -29,7 +29,7 @@ $(document).ready(function() {
 });
 
 function buildResume() {
-    var pdfLink = $("<a>").attr("href","resume_apoh.pdf").attr('target','_blank').append(getIcon("playIcon") + " view pdf");
+    var pdfLink = $("<a>").attr("href","apoh_resume.pdf").attr('target','_blank').append(getIcon("playIcon") + " view pdf");
 
     var leftCol = $("<div>").attr("id","res-left-col").attr("class","col-sm-5").append(buildNewResSection("Education"),buildNewResSection("Skills"));
     var rightCol = $("<div>").attr("id","res-right-col").attr("class","col-sm-7").append(buildNewResSection("Work Experience"),buildNewResSection("Projects and Research"));
