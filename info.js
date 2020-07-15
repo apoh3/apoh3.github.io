@@ -30,8 +30,17 @@ const education = [
 const skills = [
     {
         title:"Languages",
-        bullets:"##Java,90;Cpound,70;C,50;Cplusplus,50;SQL,90;JavaScript,90;TypeScript,70;HTML,90;CSS,90;PHP,70",
-        moreInfo: ["","","","","","bootstrap,angular,d3","","","",""]
+        bullets:"##Java,90;Cpound,70;C,50;Cplusplus,50;SQL,90;JavaScript,90;TypeScript,80;HTML/CSS,90;PHP,70",
+        moreInfo: [
+            "6;JavaFX, JDBC, jsoup",
+            "3",
+            "2",
+            "1",
+            "3",
+            "6;jQuery, Angular, D3.js",
+            "2",
+            "7;Bootstrap",
+            "2"]
     },
     {
         title:"Tools and Environments",

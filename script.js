@@ -111,7 +111,7 @@ function buildList(k,bullets,arr,key,i,plusIndent) {
     for(; k < bullets.length; k++) {
         if(plusIndent == true) {
             list.append($("<li>").attr("id","ta-class-item-"+k).attr("class","res-text-list-item extra-indent-item ta-class").append(
-                $("<div>").attr("class","ta-class-item-name").append(bullets[k].replace('##',''))
+                $("<div>").attr("class","ta-class-item-name").append("- "+bullets[k].replace('##',''))
             ));
         } else if(arr == skills && arr[i].title === "Languages") {
             createProgressbarList(list,k,bullets,key);        
@@ -136,7 +136,7 @@ function createProgressbarList(list,k,bullets,key) {
 }
 
 function showMoreBelow(element) {
-    var lines = skills[0].moreInfo[element.id.charAt(element.id.length-1)].split(',');
+    var lines = skills[0].moreInfo[element.id.charAt(element.id.length-1)].split(';');
 
     if(lines[0] !== "") {
         var keyWord = "more";
@@ -144,10 +144,15 @@ function showMoreBelow(element) {
         if(closeAllByClassName(keyWord,element.id) == 1)
             return;
 
-         var more = $("<div>").attr("id",keyWord+"-"+element.id).attr("class",keyWord);
+        var more = $("<div>").attr("id",keyWord+"-"+element.id).attr("class",keyWord);
 
-        for(var j = 0; j < lines.length; j++)
-        more.append(lines[j] + "<br>");
+        if(lines[0] > 1) 
+            more.append(lines[0] + " years experience<br>");
+        else
+            more.append(lines[0] + " year experience<br>");
+
+        if(lines[1])
+            more.append("libraries/frameworks: " + lines[1] + "<br>");
     
         $("#item-"+element.id).append(more);
     }  
