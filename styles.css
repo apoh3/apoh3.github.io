@@ -26,6 +26,11 @@ a:hover {
     text-decoration: none;
 }
 
+/* About Me */
+#about-container {
+    height: 80vh;
+}
+
 /* Resume */
 #resume-container {
     max-width: 80%;
@@ -57,12 +62,25 @@ a:hover {
 .progress {
     height: 25px;
     margin: 8px 0px;
+    max-width: 350px;
+    max-height: 21px;
+}
+
+.progress:hover {
+    cursor: pointer;
 }
 
 .progress-bar text {
     text-align: left;
     padding-left: 8px;
     font-size: 15px;
+}
+
+.more {
+    font-size: 16px;
+    line-height: 1.2em;
+    padding: 0 0 8px 0;
+    margin: 0;
 }
 
 .res-field-text p, .res-field-text ul {
@@ -74,7 +92,7 @@ a:hover {
 }
 
 .extra-indent-item {
-    margin-left: 35px;
+    margin-left: 50px;
 }
 
 .res-text-list {

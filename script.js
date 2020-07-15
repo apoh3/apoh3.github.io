@@ -22,6 +22,10 @@ $(document).ready(function() {
         $("#overlay").css("display","none");
         $("html,body").css("overflow","visible");
     });
+
+    $('.progress').click(function(e) {
+        showMore(this);
+    });
 });
 
 function buildResume() {
@@ -79,29 +83,7 @@ function appendFieldInfo(arr) {
                     plusIndent = true;
                 }   
 
-                var list = $("<ul>").attr("class","res-text-list");
-
-                for(; k < bullets.length; k++) {
-                    if(plusIndent == true)
-                        list.append($("<li>").attr("class","res-text-list-item extra-indent-item").text(bullets[k].replace('##','')));
-                    else if(arr == skills && arr[i].title === "Languages") {
-                        var skill = bullets[k].split(",");
-
-                        list.append($("<li>").attr("class","res-text-list-item item-with-bar").append(
-                            $("<div>").attr("class","progress").append(
-                                $("<div>").attr("class","progress-bar").css("width",skill[1]+"%").append(
-                                    $("<text>").append(getIcon(key) + " " + skill[0].replace('##',''))
-                                )
-                            )
-                        ));
-                    } else {
-                        list.append($("<li>").attr("class","res-text-list-item").append(
-                            $("<text>").append(getIcon(key) + " " + bullets[k].replace('##',''))
-                        ));
-                    }
-                }
-
-                div.append(list);
+                div.append(buildList(k,bullets,arr,key,i,plusIndent));
             } else {
                 if(key === "title") {
                     if(i == 0)
@@ -110,65 +92,55 @@ function appendFieldInfo(arr) {
                         div.append($("<p>").attr("class","res-title-bottom res-text-"+key).append(val+"<br>"));
                 } else
                     div.append($("<p>").attr("class","res-text res-text-"+key).append(getIcon(key) + " " + val+"<br>"));
-            }
-                
+            }      
         }
     }
 
     return div;
 }
 
-/*
-function appendFieldInfo(arr) {
-    var div = $("<div>").attr("class","res-field-text");
+function buildList(k,bullets,arr,key,i,plusIndent) {
+    var list = $("<ul>").attr("class","res-text-list");
 
-    var numOfFields = Object.keys(arr).length;
-    
-    for(var i = 0; i < numOfFields; i++) {
-        for(var j = 0; j < Object.keys(arr[i]).length; j++) {
-            var key = Object.keys(arr[i])[j];
-            var val = Object.values(arr[i])[j];
-
-            if(val.includes("##")) {
-                var bullets = val.split(";");
-                var k = 0;
-                var plusIndent = false;
-
-                if(val.charAt(0) != '#') {
-                    div.append($("<p>").attr("class","res-text res-text-"+key).append(getIcon(key) + " " + bullets[k].replace('##','')+"<br>"));
-                    k++;
-                    plusIndent = true;
-                }   
-
-                var list = $("<ul>").attr("class","res-text-list");
-
-                for(; k < bullets.length; k++) {
-                    if(plusIndent == true)
-                        list.append($("<li>").attr("class","res-text-list-item extra-indent-item").text(bullets[k].replace('##','')));
-                    else {
-                        list.append($("<li>").attr("class","res-text-list-item").append(
-                            $("<text>").append(getIcon(key) + " " + bullets[k].replace('##',''))
-                        ));
-                    }
-                }
-
-                div.append(list);
-            } else {
-                if(key === "title") {
-                    if(i == 0)
-                        div.append($("<p>").attr("class","res-text-"+key).append(val+"<br>"));
-                    else
-                        div.append($("<p>").attr("class","res-title-bottom res-text-"+key).append(val+"<br>"));
-                } else
-                    div.append($("<p>").attr("class","res-text res-text-"+key).append(getIcon(key) + " " + val+"<br>"));
-            }
-                
+    for(; k < bullets.length; k++) {
+        if(plusIndent == true)
+            list.append($("<li>").attr("class","res-text-list-item extra-indent-item").text(bullets[k].replace('##','')));
+        else if(arr == skills && arr[i].title === "Languages") {
+            createProgressbarList(list,k,bullets,key);        
+        } else {
+            list.append($("<li>").attr("class","res-text-list-item").append($("<text>").append(getIcon(key) + " " + bullets[k].replace('##',''))));
         }
     }
 
-    return div;
+    return list;
 }
-*/
+
+function createProgressbarList(list,k,bullets,key) {
+    var skill = bullets[k].split(",");
+
+    list.append($("<li>").attr("id","item-progress-"+skill[0].replace('##','')).attr("class","res-text-list-item item-with-bar").append(
+        $("<div>").attr("id","progress-"+skill[0].replace('##','')).attr("class","progress").append(
+            $("<div>").attr("class","progress-bar").css("width",skill[1]+"%").append(
+                $("<text>").append(getIcon(key) + " " + skill[0].replace('##',''))
+            )
+        )
+    ));
+}
+
+function showMore(element) {
+    var moreDivs = document.getElementsByClassName("more");
+
+    if(moreDivs[0] && moreDivs[0].id === "more-"+element.id) {
+        moreDivs[0].parentNode.removeChild(moreDivs[0]);
+        return;
+    }
+
+    while(moreDivs[0])
+        moreDivs[0].parentNode.removeChild(moreDivs[0]);
+
+    var more = $("<div>").attr("id","more-"+element.id).attr("class","more").append(element.id.replace("progress-","") + "<br>here's more info...");
+    $("#item-"+element.id).append(more);
+}
 
 function appendProjectCards(arr) {
     var cardColumns = $("<div>").attr("class","row no-gutters");
