@@ -55,7 +55,6 @@ img {
 #tourDiv {
 	background-color: white;
 	border-radius: 20px;
-	border-top-left-radius: 0;
 	border: 5px double yellow;
 	width: 100px;
 	margin: 3px;

@@ -6,18 +6,63 @@ var steps = [
         element:"monthSelector",
         offsetX:0,
         offsetY:0,
+        side:"left"
     },
     {
-        text:"Hover over data points to see statistics.",
+        text:"Hover over data points to see statistics. The visualization was created with D3.js.",
         element:"chartDiv",
         offsetX:-50,
         offsetY:-200,
+        side:"left"
     },
     {
-        text:"step3",
-        element:"monthSelector",
+        text:"This is the tool for altering the visualization's data and display...",
+        element:"optionsDiv",
+        offsetX:+10,
+        offsetY:10,
+        side:"right"
+    },
+    {
+        text:"Select chart type.",
+        element:"firstDiv",
+        offsetX:0,
+        offsetY:-5,
+        side:"right"
+    },
+    {
+        text:"Select percentage of data to be randomly removed/imputed.",
+        element:"secondDiv",
+        offsetX:0,
+        offsetY:-5,
+        side:"right"
+    },
+    {
+        text:"Select visualization method. Highlight, downplay, and annotate methods impute values for removed data.",
+        element:"thirdDiv",
         offsetX:0,
         offsetY:0,
+        side:"right"
+    },
+    {
+        text:"Any imputed value can be changed by the user by selecting and dragging the point/bar..",
+        element:"chartDiv",
+        offsetX:-50,
+        offsetY:-200,
+        side:"left"
+    },
+    {
+        text:"You can swap between chart types to see how the visualization technique differs.",
+        element:"firstDiv",
+        offsetX:0,
+        offsetY:-5,
+        side:"right"
+    },
+    {
+        text:"Tour complete. Have fun!",
+        element:"chartDiv",
+        offsetX:-50,
+        offsetY:-200,
+        side:"left"
     }
 ];
 
@@ -41,7 +86,16 @@ function displayNext(stepCnt) {
 		var xPos = rect.right + steps[stepCnt].offsetX;
         var yPos = rect.bottom + steps[stepCnt].offsetY;
 
-        $("body").append($('<div>').attr("id","tourDiv").append(steps[stepCnt].text).css({position:"absolute",top:yPos,left:xPos}));
+        if(steps[stepCnt].side === "left")
+            $("body").append($('<div>').attr("id","tourDiv").append(steps[stepCnt].text).css({position:"absolute",top:yPos,left:xPos,"border-top-left-radius":"0"}));
+        else {
+            xPos -= el.clientWidth*2;
+
+            if(steps[stepCnt].element === "optionsDiv")
+                yPos = rect.top + steps[stepCnt].offsetY;
+
+            $("body").append($('<div>').attr("id","tourDiv").append(steps[stepCnt].text).css({position:"absolute",top:yPos,left:xPos,"border-top-right-radius":"0"}));
+        }
     } else if($("#tourDiv")) {
         $("#tourDiv").remove();
     }
