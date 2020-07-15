@@ -27,7 +27,7 @@ function begin() {
 	var date = new Date();
 	var startDate = [(date.getMonth()+1),date.getDate(),date.getFullYear()];
 	var startTime = [date.getHours(),date.getMinutes(),date.getSeconds()];
-	setStartTime(startDate,startTime);
+	//setStartTime(startDate,startTime);
 	
 	prepareData(dataClone); 
 	
@@ -483,7 +483,7 @@ function removeMissingFromLineChart(dataClone, line, height, svg, tooltip, forma
 					//log user actions
 					d.LastDrag = temp;
 					
-					addUserDrag("user added point [" + formatDate(d.Day) + ", " + d.Temperature + "] (correct value = " + correctTemp + ")");
+					//addUserDrag("user added point [" + formatDate(d.Day) + ", " + d.Temperature + "] (correct value = " + correctTemp + ")");
 					
 					var dif = round(correctTemp-d.Temperature,2);
 					var dir;
@@ -493,7 +493,7 @@ function removeMissingFromLineChart(dataClone, line, height, svg, tooltip, forma
 						dir = "higher";
 						dif = dif*-1;
 					}
-					addUserDrag("	--> " + dif + " degrees " + dir + " than correct value");
+					//addUserDrag("	--> " + dif + " degrees " + dir + " than correct value");
 					
 					var greyedPath = [];
 					
@@ -1010,7 +1010,7 @@ function removeMissingFromBarChart(x, y, width, height, svg, tooltip, formatTime
 					//log user interactions
 					d.LastDrag = d.Temperature;
 					
-					addUserDrag("user added bar [" + formatDate(d.Day) + ", " + d.Temperature + "] (correct value = " + correctTemp + ")");
+					//addUserDrag("user added bar [" + formatDate(d.Day) + ", " + d.Temperature + "] (correct value = " + correctTemp + ")");
 					
 					var dif = round(correctTemp-d.Temperature,2);
 					var dir;
@@ -1020,7 +1020,7 @@ function removeMissingFromBarChart(x, y, width, height, svg, tooltip, formatTime
 						dir = "higher";
 						dif = dif*-1;
 					}
-					addUserDrag("	--> " + dif + " degrees " + dir + " than correct value");
+					//addUserDrag("	--> " + dif + " degrees " + dir + " than correct value");
 					
 					addedBarOrigTemp = d.Temperature;
 					
@@ -1453,9 +1453,9 @@ function dragDots(idName,array,height,scaleY,line,missingDataSlices,chartType,er
 		})
 		.on("end", function(d) {
 			if(isNaN(d.LastDrag)) {
-				addUserDrag("user moved point [" + formatDate(date) + ", " + addedBarOrigTemp + "] to [" + formatDate(date) + ", " + round(scaleY.invert(y),2) + "] (correct value = " + originalValue + ")");
+				//addUserDrag("user moved point [" + formatDate(date) + ", " + addedBarOrigTemp + "] to [" + formatDate(date) + ", " + round(scaleY.invert(y),2) + "] (correct value = " + originalValue + ")");
 			} else {
-				addUserDrag("user moved point [" + formatDate(date) + ", " + d.LastDrag + "] to [" + formatDate(date) + ", " + round(scaleY.invert(y),2) + "] (correct value = " + originalValue + ")");
+				//addUserDrag("user moved point [" + formatDate(date) + ", " + d.LastDrag + "] to [" + formatDate(date) + ", " + round(scaleY.invert(y),2) + "] (correct value = " + originalValue + ")");
 			}	
 
 			var dif = round(originalValue-round(scaleY.invert(y),2),2);
@@ -1466,7 +1466,7 @@ function dragDots(idName,array,height,scaleY,line,missingDataSlices,chartType,er
 				dir = "higher";
 				dif = dif*-1;
 			}
-			addUserDrag("	--> " + dif + " degrees " + dir + " than correct value");
+			//addUserDrag("	--> " + dif + " degrees " + dir + " than correct value");
 			
 			d.LastDrag = d.Temperature;
 		})
@@ -1585,17 +1585,17 @@ function dragBars(idName,array,height,scaleY,bar,h) {
 				var idParts = idName.split("_");
 				
 				if(!isNaN(lastPosition)) {
-					addUserDrag("user moved bar [" + date + ", " + lastPosition + "] to [" + date + ", " + temp + "] (correct value = " + originalValue + ")");
+					//addUserDrag("user moved bar [" + date + ", " + lastPosition + "] to [" + date + ", " + temp + "] (correct value = " + originalValue + ")");
 				} else {
-					addUserDrag("user moved bar [" + date + ", " + addedBarOrigTemp + "] to [" + date + ", " + temp + "] (correct value = " + originalValue + ")");
+					//addUserDrag("user moved bar [" + date + ", " + addedBarOrigTemp + "] to [" + date + ", " + temp + "] (correct value = " + originalValue + ")");
 				}
 				
 				lastPosition = temp;
 			} else {
 				if(!isNaN(lastPosition)) {
-					addUserDrag("user moved bar [" + formatDate(date) + ", " + lastPosition + "] to [" + formatDate(date) + ", " + temp + "] (correct value = " + originalValue + ")");
+					//addUserDrag("user moved bar [" + formatDate(date) + ", " + lastPosition + "] to [" + formatDate(date) + ", " + temp + "] (correct value = " + originalValue + ")");
 				} else {
-					addUserDrag("user moved bar [" + formatDate(date) + ", " + addedBarOrigTemp + "] to [" + formatDate(date) + ", " + temp + "] (correct value = " + originalValue + ")");
+					//addUserDrag("user moved bar [" + formatDate(date) + ", " + addedBarOrigTemp + "] to [" + formatDate(date) + ", " + temp + "] (correct value = " + originalValue + ")");
 				}
 				
 				lastPosition = temp;
@@ -1609,7 +1609,7 @@ function dragBars(idName,array,height,scaleY,bar,h) {
 				dir = "higher";
 				dif = dif*-1;
 			}
-			addUserDrag("	--> " + dif + " degrees " + dir + " than correct value");
+			//addUserDrag("	--> " + dif + " degrees " + dir + " than correct value");
 		})
 	
 	//make missing bars draggable
@@ -1696,10 +1696,10 @@ function openDiv(element) {
 
 	if(element.style.display == 'none'){
 		element.style.display='block';
-		element.style.border='1px solid black';
+		element.style.border='1px solid rgb(50,50,50)';
 		element.style.position='absolute';
 		element.style.right='150px';
-		element.style.background='black';	
+		element.style.background='rgb(50,50,50)';	
 	} else {
 		element.style.display='none';
 	}				

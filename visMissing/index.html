@@ -11,15 +11,14 @@
 
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="styles.css">	
-		<script type="text/javascript" src="btnScript.js"></script>	
-		<script type="text/javascript" src="data2.js"></script>	
-		
+		<link rel="stylesheet" type="text/css" href="styles.css">			
 		<title>Visualizing Uncertainty</title>
 	</head>
 	
-	<body>		
-		<h3>Daily Temperature (&deg;F) at the Blue Hill Meteorological Observatory (Milton, MA) for 2018</h3>
+	<body>	
+		<h4 id="headsup">*This web page was created for testing techniques for visualizing missing and uncertain (imputed) data. <button id="tourBtn">Click here</button> for "tour" of page.</h4>
+
+		<h4>Daily Temperature (&deg;F) at the Blue Hill Meteorological Observatory (Milton, MA) for 2018</h4>
 		
 		<!-- VISUALIZATION DIV -->
 		<div id="chartDiv">
@@ -125,11 +124,15 @@
 			<img id="org5_bar" src="icons/org5_bar.png" height="200" width="300" style="display: none;">
 		</div>	
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="tour.js"></script>	
+		<script type="text/javascript" src="btnScript.js"></script>	
+		<!-- <script type="text/javascript" src="data2.js"></script> -->
 		<script src="https://d3js.org/d3.v3.min.js"></script>
 		<script src="https://d3js.org/d3.v4.min.js"></script>
 		<script type="text/javascript" src="data.js"></script>
 		<script type="text/javascript" src="visScript.js"></script>
-		<script type="text/javascript" src="logUserInput.js"></script>
+		<!-- <script type="text/javascript" src="logUserInput.js"></script> -->
 		
 		<!-- BEGIN -->
 		<script>begin();</script>
