@@ -12,26 +12,53 @@ body {
     border: none;
     border-radius: 0;
     text-align: center;
+    margin-bottom: 30px;;
+    background-color: darkslategrey;
+    color: white;
 }
 
 footer {
-    background-color: lightgrey;
+    background-color: #363636;
+    color: white;
     width: 100%;
-    min-height: 80px;
+    min-height: 60px;
     padding: 15px;
     text-align: center;
 }
 
+a {
+    color: darkslategrey;
+}
+
 a:hover {
     text-decoration: none;
+    color: #001F1B;
+}
+
+/* Nav Bar */
+.navbar {
+    background-color: #5E2A24;
+    color: white;
 }
 
 /* About Me */
+.about {
+    background-color: #76342D;
+    color: white;
+    margin: 0;
+    text-align: left;
+}
+
 #about-container {
     height: 80vh;
+    background-color: #76342D;
 }
 
 /* Resume */
+.resume {
+    background-color: darkslategrey;
+}
+
 #resume-container {
     max-width: 80%;
 }
@@ -49,7 +76,13 @@ a:hover {
     line-height: 1.6em;
 }
 
-.res-text-title, .res-text-school {
+.res-header {
+    background-color: lightgrey;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.res-header, .res-text-title, .res-text-school {
     font-weight: bold;
 }
 
@@ -74,19 +107,19 @@ a:hover {
 
 .progress:hover {
     cursor: pointer;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.2);
 }
 
 .progress:hover > .progress-bar {
-    background-color: navy;
+    background-color: darkslategrey;
 }
 
 .progress-bar {
-    background-color: blue;
+    background-color: rgb(77, 127, 127);
 }
 
 .progress-bar:hover {
-    background-color: navy;
+    background-color: darkslategrey;
 }
 
 .progress-bar text {
@@ -128,6 +161,10 @@ a:hover {
 }
 
 /* Portfolio */
+.portfolio {
+    background-color: #B86200;
+}
+
 #portfolio-container {
     max-width: 80%;
 }

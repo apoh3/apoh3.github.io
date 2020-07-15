@@ -61,12 +61,22 @@ const workExperience = [
     {
         title:"Writing and Reading Tutor",
         terms:"Fall 2016 - Spring 2018",
-        description:"Worked one-on-one with students to guide them through all stages of the writing process, including idea development, research, and documentation. Additionally, participated in and facilitated weekly workshops."
+        description:"Worked one-on-one with students to guide them through all stages of the writing process, including idea development, research, and documentation. Participated in and facilitated weekly workshops with other tutors."
+    },
+    {
+        title:"Undergraduate Lab Assistant",
+        terms:"Fall 2016",
+        description:"Assisted students with lab projects, including experiments with electrical circuits using Linux, C programming, breadboards, and Raspberry Pi."
     },
     {
         title:"Phonathon Caller",
         terms:"Fall 2015 - Spring 2016",
-        description:"Called alumni and friends of UMass Dartmouth for contributions to help better the university."
+        description:"Called alumni and friends of UMass Dartmouth to update them on current events and to encourage them to financially support the University and upcoming events."
+    },
+    {
+        title:"Volunteer STEM Mentor and Tutor",
+        terms:"Fall 2015 - Spring 2016",
+        description:"Helped students with homework and projects related to their STEM studies, as well as promoted interest in the science and engineering fields."
     }
 ];
 
@@ -119,7 +129,7 @@ const portfolioProjects = [
         title:"Locksmith Barron", 
         image:"img/locksmithBarron.png",
         text:"Puzzle game that tasks players with building keys by banging down groves until the key matches the given mold. When a groove is banged down, both adjacent grooves get its debris causing them to rise.", 
-        try:true,
+        try:false,
         link:"click here for p4"
     }
 ];
