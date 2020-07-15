@@ -65,6 +65,10 @@ img {
 	font-weight: bold;
 }
 
+#tourDiv:hover {
+	cursor: pointer;
+}
+
 #tourBtn:hover {
 	color: yellow;
 	cursor: pointer;

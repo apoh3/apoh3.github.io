@@ -1,5 +1,6 @@
 /* July 2020 */
 
+var stepCnt = 0;
 var steps = [
     {
         text:"Select how much data you would like to display.",
@@ -67,11 +68,12 @@ var steps = [
 ];
 
 $(document).ready(function() {
-    var stepCnt = 0;
-
-    $('#tourBtn').click(function(e) {
-        displayNext(stepCnt);
-        stepCnt++;
+    $('#tourBtn').click(function() {
+        if(!$('#tourDiv').length) {
+            displayNext(0);
+        } else {
+            displayNext(10);
+        }
     });
 });
 
@@ -86,18 +88,25 @@ function displayNext(stepCnt) {
 		var xPos = rect.right + steps[stepCnt].offsetX;
         var yPos = rect.bottom + steps[stepCnt].offsetY;
 
-        if(steps[stepCnt].side === "left")
-            $("body").append($('<div>').attr("id","tourDiv").append(steps[stepCnt].text).css({position:"absolute",top:yPos,left:xPos,"border-top-left-radius":"0"}));
+        if(steps[stepCnt].side === "left" && stepCnt == steps.length-1)
+            $("body").append($('<div>').attr("id","tourDiv").append(steps[stepCnt].text + "<br>(click to end tour)").css({position:"absolute",top:yPos,left:xPos,"border-top-left-radius":"0"}));
+        else if(steps[stepCnt].side === "left")
+            $("body").append($('<div>').attr("id","tourDiv").append(steps[stepCnt].text + "<br>(click for next)").css({position:"absolute",top:yPos,left:xPos,"border-top-left-radius":"0"}));
         else {
             xPos -= el.clientWidth*2;
 
             if(steps[stepCnt].element === "optionsDiv")
                 yPos = rect.top + steps[stepCnt].offsetY;
 
-            $("body").append($('<div>').attr("id","tourDiv").append(steps[stepCnt].text).css({position:"absolute",top:yPos,left:xPos,"border-top-right-radius":"0"}));
+            $("body").append($('<div>').attr("id","tourDiv").append(steps[stepCnt].text + "<br>(click for next)").css({position:"absolute",top:yPos,left:xPos,"border-top-right-radius":"0"}));
         }
+
+        $('#tourDiv').click(function() {displayNext(stepCnt);});
+
+        stepCnt++;
     } else if($("#tourDiv")) {
         $("#tourDiv").remove();
+        stepCnt = 0;
     }
 }
 
