@@ -24,7 +24,7 @@ $(document).ready(function() {
     });
 
     $('.progress').click(function(e) {
-        showMore(this);
+        showMoreBelow(this);
     });
 });
 
@@ -90,7 +90,7 @@ function appendFieldInfo(arr) {
                         div.append($("<p>").attr("class","res-text-"+key).append(val+"<br>"));
                     else
                         div.append($("<p>").attr("class","res-title-bottom res-text-"+key).append(val+"<br>"));
-                } else
+                } else if(key !== "moreInfo")
                     div.append($("<p>").attr("class","res-text res-text-"+key).append(getIcon(key) + " " + val+"<br>"));
             }      
         }
@@ -102,10 +102,14 @@ function appendFieldInfo(arr) {
 function buildList(k,bullets,arr,key,i,plusIndent) {
     var list = $("<ul>").attr("class","res-text-list");
 
+    if(plusIndent == true) {}
+
     for(; k < bullets.length; k++) {
-        if(plusIndent == true)
-            list.append($("<li>").attr("class","res-text-list-item extra-indent-item").text(bullets[k].replace('##','')));
-        else if(arr == skills && arr[i].title === "Languages") {
+        if(plusIndent == true) {
+            list.append($("<li>").attr("id","ta-class-item-"+k).attr("class","res-text-list-item extra-indent-item ta-class").append(
+                $("<div>").attr("class","ta-class-item-name").append(bullets[k].replace('##',''))
+            ));
+        } else if(arr == skills && arr[i].title === "Languages") {
             createProgressbarList(list,k,bullets,key);        
         } else {
             list.append($("<li>").attr("class","res-text-list-item").append($("<text>").append(getIcon(key) + " " + bullets[k].replace('##',''))));
@@ -118,28 +122,57 @@ function buildList(k,bullets,arr,key,i,plusIndent) {
 function createProgressbarList(list,k,bullets,key) {
     var skill = bullets[k].split(",");
 
-    list.append($("<li>").attr("id","item-progress-"+skill[0].replace('##','')).attr("class","res-text-list-item item-with-bar").append(
-        $("<div>").attr("id","progress-"+skill[0].replace('##','')).attr("class","progress").append(
+    list.append($("<li>").attr("id","item-progress-"+k).attr("class","res-text-list-item item-with-bar").append(
+        $("<div>").attr("id","progress-"+k).attr("class","progress").append(
             $("<div>").attr("class","progress-bar").css("width",skill[1]+"%").append(
-                $("<text>").append(getIcon(key) + " " + skill[0].replace('##',''))
+                $("<text>").append(getIcon(key) + " " + skill[0].replace('##','').replace('pound','#').replace('plusplus','++'))
             )
         )
     ));
 }
 
-function showMore(element) {
+function showMoreBelow(element) {
+    var lines = skills[0].moreInfo[element.id.charAt(element.id.length-1)].split(',');
+
+    if(lines[0] !== "") {
+        var keyWord = "more";
+
+        if(closeAllByClassName(keyWord,element.id) == 1)
+            return;
+
+         var more = $("<div>").attr("id",keyWord+"-"+element.id).attr("class",keyWord);
+
+        for(var j = 0; j < lines.length; j++)
+        more.append(lines[j] + "<br>");
+    
+        $("#item-"+element.id).append(more);
+    }  
+}
+
+function closeAllByClassName(name,elId) {
+    var moreDivs = document.getElementsByClassName(name);
+
+    if(moreDivs[0] && moreDivs[0].id.replace(name+"-","") === elId) {
+        moreDivs[0].parentNode.removeChild(moreDivs[0]);
+        return 1;
+    }
+
+    while(moreDivs[0])
+        moreDivs[0].parentNode.removeChild(moreDivs[0]);
+
+    return 0;
+}
+
+function showClassDescription(element) {
     var moreDivs = document.getElementsByClassName("more");
 
-    if(moreDivs[0] && moreDivs[0].id === "more-"+element.id) {
+    if(moreDivs[0] && moreDivs[0].id.replace("more-","") === element.id) {
         moreDivs[0].parentNode.removeChild(moreDivs[0]);
         return;
     }
 
     while(moreDivs[0])
         moreDivs[0].parentNode.removeChild(moreDivs[0]);
-
-    var more = $("<div>").attr("id","more-"+element.id).attr("class","more").append(element.id.replace("progress-","") + "<br>here's more info...");
-    $("#item-"+element.id).append(more);
 }
 
 function appendProjectCards(arr) {

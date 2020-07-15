@@ -64,10 +64,24 @@ a:hover {
     margin: 8px 0px;
     max-width: 350px;
     max-height: 21px;
+    background-color: rgba(0,0,0,0.05);
 }
 
 .progress:hover {
     cursor: pointer;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.progress:hover > .progress-bar {
+    background-color: navy;
+}
+
+.progress-bar {
+    background-color: blue;
+}
+
+.progress-bar:hover {
+    background-color: navy;
 }
 
 .progress-bar text {
@@ -77,10 +91,22 @@ a:hover {
 }
 
 .more {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.2em;
-    padding: 0 0 8px 0;
-    margin: 0;
+    padding: 0 10px 5px 10px;
+    margin: 0 0 10px 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    max-width: 340px;
+}
+
+.ta-class-item-name {
+    margin-left: 46px;
+    padding: 0 5px;
+    max-width: fit-content;
+    border-radius: 5px;
 }
 
 .res-field-text p, .res-field-text ul {
@@ -89,10 +115,6 @@ a:hover {
 
 .res-title-bottom {
     padding-top: 15px;
-}
-
-.extra-indent-item {
-    margin-left: 50px;
 }
 
 .res-text-list {
