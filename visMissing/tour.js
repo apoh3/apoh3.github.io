@@ -45,7 +45,7 @@ var steps = [
         side:"right"
     },
     {
-        text:"Any imputed value can be changed by the user by selecting and dragging the point/bar..",
+        text:"Any imputed value can be changed by the user by selecting and dragging the point/bar.",
         element:"chartDiv",
         offsetX:-50,
         offsetY:-200,
