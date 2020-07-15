@@ -90,8 +90,12 @@ function appendFieldInfo(arr) {
                         div.append($("<p>").attr("class","res-text-"+key).append(val+"<br>"));
                     else
                         div.append($("<p>").attr("class","res-title-bottom res-text-"+key).append(val+"<br>"));
-                } else if(key !== "moreInfo")
-                    div.append($("<p>").attr("class","res-text res-text-"+key).append(getIcon(key) + " " + val+"<br>"));
+                } else if(key !== "moreInfo") {
+                    if(key === "school" && i == 0)
+                        div.append($("<p>").attr("class","res-text-"+key).append(val+"<br>"));
+                    else if(key !== "school")
+                        div.append($("<p>").attr("class","res-text res-text-"+key).append(getIcon(key) + " " + val+"<br>"));
+                }
             }      
         }
     }

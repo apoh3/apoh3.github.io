@@ -49,8 +49,13 @@ a:hover {
     line-height: 1.6em;
 }
 
-.res-text-title {
+.res-text-title, .res-text-school {
     font-weight: bold;
+}
+
+.res-text-school {
+    font-size: 18px;
+    padding-bottom: 4px;
 }
 
 .res-text, .res-text-list {

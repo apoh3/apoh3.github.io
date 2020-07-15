@@ -12,12 +12,14 @@ var playIcon = '<svg class="bi bi-play-fill" width="1em" height="1em" viewBox="0
 //Info for resume
 const education = [
     {
+        school:"University of Massachusetts Dartmouth",
         title:"Master of Science in Computer Science",
         conferral:"May 2020",
         awards:"4 time Teaching Assistantship recipient",
         gpa:"GPA of 3.84"
     },
     {
+        school:"University of Massachusetts Dartmouth",
         title:"Bachelor of Science in Computer Science",
         conferral:"May 2018",
         awards:"##Regina Rheault Scholarship recipient;Carrier-Pisarczyk Scholarship recipient;graduated summa cum laude##",
