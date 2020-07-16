@@ -39,7 +39,7 @@ const skills = [
             "2",
             "1",
             "3",
-            "6;jQuery, Angular, node.js D3.js",
+            "6;jQuery, Angular, node.js, D3.js",
             "2",
             "7;Bootstrap",
             "2"]
