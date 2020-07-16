@@ -1,5 +1,6 @@
 /* Personal Site - as of 07/14/2020 */
 
+addScrollIcon();
 buildResume();
 appendProjectCards(portfolioProjects);
 
@@ -228,6 +229,10 @@ function appendProjectCards(arr) {
     $("#portfolio-container").append(cardColumns);
 }
 
+function addScrollIcon() {
+    $("#about-jumbo").append(getIcon("scroll"));
+}
+
 function getIcon(key) {
     if(key === "awards")
         return awardIcon;
@@ -245,6 +250,8 @@ function getIcon(key) {
         return infoIcon;
     else if(key === "expand")
         return expandIcon;
+    else if(key === "scroll")
+        return scrollIcon;
     else 
         return ''; 
 }
