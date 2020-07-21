@@ -32,7 +32,7 @@ const education = [
 const skills = [
     {
         title:"Languages",
-        bullets:"##Java,90;Cpound,70;C,50;Cplusplus,50;SQL,90;JavaScript,90;TypeScript,80;HTML/CSS,90;PHP,70",
+        bullets:"##Java,90;Cpound,70;C,50;Cplusplus,50;SQL,90;JavaScript,90;TypeScript,90;HTML/CSS,90;PHP,80",
         moreInfo: [
             "6;JavaFX, JDBC, jsoup",
             "3",
@@ -111,26 +111,26 @@ const portfolioProjects = [
     {
         title:"nucleoSLIDE",
         image:"img/nucleoslide.png",
-        text:"Online citizen science game developed to help solve the Motif Finding Problem, where a motif is some meaningful unknown pattern of length <i>k</i> hidden among multiple sequences.",
+        text:"Online citizen science game developed to help solve the Motif Finding Problem, where a motif is some meaningful unknown pattern of length <i>k</i> hidden among multiple sequences.<br>Implemenation: JavaScript, HTML/CSS, PHP, SQLite database, Apache server",
         try:true,
         link:"http://www.cis.umassd.edu/~apoh/"
     },
     {
         title:"Visualizing Uncertainty", 
         image:"img/visMissing.png",
-        text:"Web-based tool for testing visualization methods for viewing and predicting missing or uncertain data in line and bar graphs.", 
+        text:"Web-based tool for testing visualization methods for viewing and predicting missing or uncertain data in line and bar graphs.<br>Implementation: JavaScript (D3.js), HTML/CSS", 
         try:true,
         link:"visMissing/index.html"
     },
     {
         title:"AIS Data Archiver",
         image:"img/aisArchiver.png",
-        text:"Desktop application for viewing and managing live AIS data (vessel traffic data) that is gathered and stored from web resources without user operation.", 
+        text:"Desktop application for viewing and managing live AIS data (vessel traffic data) that is gathered and stored from web resources without user operation.<br>Implementation: Java (JavaFX, Jsoup, JDBC), MySQL database, HTML, Google Maps API", 
     },
     {
         title:"Locksmith Barron", 
         image:"img/locksmithBarron.png",
-        text:"Puzzle game that tasks players with building keys by banging down groves until the key matches the given mold. When a groove is banged down, both adjacent grooves get its debris causing them to rise.", 
+        text:"Puzzle game that tasks players with building keys by banging down groves until the key matches the given mold. When a groove is banged down, both adjacent grooves get its debris causing them to rise.<br>Implementation: C#, Unity", 
         try:false,
         link:"click here for p4"
     }
