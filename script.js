@@ -331,7 +331,7 @@ function enlargeImage(el) {
             //images
             $("<div>").attr("class","carousel-inner").append(
                 $("<div>").attr("class","carousel-item active").append(
-                    $("<img>").attr("class","d-block").attr("src",path+"1.PNG").attr("alt","First slide")
+                    $("<img>").attr("class","d-block").attr("src",path+"1.jpg").attr("alt","First slide")
                 )
             ),
             //left control
@@ -350,7 +350,7 @@ function enlargeImage(el) {
         $(".carousel-indicators").append($("<li data-target='#carousel' data-slide-to='"+(i+1)+"'>"));
         $(".carousel-inner").append(
             $("<div>").attr("class","carousel-item").append(
-                $("<img>").attr("class","d-block").attr("src",path+(i+2)+".PNG").attr("alt",portfolioProjects[num].title+" screenshot")
+                $("<img>").attr("class","d-block").attr("src",path+(i+2)+".jpg").attr("alt",portfolioProjects[num].title+" screenshot")
             )
         );
     }
