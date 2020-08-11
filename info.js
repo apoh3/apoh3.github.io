@@ -1,6 +1,8 @@
 var name = "Allison Poh";
 var jobAbbr = "SWE";
 var profile = "img/profile.jpg";
+var firstYr = 2015;
+var lastYr = 2020;
 
 const navOptions = ["Home","Experience","Skills","Portfolio","Contact"];
 

@@ -62,6 +62,55 @@ function buildNavOptions() {
 }
 
 function buildExperience() {
+    //info shifter in row (left, info deck, right)
+    var information = $("<div>").attr("id","exp-info-row").attr("class","row").append(
+        $("<div>").attr("class","col col-sm-1 shift-left").append(
+            $("<i>").attr("class","fa fa-caret-left").attr("aria-hidden","true")
+        ),
+        $("<div>").attr("class","col col-sm-10 col-middle").append(
+            $("<div>").attr("id","div-exp-info").attr("class","col-middle-info")
+        ),
+        $("<div>").attr("class","col col-sm-1 shift-right").append(
+            $("<i>").attr("class","fa fa-caret-right").attr("aria-hidden","true")
+        )
+    );
+
+    //year buttons in deck
+    var years = $("<div role='group'>").attr("id","deck-years").attr("class","card-deck");
+
+    for(var i = firstYr; i <= lastYr; i++) {
+        years.append(
+            $("<div>").attr("id","card-year-"+i).attr("class","card").append(
+                $("<div>").attr("class","card-body").append(
+                    $("<button>").attr("id","btn-year-"+i).attr("class","card-text btn btn-year").append(i)
+                )
+            )
+        )
+    }
+
+    $("#experience-container").append(information, years);
+
+    //add info cards to info shifter deck
+    $("#div-exp-info").append(
+        $("<div>").attr("id","deck-activity").attr("class","card-deck").append()
+    );
+
+    for(var i = 0; i < 3; i++) {
+        $("#deck-activity").append(
+            $("<div>").attr("class","card").append(
+                $("<div>").attr("class","card-body").append(
+                    $("<p>").attr("class","card-text").append("blach")
+                )
+            )
+        )
+    }
+
+    $("#btn-year-"+lastYr).focus();
+    lastClicked = $("#btn-year-"+lastYr);
+}
+
+/*
+function buildExperience() {
     var timeline = $("<div>").attr("id","timeline").append(
         $("<div>").attr("class","timeline-line").append(
             $("<div>").attr("class","timeline-circle").append(
@@ -100,6 +149,7 @@ function addExperienceInfo(idx) {
     if(expereince[idx].pos === "top")
         infoDiv.addClass("timeline-info-top");
 }
+*/
 
 function buildSkills() {
     var width = 450;
@@ -143,6 +193,8 @@ function buildSkills() {
             }
         })
         .on('mouseover', function (d,i) {
+            d3.select(this).style("cursor", "pointer"); 
+
             clearTexts();
             updateInnerText(i);
             d3.selectAll(".slice")
@@ -156,6 +208,8 @@ function buildSkills() {
         .append("circle")
         .attr("r", radius * 0.6)
         .style("fill", "rgba(169,160,139,0.3)")
+        .on('mouseover', function (d,i) {
+            d3.select(this).style("cursor", "default")});
 
     //inner circle text
     svg.append('text')
@@ -163,7 +217,9 @@ function buildSkills() {
         .attr('y', radius * -0.25)
         .attr('text-anchor', 'middle')
         .style('font-weight', 'bold')
-        .text(skills[0].title);
+        .text(skills[0].title)
+        .on('mouseover', function (d,i) {
+            d3.select(this).style("cursor", "default")});
     makeTexts(0);
 
     //update inner circle text
@@ -184,7 +240,9 @@ function buildSkills() {
                 .attr('class', 'inner-text-info')
                 .attr('y', radius * -0.10*pos)
                 .attr('text-anchor', 'middle')
-                .text(skillInfo[i]);
+                .text(skillInfo[i])
+                .on('mouseover', function (d,i) {
+                    d3.select(this).style("cursor", "default")});
 
             pos--;
         }
@@ -287,6 +345,26 @@ function buildContact() {
 }
 
 function addInteractions() {
+    $(".btn-year").click(function() {
+        lastClicked = this;
+    });
+
+    $("body").click(function(e){
+        if($(e.target).hasClass("shift-left") === true) {
+            var idSplit = lastClicked.id.split("-");
+            var yr = parseInt(idSplit[2]);
+            var next = $("#"+idSplit[0]+"-"+idSplit[1]+"-"+(yr-1));
+            lastClicked = next;
+        } else if($(e.target).hasClass("shift-right") === true) {
+            var idSplit = lastClicked.id.split("-");
+            var yr = parseInt(idSplit[2]);
+            var next = $("#"+idSplit[0]+"-"+idSplit[1]+"-"+(yr+1));
+            lastClicked = next;
+        } 
+
+        lastClicked.focus();
+    });
+
     $("#input-search" ).focus(function() {
         document.onkeydown = function(e) {
             if(e.keyCode == 13)

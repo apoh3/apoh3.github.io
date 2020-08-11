@@ -65,11 +65,87 @@
     padding-bottom: 80px;
 }
 
-
 #experience-container {
     margin-bottom: 70px;
 }
 
+/* top (info) */
+#exp-info-row {
+    border-bottom: 10px solid white;
+}
+
+#exp-info-row .col-sm-1 {
+    background-color: rgba(169,160,139,0.7);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+#exp-info-row .col-sm-1:hover {
+    background-color: rgba(169,160,139,0.85);
+}
+
+#exp-info-row .col-sm-1:active {
+    background-color: rgba(169,160,139,1);
+}
+
+#exp-info-row .col-sm-1 .fa {
+    font-size: 50px !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* info cards */
+#deck-activity .card {
+    border: 1px solid rgba(247,154,50,0.5);
+}
+
+/* bottom (years) */
+#deck-years {
+    background-color: white;
+    height: 80px;
+}
+
+#deck-years .card-body {
+    margin: 0;
+    padding: 0;
+}
+
+#deck-years .card {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+#deck-years .btn {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    color: white;
+    border: none;
+    border-radius: 0;
+    background-color: rgba(169,160,139,0.7);
+}
+
+#deck-years .btn:hover {
+    background-color: rgba(169,160,139,0.85);
+}
+
+#deck-years .btn:focus {
+    box-shadow: none;
+    outline: 0px;
+    background-color: rgba(169,160,139,1);
+    border: 0;
+}
+
+/*
 #timeline {
     text-align: center;
     margin: 20px;
@@ -126,10 +202,15 @@
     color: rgb(247,154,50);
     margin-top: -100px;
 }
+*/
 
 /* skills section */
 #skills-container {
     text-align: center;
+}
+
+.slice: hover {
+    cursor: pointer;
 }
 
 /* portfolio section */
