@@ -314,7 +314,7 @@ function addInteractions() {
 function enlargeImage(el) {
     var idSplit = el.id.split('-');
     var num = idSplit[idSplit.length-1];
-    var path = "img/"+portfolioProjects[num].title.charAt(0)+"/";
+    var path = "img/"+portfolioProjects[num].title.charAt(0).toLowerCase()+"/";
 
     $("html,body").css("overflow","hidden");
     $("#overlay").css("display","block");
