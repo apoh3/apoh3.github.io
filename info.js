@@ -122,8 +122,7 @@ const experience = [
         title:"Research Assistant",
         date:"Summer 2018",
         info: [
-            "blah blah blah",
-            "blah blah blah"
+            "Topic: Web Provenance Studies"
         ]
     },
     {
@@ -132,8 +131,8 @@ const experience = [
         title:"Teacher Assistant",
         date:"Fall 2018",
         info: [
-            "CIS 181 Object-Oriented Programming II lab instructor",
-            "CIS 381 Social and Ethical Aspects of Computing grader"
+            "CIS 180 Object-Oriented Programming I (Java) lab instructor",
+            "CIS 272 Introduction to Computing Systems grader"
         ]
     },
 
@@ -142,10 +141,10 @@ const experience = [
         year:"2019",
         keyword:"work",
         title:"Teacher Assistant",
-        date:"Fall 2019",
+        date:"Spring 2019",
         info: [
-            "CIS 181 Object-Oriented Programming II lab instructor",
-            "CIS 381 Social and Ethical Aspects of Computing grader"
+            "CIS 180 Object-Oriented Programming I (Java) lab instructor",
+            "CIS 181 Object-Oriented Programming II (Java) lab instructor",
         ]
     },
     {
@@ -154,29 +153,28 @@ const experience = [
         title:"Research Assistant",
         date:"Summer 2019",
         info: [
-            "blah blah blah",
-            "blah blah blah"
+            "Topic: Visualizing Uncertainty in Data"
         ]
     },
     {
         year:"2019",
         keyword:"work",
         title:"Teacher Assistant",
-        date:"Spring 2019",
+        date:"Fall 2019",
         info: [
-            "CIS 181 Object-Oriented Programming II lab instructor",
-            "CIS 381 Social and Ethical Aspects of Computing grader"
+            "CIS 180 Object-Oriented Programming I (Java) lab instructor",
+            "CIS 370 Design of Operating Systems lab helper and grader"
         ]
     },
-    
+
     //2020
     {
         year:"2020",
         keyword:"work",
         title:"Teacher Assistant",
-        date:"Fall 2020",
+        date:"Spring 2020",
         info: [
-            "CIS 181 Object-Oriented Programming II lab instructor",
+            "CIS 181 Object-Oriented Programming II (Java) lab instructor",
             "CIS 381 Social and Ethical Aspects of Computing grader"
         ]
     },

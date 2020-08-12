@@ -75,6 +75,7 @@ function buildExperience() {
         years.append(
             $("<div>").attr("id","card-year-"+i).attr("class","card").append(
                 $("<div>").attr("class","card-body").append(
+                    $("<div>").attr("id","btn-notch-"+i).attr("class","triangle"),
                     $("<button onclick='updateExp("+i+")'>").attr("id","btn-year-"+i).attr("class","card-text btn btn-year").append(i)
                 )
             )
@@ -91,6 +92,7 @@ function buildExperience() {
 
     //yr actions
     $("#btn-year-"+lastYr).focus();
+    $("#btn-notch-"+lastYr).addClass("triangle-white");
 }
 
 function updateExp(yr) {
@@ -199,6 +201,11 @@ function setCardColor(key,i) {
 
 function buildSkills() {
     var width = 450;
+
+    if($(window).width() < 450) {
+        width = $(window).width()-50;
+    }
+
     var height = width;
     var margin = 5;
     var radius = Math.min(width,height)/2-margin
@@ -391,6 +398,16 @@ function buildContact() {
 }
 
 function addInteractions() {
+    //experience timeline - add notch to focused year
+    $(".btn-year").focus(function() {
+        $(".triangle").each(function() {
+           $(this).removeClass("triangle-white");
+        });
+
+        var id = this.id.split("-");
+        $("#btn-notch-"+id[id.length-1]).addClass("triangle-white");
+    });
+
     $("#input-search" ).focus(function() {
         document.onkeydown = function(e) {
             if(e.keyCode == 13)

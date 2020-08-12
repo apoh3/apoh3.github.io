@@ -103,6 +103,7 @@
 #deck-activity .card {
     border: 1px solid rgba(247,154,50,0.5);
     border-radius: 0;
+    min-height: 20vh;
 }
 
 #deck-activity .card-body {
@@ -172,12 +173,29 @@
     background-color: rgba(169,160,139,1);
 }
 
+.triangle {
+    width: 0; 
+    height: 0; 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(169,160,139,0);
+}
+
+.triangle-white {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+}
+
 /* skills section */
 #skills-container {
     text-align: center;
 }
 
-.slice: hover {
+.slice:hover {
     cursor: pointer;
 }
 
