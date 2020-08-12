@@ -92,7 +92,10 @@ function buildExperience() {
 
     //yr actions
     $("#btn-year-"+lastYr).focus();
-    $("#btn-notch-"+lastYr).addClass("triangle-white");
+
+    if($(window).width() > 450) {
+        $("#btn-notch-"+lastYr).addClass("triangle-white");
+    }
 }
 
 function updateExp(yr) {
@@ -201,14 +204,22 @@ function setCardColor(key,i) {
 
 function buildSkills() {
     var width = 450;
+    var stroke = 20;
+    var margin = 5;
+    var innerRad = 150;
+    var innerPerc = 0.6;
 
-    if($(window).width() < 450) {
-        width = $(window).width()-50;
+    //phones and tablets
+    if($(window).width() < 768) {
+        width = $(window).width()-70;
+        stroke = 8;
+        margin = 2;
+        innerRad = 100;
+        innerPerc = 0.5;
     }
 
     var height = width;
-    var margin = 5;
-    var radius = Math.min(width,height)/2-margin
+    var radius = Math.min(width,height)/2-margin;
 
     var color = d3.scaleOrdinal()
         .domain(skills)
@@ -232,7 +243,7 @@ function buildSkills() {
         .enter()
         .append('path')
         .attr('d', d3.arc()
-            .innerRadius(150)
+            .innerRadius(innerRad)
             .outerRadius(radius)
         )
         .attr('class', 'slice')
@@ -242,7 +253,7 @@ function buildSkills() {
             if(i == 0) {
                 return "0px";
             } else {
-                return "20px";
+                return stroke+"px";
             }
         })
         .on('mouseover', function (d,i) {
@@ -251,7 +262,7 @@ function buildSkills() {
             clearTexts();
             updateInnerText(i);
             d3.selectAll(".slice")
-                .style("stroke-width", "20px");
+                .style("stroke-width", stroke+"px");
             d3.select(this)
                 .style("stroke-width", "0px");
         });
@@ -259,7 +270,7 @@ function buildSkills() {
     //inner circle
     svg
         .append("circle")
-        .attr("r", radius * 0.6)
+        .attr("r", radius * innerPerc)
         .style("fill", "rgba(169,160,139,0.3)")
         .on('mouseover', function (d,i) {
             d3.select(this).style("cursor", "default")});
@@ -270,6 +281,11 @@ function buildSkills() {
         .attr('y', radius * -0.25)
         .attr('text-anchor', 'middle')
         .style('font-weight', 'bold')
+        .style("font-size",function(d,i) {
+            if($(window).width() < 768) {
+                return "0.6em";
+            }
+        })
         .text(skills[0].title)
         .on('mouseover', function (d,i) {
             d3.select(this).style("cursor", "default")});
@@ -293,6 +309,11 @@ function buildSkills() {
                 .attr('class', 'inner-text-info')
                 .attr('y', radius * -0.10*pos)
                 .attr('text-anchor', 'middle')
+                .style("font-size",function(d,i) {
+                    if($(window).width() < 768) {
+                        return "0.6em";
+                    }
+                })
                 .text(skillInfo[i])
                 .on('mouseover', function (d,i) {
                     d3.select(this).style("cursor", "default")});
@@ -312,6 +333,10 @@ function buildPortfolio() {
 
     for(var i = 0; i < portfolioProjects.length; i++) {
         var col = $("<div>").attr("class","col-md-3 d-flex align-items-stretch");
+
+        if($(window).width() >= 768 && $(window).width() < 1200) {
+            col = $("<div>").attr("class","col-md-6 d-flex align-items-stretch");
+        }
 
         //text and img
         var cardBody = $("<div>").attr("class","card-body").append(
@@ -348,7 +373,7 @@ function buildPortfolio() {
 	
     $("#portfolio-container").append(cardColumn);
 	
-	$("#card-img-"+(portfolioProjects.length-1)).css({"opacity":"1","cursor":"default"});
+    $("#card-img-"+(portfolioProjects.length-1)).css({"opacity":"1","cursor":"default"});
 }
 
 function buildContact() {
