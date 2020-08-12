@@ -62,27 +62,20 @@ function buildNavOptions() {
 }
 
 function buildExperience() {
-    //info shifter in row (left, info deck, right)
+    //top (left, right, and mid info)
     var information = $("<div>").attr("id","exp-info-row").attr("class","row").append(
-        $("<div>").attr("class","col col-sm-1 shift-left").append(
-            $("<i>").attr("class","fa fa-caret-left").attr("aria-hidden","true")
-        ),
-        $("<div>").attr("class","col col-sm-10 col-middle").append(
+        $("<div>").attr("class","col col-sm-12 col-middle").append(
             $("<div>").attr("id","div-exp-info").attr("class","col-middle-info")
-        ),
-        $("<div>").attr("class","col col-sm-1 shift-right").append(
-            $("<i>").attr("class","fa fa-caret-right").attr("aria-hidden","true")
         )
     );
 
-    //year buttons in deck
+    //bottom (yr btns)
     var years = $("<div role='group'>").attr("id","deck-years").attr("class","card-deck");
-
     for(var i = firstYr; i <= lastYr; i++) {
         years.append(
             $("<div>").attr("id","card-year-"+i).attr("class","card").append(
                 $("<div>").attr("class","card-body").append(
-                    $("<button>").attr("id","btn-year-"+i).attr("class","card-text btn btn-year").append(i)
+                    $("<button onclick='updateExp("+i+")'>").attr("id","btn-year-"+i).attr("class","card-text btn btn-year").append(i)
                 )
             )
         )
@@ -90,66 +83,119 @@ function buildExperience() {
 
     $("#experience-container").append(information, years);
 
-    //add info cards to info shifter deck
+    //add cards to experience
     $("#div-exp-info").append(
-        $("<div>").attr("id","deck-activity").attr("class","card-deck").append()
+        $("<div>").attr("id","deck-activity").attr("class","card-deck")
     );
+    createExperienceCards(lastYr);
 
-    for(var i = 0; i < 3; i++) {
+    //yr actions
+    $("#btn-year-"+lastYr).focus();
+}
+
+function updateExp(yr) {
+    $("#deck-activity").empty();
+    createExperienceCards(yr);
+}
+
+function createExperienceCards(yr) {
+    var indexes = [];
+    var cardCnt = 0;
+
+    for(var i = 0; i < experience.length; i++) {
+        if(experience[i].year === yr.toString()) {
+            indexes[cardCnt] = i;
+            cardCnt++;
+        }
+    }
+
+    for(var i = 0; i < indexes.length; i++) {
         $("#deck-activity").append(
-            $("<div>").attr("class","card").append(
+            $("<div>").attr("id","card-exp-"+indexes[i]).attr("class","card").append(
                 $("<div>").attr("class","card-body").append(
-                    $("<p>").attr("class","card-text").append("blach")
+                    $("<div>").attr("id","card-title-"+indexes[i]).attr("class","card-title").append(experience[indexes[i]].title).append(
+                        $("<div>").attr("class","card-text-date").append(experience[indexes[i]].date)
+                    ),
+                    $("<div>").attr("class","card-text").append(
+                        $("<div>").attr("id","card-text-info-"+indexes[i]).attr("class","card-text-info")
+                    )
                 )
             )
-        )
-    }
+        );
 
-    $("#btn-year-"+lastYr).focus();
-    lastClicked = $("#btn-year-"+lastYr);
-}
-
-/*
-function buildExperience() {
-    var timeline = $("<div>").attr("id","timeline").append(
-        $("<div>").attr("class","timeline-line").append(
-            $("<div>").attr("class","timeline-circle").append(
-                $("<span>").attr("id","circle-1").attr("class","timeline-circle-text").append("2016")
-            ),
-            $("<div>").attr("class","timeline-circle").append(
-                $("<span>").attr("id","circle-2").attr("class","timeline-circle-text").append("2017")
-            ),
-            $("<div>").attr("class","timeline-circle").append(
-                $("<span>").attr("id","circle-3").attr("class","timeline-circle-text").append("2018")
-            ),
-            $("<div>").attr("class","timeline-circle").append(
-                $("<span>").attr("id","circle-4").attr("class","timeline-circle-text").append("2019")
-            ),
-            $("<div>").attr("class","timeline-circle").append(
-                $("<span>").attr("id","circle-5").attr("class","timeline-circle-text").append("2020")
-            ),
-        )
-    );
-
-    $("#experience-container").append(timeline);
-
-    for(var i = 0; i < expereince.length; i++) {
-        addExperienceInfo(i);
+        setCardTextInfo(indexes[i]);
+        setCardColor(experience[indexes[i]].keyword,indexes[i]);
+        addCardImg(experience[indexes[i]].keyword,indexes[i]);
     }
 }
 
-function addExperienceInfo(idx) {
-    var infoDiv = $("<div>").attr("class","timeline-info").append(
-        $("<div>").attr("class","timeline-info-title").append(expereince[idx].job),
-        $("<div>").attr("class","timeline-info-years").append(expereince[idx].years)
-    );
+function setCardTextInfo(i) {
+    var div = $("#card-text-info-"+i);
 
-    $("#circle-" + (idx+1)).append(infoDiv);
+    var infoArr = experience[i].info; 
+    
+    for(var j = 0; j < infoArr.length; j++) {
+        div.append(infoArr[j]); 
 
-    if(expereince[idx].pos === "top")
-        infoDiv.addClass("timeline-info-top");
+        if(j != infoArr.length) {
+            div.append($("<br>"));
+        }
+    }
 }
-*/
+
+function addCardImg(key,i) {
+    var cardTitle = $("#card-title-"+i);
+    var icon;
+
+    switch(key) {
+        case "grad":
+            icon = $("<i>").attr("class","fa fa-graduation-cap ").attr("aria-hidden","true");
+            break;
+        case "award":
+            icon = $("<i>").attr("class","fa fa-star").attr("aria-hidden","true");
+            break;
+        case "research":
+            icon = $("<i>").attr("class","fa fa-desktop").attr("aria-hidden","true");
+            break;
+        case "work":
+            icon = $("<i>").attr("class","fa fa-briefcase").attr("aria-hidden","true");
+            break;
+        case "moment":
+            icon = $("<i>").attr("class","fa fa-university").attr("aria-hidden","true");
+            break;
+        default:
+            icon = $("<i>").attr("class","fa fa-caret-left").attr("aria-hidden","true");
+    }
+
+    cardTitle.prepend(icon);
+}
+
+function setCardColor(key,i) {
+    var card = $("#card-exp-"+i);
+    var cardTitle = $("#card-title-"+i);
+
+    switch(key) {
+        case "grad":
+            card.css("border","1px solid rgba(247,154,50,0.5)");
+            cardTitle.css("background-color","rgb(247,154,50)");
+            break;
+        case "award":
+            card.css("border","1px solid rgba(41,21,23,0.5)");
+            cardTitle.css("background-color","rgb(41,21,23)");
+            break;
+        case "research":
+            card.css("border","1px solid rgba(164,121,115,0.5)");
+            cardTitle.css("background-color","rgb(164,121,115)");
+            break;
+        case "work":
+            card.css("border","1px solid rgba(90,31,49,0.5)");
+            cardTitle.css("background-color","rgb(90,31,49)");
+            break;
+        default:
+            card.css("border","1px solid rgba(173,77,0,0.5)");
+            cardTitle.css("background-color","rgb(173,77,0)");
+    }
+}
 
 function buildSkills() {
     var width = 450;
@@ -345,26 +391,6 @@ function buildContact() {
 }
 
 function addInteractions() {
-    $(".btn-year").click(function() {
-        lastClicked = this;
-    });
-
-    $("body").click(function(e){
-        if($(e.target).hasClass("shift-left") === true) {
-            var idSplit = lastClicked.id.split("-");
-            var yr = parseInt(idSplit[2]);
-            var next = $("#"+idSplit[0]+"-"+idSplit[1]+"-"+(yr-1));
-            lastClicked = next;
-        } else if($(e.target).hasClass("shift-right") === true) {
-            var idSplit = lastClicked.id.split("-");
-            var yr = parseInt(idSplit[2]);
-            var next = $("#"+idSplit[0]+"-"+idSplit[1]+"-"+(yr+1));
-            lastClicked = next;
-        } 
-
-        lastClicked.focus();
-    });
-
     $("#input-search" ).focus(function() {
         document.onkeydown = function(e) {
             if(e.keyCode == 13)

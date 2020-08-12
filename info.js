@@ -8,37 +8,196 @@ const navOptions = ["Home","Experience","Skills","Portfolio","Contact"];
 
 const contactInfo = ["pohallison@gmail.com","linkedin.com/in/allisonpoh","apoh3.github.io"];
 
-const expereince = [
+const experience = [
+    //2015
     {
-        years:"2016-2018",
-        job:"Writing and Reading Tutor",
-        pos:"bottom"
+        year:"2015",
+        keyword:"moment",
+        title:"Enrolled in UMassD Computer Science Program",
+        date:"Fall 2015",
+        info: [
+            "blah blah blah",
+            "blah blah blah"
+        ]
     },
     {
-        years:"2018-2020",
-        job:"Graduate Teaching Assistant",
-        pos:"bottom"
+        year:"2015",
+        keyword:"work",
+        title:"Phonathon",
+        date:"Spring 2016 - Fall 2017",
+        info: [
+            "blah blah blah",
+            "blah blah blah"
+        ]
+    },
+
+    //2016
+    {
+        year:"2016",
+        keyword:"award",
+        title:"Carrier-Pisarczyk Scholarship Recipient",
+        date:"September 2016",
+        info: [
+            "blah blah blah",
+            "blah blah blah"
+        ]
     },
     {
-        years:"2017-2018",
-        job:"Senior Capstone",
-        pos:"top"
-    },    
+        year:"2016",
+        keyword:"work",
+        title:"Phonathon",
+        date:"Spring 2016 - Fall 2017",
+        info: [
+            "blah blah blah",
+            "blah blah blah"
+        ]
+    },
+
+    //2017
     {
-        years:"2018",
-        job:"Research Assistant 1",
-        pos:"top"
+        year:"2017",
+        keyword:"work",
+        title:"Teaching Assistant",
+        date:"Fall 2017",
+        info: [
+            "blah blah blah",
+            "blah blah blah"
+        ]
     },
     {
-        years:"2019",
-        job:"Research Assistant 2",
-        pos:"top"
+        year:"2017",
+        keyword:"award",
+        title:"Regina Rheault Scholarship Recipient",
+        date:"April 2017",
+        info: [
+            "blah blah blah",
+            "blah blah blah"
+        ]
     },
     {
-        years:"2019-2020",
-        job:"MS Thesis",
-        pos:"top"
+        year:"2017",
+        keyword:"work",
+        title:"WRC Tutor",
+        date:"Fall 2017 - Spring 2018",
+        info: [
+            "blah blah blah",
+            "blah blah blah"
+        ]
     },
+
+    //2018
+    {
+        year:"2018",
+        keyword:"moment",
+        title:"Completed Senior Capstone",
+        date:"May 2018",
+        info: [
+            "CIS 181 Object-Oriented Programming II lab instructor",
+            "CIS 381 Social and Ethical Aspects of Computing grader"
+        ]
+    },
+    {
+        year:"2018",
+        keyword:"grad",
+        title:"BS in Computer Science",
+        date:"May 2018",
+        info: [
+            "GPA: 3.85",
+            "summa cum laude"
+        ]
+    },
+    {
+        year:"2018",
+        keyword:"work",
+        title:"WRC Tutor",
+        date:"Fall 2017 - Spring 2018",
+        info: [
+            "blah blah blah",
+            "blah blah blah"
+        ]
+    },
+    {
+        year:"2018",
+        keyword:"research",
+        title:"Research Assistant",
+        date:"Summer 2018",
+        info: [
+            "blah blah blah",
+            "blah blah blah"
+        ]
+    },
+    {
+        year:"2018",
+        keyword:"work",
+        title:"Teacher Assistant",
+        date:"Fall 2018",
+        info: [
+            "CIS 181 Object-Oriented Programming II lab instructor",
+            "CIS 381 Social and Ethical Aspects of Computing grader"
+        ]
+    },
+
+    //2019
+    {
+        year:"2019",
+        keyword:"work",
+        title:"Teacher Assistant",
+        date:"Fall 2019",
+        info: [
+            "CIS 181 Object-Oriented Programming II lab instructor",
+            "CIS 381 Social and Ethical Aspects of Computing grader"
+        ]
+    },
+    {
+        year:"2019",
+        keyword:"research",
+        title:"Research Assistant",
+        date:"Summer 2019",
+        info: [
+            "blah blah blah",
+            "blah blah blah"
+        ]
+    },
+    {
+        year:"2019",
+        keyword:"work",
+        title:"Teacher Assistant",
+        date:"Spring 2019",
+        info: [
+            "CIS 181 Object-Oriented Programming II lab instructor",
+            "CIS 381 Social and Ethical Aspects of Computing grader"
+        ]
+    },
+    
+    //2020
+    {
+        year:"2020",
+        keyword:"work",
+        title:"Teacher Assistant",
+        date:"Fall 2020",
+        info: [
+            "CIS 181 Object-Oriented Programming II lab instructor",
+            "CIS 381 Social and Ethical Aspects of Computing grader"
+        ]
+    },
+    {
+        year:"2020",
+        keyword:"moment",
+        title:"Defended MS Thesis",
+        date:"May 2020",
+        info: [
+            "nucleoSLIDE: A Citizen Science Game for the Motif Finding Problem"
+        ]
+    },
+    {
+        year:"2020",
+        keyword:"grad",
+        title:"MS in Computer Science",
+        date:"May 2020",
+        info: [
+            "GPA: 3.84"
+        ]
+    }
 ];
 
 const skills = [
