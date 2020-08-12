@@ -400,12 +400,14 @@ function buildContact() {
 function addInteractions() {
     //experience timeline - add notch to focused year
     $(".btn-year").focus(function() {
-        $(".triangle").each(function() {
-           $(this).removeClass("triangle-white");
-        });
-
-        var id = this.id.split("-");
-        $("#btn-notch-"+id[id.length-1]).addClass("triangle-white");
+        if($(window).width() > 450) {
+            $(".triangle").each(function() {
+                $(this).removeClass("triangle-white");
+             });
+     
+             var id = this.id.split("-");
+             $("#btn-notch-"+id[id.length-1]).addClass("triangle-white");
+        }
     });
 
     $("#input-search" ).focus(function() {
