@@ -92,6 +92,7 @@ function buildExperience() {
 
     //yr actions
     $("#btn-year-"+lastYr).focus();
+    window.scrollTo(0,0);
 
     if($(window).width() > 450) {
         $("#btn-notch-"+lastYr).addClass("triangle-white");
