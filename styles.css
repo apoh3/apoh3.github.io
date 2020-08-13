@@ -38,6 +38,9 @@
 
 .jumbotron-first {
     border: none;
+    height: 1px;
+    padding: 0;
+    margin: 0;
 }
 
 .jumbotron-h3 {
@@ -56,12 +59,12 @@
 }
 
 #home-container {
-	height: 85vh;
-    margin-bottom: 40px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    min-height: 95vh;
 }
 
 #home-container .col-lg-6 {
-    border: 1px solid purple;
     min-height: 100px;
 }
 
@@ -74,12 +77,8 @@
 }
 
 /* experience section */
-#experience {
-    padding-bottom: 80px;
-}
-
 #experience-container {
-    margin-bottom: 70px;
+    margin-bottom: 80px;
 }
 
 /* top (info) */

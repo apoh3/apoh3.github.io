@@ -24,6 +24,8 @@ $(document).ready(function() {
         else if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
             $('a[href="#portfolio"]').addClass('active');
             $('a[href="#contact"]').removeClass('active');
+        } else if (!$('a[href="#experience"]').hasClass("active") && !$('a[href="#portfolio"]').hasClass("active") && !$('a[href="#contact"]').hasClass("active")) {
+            $('a[href="#"]').addClass('active');
         }
      });
 });
@@ -34,7 +36,7 @@ function addHTMLText() {
 		"color":"#fbfbfb",
 		"font-family":"Arizonia",
 		"font-size":"160%"});
-    $("#jumbotron-1").append(navOptions[0]);
+    //$("#jumbotron-1").append(navOptions[0]);
 	$("#jumbotron-2").append(navOptions[1]);
 	//$("#jumbotron-3").append(navOptions[2]);
 	$("#jumbotron-4").append(navOptions[2]);
