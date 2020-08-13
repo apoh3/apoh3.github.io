@@ -415,20 +415,22 @@ function enlargeImage(el) {
     );
 
     if($("#img-first").height() >= $(window).height()) {
-        $("#img-first").css("height",$(window).height()*0.9);
+        $("#img-first").css("height",$(window).height()*0.95);
     }
+
+    var w = $("#img-first").width();
 
     //build slideshow according to num of images available
     for(var i = 0; i < portfolioProjects[num].slides-1; i++) {
         $(".carousel-indicators").append($("<li data-target='#carousel' data-slide-to='"+(i+1)+"'>"));
         $(".carousel-inner").append(
             $("<div>").attr("class","carousel-item").append(
-                $("<img>").attr("id","carousel-img-"+i).attr("class","d-block carousel-img").attr("src",path+(i+2)+".jpg").attr("alt",portfolioProjects[num].title+" screenshot").css("width",$(window).width()*0.8)
+                $("<img>").attr("id","carousel-img-"+i).attr("class","d-block carousel-img").attr("src",path+(i+2)+".jpg").attr("alt",portfolioProjects[num].title+" screenshot").css("width",w)
             )
         );
 
-        if($(".carousel-img").height() >= $(window).height()) {
-            $(".carousel-img").css("height",$(window).height()*0.9);
+        if($("#img-first").height() > 0) {
+            $("#carousel-img-"+i).css("height",$("#img-first").height());
         }
     }
 

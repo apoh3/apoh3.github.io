@@ -317,10 +317,6 @@
     background-color: black;
 }
 
-.carousel-item img {
-    /*height: 85vh !important;*/
-}
-
 #btn-close {
     background-color: transparent;
     border: none;
