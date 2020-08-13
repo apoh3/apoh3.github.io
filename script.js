@@ -217,7 +217,7 @@ function buildExperience() {
             $("<div>").attr("id","card-year-"+i).attr("class","card").append(
                 $("<div>").attr("class","card-body").append(
                     $("<div>").attr("id","btn-notch-"+i).attr("class","triangle"),
-                    $("<a onclick='updateExp("+i+")'>").attr("id","btn-year-"+i).attr("class","card-text btn btn-year").append(i)
+                    $("<a onclick='updateExp("+i+")'>").attr("id","btn-year-"+i).attr("class","btn btn-year").append(i)
                 )
             )
         )
@@ -225,7 +225,7 @@ function buildExperience() {
 
     if($(window).width() < 768) {
         $("#experience-container").append(years, information);
-        $("#deck-years").css("padding-bottom","15px");
+        $("#deck-years").css("margin-bottom","15px");
         $("#experience-container").css("margin-bottom","0px");
         $(".card-exp").css("margin-right","0px");
     } else {
@@ -245,10 +245,19 @@ function buildExperience() {
 
     if($(window).width() > 768) {
         $("#btn-notch-"+lastYr).addClass("triangle-white");
+        $(".btn-year").css("line-height","50px");
     }
 }
 
 function updateExp(yr) {
+    if($(window).width() > 768) {
+        $(".triangle").each(function() {
+            $(this).removeClass("triangle-white");
+            });
+    
+            $("#btn-notch-"+yr).addClass("triangle-white");
+    }
+
     $("#deck-activity").empty();
     createExperienceCards(yr);
 }
@@ -554,18 +563,6 @@ function buildContact() {
 }
 
 function addInteractions() {
-    //experience timeline - add notch to focused year
-    $(".btn-year").focus(function() {
-        if($(window).width() > 768) {
-            $(".triangle").each(function() {
-                $(this).removeClass("triangle-white");
-             });
-     
-             var id = this.id.split("-");
-             $("#btn-notch-"+id[id.length-1]).addClass("triangle-white");
-        }
-    });
-
     $("#input-search" ).focus(function() {
         document.onkeydown = function(e) {
             if(e.keyCode == 13)
