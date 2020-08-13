@@ -1,4 +1,4 @@
-var name = "Allison Poh";
+var name = "AP";
 var jobAbbr = "SWE";
 var profile = "img/profile.jpg";
 var firstYr = 2015;

@@ -33,8 +33,11 @@ $(document).ready(function() {
 function addHTMLText() {
     document.title = name + " | " + jobAbbr;
     $(".navbar-brand").append(name).css({
-		"color":"#fbfbfb",
-		"font-size":"160%"});
+        "color":"#fbfbfb",
+        "font-size":"130%",
+        "font-weight":"bold",
+        "font-family":"'Ovo', serif"
+    });
     //$("#jumbotron-1").append(navOptions[0]);
 	$("#jumbotron-2").append(navOptions[1]);
 	//$("#jumbotron-3").append(navOptions[2]);
