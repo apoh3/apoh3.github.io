@@ -4,7 +4,7 @@ var profile = "img/profile.jpg";
 var firstYr = 2015;
 var lastYr = 2020;
 
-const navOptions = ["Home","Experience","Skills","Portfolio","Contact"];
+const navOptions = ["Home","Experience","Portfolio","Contact"];
 
 const contactInfo = ["pohallison@gmail.com","linkedin.com/in/allisonpoh","apoh3.github.io"];
 

@@ -1,8 +1,8 @@
 $(document).ready(function() {
     addHTMLText();
     buildNavOptions();
+    buildHome();
     buildExperience(); //timeline
-    buildSkills();     //donut chart
     buildPortfolio();  //cards
     buildContact();    //img and table
     addInteractions();
@@ -36,9 +36,9 @@ function addHTMLText() {
 		"font-size":"160%"});
     $("#jumbotron-1").append(navOptions[0]);
 	$("#jumbotron-2").append(navOptions[1]);
-	$("#jumbotron-3").append(navOptions[2]);
-	$("#jumbotron-4").append(navOptions[3]);
-    $("#jumbotron-5").append(navOptions[4]);
+	//$("#jumbotron-3").append(navOptions[2]);
+	$("#jumbotron-4").append(navOptions[2]);
+    $("#jumbotron-5").append(navOptions[3]);
 }
 
 function buildNavOptions() {
@@ -59,6 +59,135 @@ function buildNavOptions() {
     }
 
     $('a[href="#"]').addClass('active');
+}
+
+function buildHome() {
+    $("#home-container").append(
+        $("<div>").attr("class","row").append(
+            $("<div>").attr("id","info-container").attr("class","col-lg-6"),
+            $("<div>").attr("id","skills-container").attr("class","col-lg-6")
+        )
+    );
+
+    buildSkills();
+}
+
+function buildSkills() {
+    //outer circle
+    var width = $("#skills-container").width();
+    var height = width;
+    var margin = $("#skills-container").width()*0.1;
+    var radius = Math.min(width,height)/2-margin;
+    var innerRad = $("#skills-container").width()*0.3;
+    var stroke = $("#skills-container").width()*0.05;
+    var outerFontOffset = -0.1;
+
+    //inner circle
+    var innerCircleRadius = radius*0.7;
+    var fontSize = 1;
+    var fontSpacing = -0.25;
+
+    if(width < 768/2) { //small
+        fontSize = 0.6;
+    }
+
+    var color = d3.scaleOrdinal()
+        .domain(skills)
+        .range(["rgb(173,77,0)","rgb(247,154,50)","rgb(164,121,115)","rgb(90,31,49)","rgb(41,21,23)"]);
+
+    var pie = d3.pie().value(skills.length);
+    var data = pie(d3.entries(skills));
+
+    //diagram
+    var svg = d3.select("#skills-container")
+        .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+        .append("g")
+            .attr("transform", "translate(" + width/2 + "," + height/2 + ")");
+
+    //slices
+    svg
+        .selectAll('any')
+        .data(data)
+        .enter()
+        .append('path')
+        .attr('d', d3.arc()
+            .innerRadius(innerRad)
+            .outerRadius(radius)
+        )
+        .attr('class', 'slice')
+        .attr('fill', function(d,i){ return(color(skills[i].title)) })
+        .attr("stroke", "white")
+        .style("stroke-width",function(d,i) {
+            if(i == 0) {
+                return "0px";
+            } else {
+                return stroke+"px";
+            }
+        })
+        .on('mouseover', function (d,i) {
+            d3.select(this).style("cursor", "pointer"); 
+
+            clearTexts();
+            updateInnerText(i);
+            d3.selectAll(".slice")
+                .style("stroke-width", stroke+"px");
+            d3.select(this)
+                .style("stroke-width", "0px");
+        });
+
+    //inner circle
+    svg
+        .append("circle")
+        .attr("r", innerCircleRadius)
+        .style("fill", "rgba(169,160,139,0.3)")
+        .on('mouseover', function (d,i) {
+            d3.select(this).style("cursor", "default")});
+
+    //inner circle text
+    svg.append('text')
+        .attr('class', 'inner-text-title')
+        .attr('y', radius * fontSpacing)
+        .attr('text-anchor', 'middle')
+        .style('font-weight', 'bold')
+        .style("font-size", fontSize+"em")
+        .text(skills[0].title)
+        .on('mouseover', function (d,i) {
+            d3.select(this).style("cursor", "default")});
+    makeTexts(0);
+
+    //update inner circle text
+    function updateInnerText(i) {
+        d3.select(".inner-text-title")
+            .text(skills[i].title);
+
+        makeTexts(i);
+    }
+
+    //skills info on newlines (new text)
+    function makeTexts(idx) {
+        var skillInfo = skills[idx].includes.split(';');
+        var pos = 1;
+
+        for(var i = 0; i < skillInfo.length; i++) {
+            svg.append('text')
+                .attr('class', 'inner-text-info')
+                .attr('y', radius * outerFontOffset*pos)
+                .attr('text-anchor', 'middle')
+                .style("font-size", fontSize+"em")
+                .text(skillInfo[i])
+                .on('mouseover', function (d,i) {
+                    d3.select(this).style("cursor", "default")});
+
+            pos--;
+        }
+    }
+
+    //remove skills info
+    function clearTexts() {
+        d3.selectAll(".inner-text-info").remove();
+    }
 }
 
 function buildExperience() {
@@ -203,132 +332,6 @@ function setCardColor(key,i) {
     }
 }
 
-function buildSkills() {
-    var width = 450;
-    var stroke = 20;
-    var margin = 5;
-    var innerRad = 150;
-    var innerPerc = 0.6;
-
-    //phones and tablets
-    if($(window).width() < 768) {
-        width = $(window).width()-70;
-        stroke = 8;
-        margin = 2;
-        innerRad = 100;
-        innerPerc = 0.5;
-    }
-
-    var height = width;
-    var radius = Math.min(width,height)/2-margin;
-
-    var color = d3.scaleOrdinal()
-        .domain(skills)
-        .range(["rgb(173,77,0)","rgb(247,154,50)","rgb(164,121,115)","rgb(90,31,49)","rgb(41,21,23)"]);
-
-    var pie = d3.pie().value(skills.length);
-    var data = pie(d3.entries(skills));
-
-    //diagram
-    var svg = d3.select("#skills-container")
-        .append("svg")
-            .attr("width", width)
-            .attr("height", height)
-        .append("g")
-            .attr("transform", "translate(" + width/2 + "," + height/2 + ")");
-
-    //slices
-    svg
-        .selectAll('any')
-        .data(data)
-        .enter()
-        .append('path')
-        .attr('d', d3.arc()
-            .innerRadius(innerRad)
-            .outerRadius(radius)
-        )
-        .attr('class', 'slice')
-        .attr('fill', function(d,i){ return(color(skills[i].title)) })
-        .attr("stroke", "white")
-        .style("stroke-width",function(d,i) {
-            if(i == 0) {
-                return "0px";
-            } else {
-                return stroke+"px";
-            }
-        })
-        .on('mouseover', function (d,i) {
-            d3.select(this).style("cursor", "pointer"); 
-
-            clearTexts();
-            updateInnerText(i);
-            d3.selectAll(".slice")
-                .style("stroke-width", stroke+"px");
-            d3.select(this)
-                .style("stroke-width", "0px");
-        });
-
-    //inner circle
-    svg
-        .append("circle")
-        .attr("r", radius * innerPerc)
-        .style("fill", "rgba(169,160,139,0.3)")
-        .on('mouseover', function (d,i) {
-            d3.select(this).style("cursor", "default")});
-
-    //inner circle text
-    svg.append('text')
-        .attr('class', 'inner-text-title')
-        .attr('y', radius * -0.25)
-        .attr('text-anchor', 'middle')
-        .style('font-weight', 'bold')
-        .style("font-size",function(d,i) {
-            if($(window).width() < 768) {
-                return "0.6em";
-            }
-        })
-        .text(skills[0].title)
-        .on('mouseover', function (d,i) {
-            d3.select(this).style("cursor", "default")});
-    makeTexts(0);
-
-    //update inner circle text
-    function updateInnerText(i) {
-        d3.select(".inner-text-title")
-            .text(skills[i].title);
-
-        makeTexts(i);
-    }
-
-    //skills info on newlines (new text)
-    function makeTexts(idx) {
-        var skillInfo = skills[idx].includes.split(';');
-        var pos = 1;
-
-        for(var i = 0; i < skillInfo.length; i++) {
-            svg.append('text')
-                .attr('class', 'inner-text-info')
-                .attr('y', radius * -0.10*pos)
-                .attr('text-anchor', 'middle')
-                .style("font-size",function(d,i) {
-                    if($(window).width() < 768) {
-                        return "0.6em";
-                    }
-                })
-                .text(skillInfo[i])
-                .on('mouseover', function (d,i) {
-                    d3.select(this).style("cursor", "default")});
-
-            pos--;
-        }
-    }
-
-    //remove skills info
-    function clearTexts() {
-        d3.selectAll(".inner-text-info").remove();
-    }
-}
-
 function buildPortfolio() {
     var cardColumn = $("<div>").attr("class","row no-gutters");
 
@@ -375,6 +378,97 @@ function buildPortfolio() {
     $("#portfolio-container").append(cardColumn);
 	
     $("#card-img-"+(portfolioProjects.length-1)).css({"opacity":"1","cursor":"default"});
+}
+
+function enlargeImage(el) {
+    var idSplit = el.id.split('-');
+    var num = idSplit[idSplit.length-1];
+    var path = "img/"+portfolioProjects[num].title.charAt(0).toLowerCase()+"/";
+
+    $("html,body").css("overflow","hidden");
+    $("#overlay").css("display","block");
+
+    $("#overlay").prepend(
+        //close button
+        $("<button>").attr("id","btn-close").attr("class","float-right").append($("<i>").attr("class","fa fa-times").attr("aria-hidden","true")),
+        //carousel
+        $("<div data-interval='false'>").attr("id","carousel").attr("class","carousel slide").append(
+            //dots for current image
+            $("<ol>").attr("class","carousel-indicators").append(
+                $("<li data-target='#carousel' data-slide-to='0'>").attr("class","active")
+            ),
+            //images
+            $("<div>").attr("class","carousel-inner").append(
+                $("<div>").attr("class","carousel-item active").append(
+                    $("<img>").attr("id","img-first").attr("class","d-block").attr("src",path+"1.jpg").attr("alt","First slide").css("width",$(window).width()*0.8)
+                )
+            ),
+            //left control
+            $("<a role='button' data-slide='prev'>").attr("id","btn-left").attr("class","carousel-control-prev").attr("href","#carousel").append(
+                $("<i>").attr("class","carousel-control-icon fa fa-angle-left").attr("aria-hidden","true")
+            ),
+            //right control
+            $("<a role='button' data-slide='next'>").attr("id","btn-right").attr("class","carousel-control-next").attr("href","#carousel").append(
+                $("<i>").attr("class","carousel-control-icon fa fa-angle-right").attr("aria-hidden","true")
+            )
+        )
+    );
+
+    if($("#img-first").height() >= $(window).height()) {
+        $("#img-first").css("height",$(window).height()*0.9);
+    }
+
+    //build slideshow according to num of images available
+    for(var i = 0; i < portfolioProjects[num].slides-1; i++) {
+        $(".carousel-indicators").append($("<li data-target='#carousel' data-slide-to='"+(i+1)+"'>"));
+        $(".carousel-inner").append(
+            $("<div>").attr("class","carousel-item").append(
+                $("<img>").attr("id","carousel-img-"+i).attr("class","d-block carousel-img").attr("src",path+(i+2)+".jpg").attr("alt",portfolioProjects[num].title+" screenshot").css("width",$(window).width()*0.8)
+            )
+        );
+
+        if($(".carousel-img").height() >= $(window).height()) {
+            $(".carousel-img").css("height",$(window).height()*0.9);
+        }
+    }
+
+    //ensure carousel control visibility
+    if(portfolioProjects[num].theme === "dark") {
+        $(".carousel-indicators").attr("class", "carousel-indicators carousel-indicators-dark");
+        $(".carousel-control-prev").css("color","black");
+        $(".carousel-control-next").css("color","black");
+    }
+	
+	//slide on arrow keys
+	document.onkeydown = function(e) {
+		switch(e.keyCode) {
+			// left
+			case 37:
+				$("#btn-left").click();
+				break;
+			// right
+			case 39: 
+				$("#btn-right").click();
+				break;
+			// escape
+			case 27: 
+				$("#btn-close").click();
+				break;
+			// backspace/delete
+			case 8: 
+				$("#btn-close").click();
+				break;
+			default: return;
+		}
+		e.preventDefault();
+	};
+	
+	//close/x button
+	$('#btn-close').click(function() {  
+        $("#overlay").html("");
+        $("#overlay").css("display","none");
+        $("html,body").css("overflow","visible");
+    });
 }
 
 function buildContact() {
@@ -457,89 +551,6 @@ function addInteractions() {
     $("#btn-search").click(function() {
         var input = $("#input-search").val();
         findMatches(input);
-    });
-}
-
-function enlargeImage(el) {
-    var idSplit = el.id.split('-');
-    var num = idSplit[idSplit.length-1];
-    var path = "img/"+portfolioProjects[num].title.charAt(0).toLowerCase()+"/";
-
-    $("html,body").css("overflow","hidden");
-    $("#overlay").css("display","block");
-
-    $("#overlay").prepend(
-        //close button
-        $("<button>").attr("id","btn-close").attr("class","float-right").append($("<i>").attr("class","fa fa-times").attr("aria-hidden","true")),
-        //carousel
-        $("<div data-interval='false'>").attr("id","carousel").attr("class","carousel slide").append(
-            //dots for current image
-            $("<ol>").attr("class","carousel-indicators").append(
-                $("<li data-target='#carousel' data-slide-to='0'>").attr("class","active")
-            ),
-            //images
-            $("<div>").attr("class","carousel-inner").append(
-                $("<div>").attr("class","carousel-item active").append(
-                    $("<img>").attr("class","d-block").attr("src",path+"1.jpg").attr("alt","First slide")
-                )
-            ),
-            //left control
-            $("<a role='button' data-slide='prev'>").attr("id","btn-left").attr("class","carousel-control-prev").attr("href","#carousel").append(
-                $("<i>").attr("class","carousel-control-icon fa fa-angle-left").attr("aria-hidden","true")
-            ),
-            //right control
-            $("<a role='button' data-slide='next'>").attr("id","btn-right").attr("class","carousel-control-next").attr("href","#carousel").append(
-                $("<i>").attr("class","carousel-control-icon fa fa-angle-right").attr("aria-hidden","true")
-            )
-        )
-    );
-
-    //build slideshow according to num of images available
-    for(var i = 0; i < portfolioProjects[num].slides-1; i++) {
-        $(".carousel-indicators").append($("<li data-target='#carousel' data-slide-to='"+(i+1)+"'>"));
-        $(".carousel-inner").append(
-            $("<div>").attr("class","carousel-item").append(
-                $("<img>").attr("class","d-block").attr("src",path+(i+2)+".jpg").attr("alt",portfolioProjects[num].title+" screenshot")
-            )
-        );
-    }
-
-    //ensure carousel control visibility
-    if(portfolioProjects[num].theme === "dark") {
-        $(".carousel-indicators").attr("class", "carousel-indicators carousel-indicators-dark");
-        $(".carousel-control-prev").css("color","black");
-        $(".carousel-control-next").css("color","black");
-    }
-	
-	//slide on arrow keys
-	document.onkeydown = function(e) {
-		switch(e.keyCode) {
-			// left
-			case 37:
-				$("#btn-left").click();
-				break;
-			// right
-			case 39: 
-				$("#btn-right").click();
-				break;
-			// escape
-			case 27: 
-				$("#btn-close").click();
-				break;
-			// backspace/delete
-			case 8: 
-				$("#btn-close").click();
-				break;
-			default: return;
-		}
-		e.preventDefault();
-	};
-	
-	//close/x button
-	$('#btn-close').click(function() {  
-        $("#overlay").html("");
-        $("#overlay").css("display","none");
-        $("html,body").css("overflow","visible");
     });
 }
 

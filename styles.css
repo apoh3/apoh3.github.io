@@ -57,7 +57,20 @@
 
 #home-container {
 	height: 85vh;
-	margin-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+#home-container .col-lg-6 {
+    border: 1px solid purple;
+    min-height: 100px;
+}
+
+#skills-container {
+    text-align: center;
+}
+
+.slice:hover {
+    cursor: pointer;
 }
 
 /* experience section */
@@ -190,15 +203,6 @@
     border-top: 10px solid white;
 }
 
-/* skills section */
-#skills-container {
-    text-align: center;
-}
-
-.slice:hover {
-    cursor: pointer;
-}
-
 /* portfolio section */
 .card {
     margin-bottom: 20px;
@@ -314,7 +318,7 @@
 }
 
 .carousel-item img {
-    height: 85vh !important;
+    /*height: 85vh !important;*/
 }
 
 #btn-close {
