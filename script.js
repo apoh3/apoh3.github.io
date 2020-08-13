@@ -34,7 +34,6 @@ function addHTMLText() {
     document.title = name + " | " + jobAbbr;
     $(".navbar-brand").append(name).css({
 		"color":"#fbfbfb",
-		"font-family":"Arizonia",
 		"font-size":"160%"});
     //$("#jumbotron-1").append(navOptions[0]);
 	$("#jumbotron-2").append(navOptions[1]);
@@ -66,12 +65,23 @@ function buildNavOptions() {
 function buildHome() {
     $("#home-container").append(
         $("<div>").attr("class","row").append(
-            $("<div>").attr("id","info-container").attr("class","col-lg-6"),
-            $("<div>").attr("id","skills-container").attr("class","col-lg-6")
+            $("<div>").attr("id","info-container").attr("class","col-xl-6"),
+            $("<div>").attr("id","skills-container").attr("class","col-xl-6")
         )
     );
 
+    buildIntro();
     buildSkills();
+}
+
+function buildIntro() {
+    $("#info-container").append(
+        $("<div>").attr("id","home-div").append(
+            $("<h1>").attr("id","home-title").append("Allison Poh"),
+            $("<p>").attr("id","home-text").append("software engineer blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"),
+            $("<a>").attr("id","home-resume").attr("href","resume_apoh.pdf").attr('target','_blank').append("view resume")
+        )
+    )
 }
 
 function buildSkills() {
@@ -207,13 +217,21 @@ function buildExperience() {
             $("<div>").attr("id","card-year-"+i).attr("class","card").append(
                 $("<div>").attr("class","card-body").append(
                     $("<div>").attr("id","btn-notch-"+i).attr("class","triangle"),
-                    $("<button onclick='updateExp("+i+")'>").attr("id","btn-year-"+i).attr("class","card-text btn btn-year").append(i)
+                    $("<a onclick='updateExp("+i+")'>").attr("id","btn-year-"+i).attr("class","card-text btn btn-year").append(i)
                 )
             )
         )
     }
 
-    $("#experience-container").append(information, years);
+    if($(window).width() < 768) {
+        $("#experience-container").append(years, information);
+        $("#deck-years").css("padding-bottom","15px");
+        $("#experience-container").css("margin-bottom","0px");
+        $(".card-exp").css("margin-right","0px");
+    } else {
+        $("#experience-container").append(information, years);
+        $(".card-exp").css("margin-right","20px");
+    }
 
     //add cards to experience
     $("#div-exp-info").append(
@@ -225,7 +243,7 @@ function buildExperience() {
     $("#btn-year-"+lastYr).focus();
     window.scrollTo(0,0);
 
-    if($(window).width() > 450) {
+    if($(window).width() > 768) {
         $("#btn-notch-"+lastYr).addClass("triangle-white");
     }
 }
@@ -248,7 +266,7 @@ function createExperienceCards(yr) {
 
     for(var i = 0; i < indexes.length; i++) {
         $("#deck-activity").append(
-            $("<div>").attr("id","card-exp-"+indexes[i]).attr("class","card").append(
+            $("<div>").attr("id","card-exp-"+indexes[i]).attr("class","card card-exp").append(
                 $("<div>").attr("class","card-body").append(
                     $("<div>").attr("id","card-title-"+indexes[i]).attr("class","card-title").append(experience[indexes[i]].title).append(
                         $("<div>").attr("class","card-text-date").append(experience[indexes[i]].date)
@@ -263,6 +281,13 @@ function createExperienceCards(yr) {
         setCardTextInfo(indexes[i]);
         setCardColor(experience[indexes[i]].keyword,indexes[i]);
         addCardImg(experience[indexes[i]].keyword,indexes[i]);
+    }
+
+    if($(window).width() < 768) {
+        $(".card-exp").css("margin-right","0px");
+    } else {
+        $(".card-exp").css("margin-right","20px");
+        $(".card-exp").css("min-height",40+"vh");
     }
 }
 
@@ -373,13 +398,20 @@ function buildPortfolio() {
             )
         );
         
-        col.append($("<div>").attr("class","card").append(cardBody));
+        col.append($("<div>").attr("class","card card-portfolio").append(cardBody));
         cardColumn.append(col);
     }
 	
     $("#portfolio-container").append(cardColumn);
 	
     $("#card-img-"+(portfolioProjects.length-1)).css({"opacity":"1","cursor":"default"});
+
+    if($(window).width() < 768) {
+        $(".card-portfolio").css("margin-right","0px");
+        $("#input-search").css("width","100px");
+    } else {
+        $(".card-portfolio").css("margin-right","20px");
+    }
 }
 
 function enlargeImage(el) {
@@ -524,7 +556,7 @@ function buildContact() {
 function addInteractions() {
     //experience timeline - add notch to focused year
     $(".btn-year").focus(function() {
-        if($(window).width() > 450) {
+        if($(window).width() > 768) {
             $(".triangle").each(function() {
                 $(this).removeClass("triangle-white");
              });

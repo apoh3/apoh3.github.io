@@ -19,7 +19,6 @@
 
 .nav-link {
     font-size: 120%;
-    font-family: Cormorant;
 }
 
 .nav-link:hover {
@@ -32,7 +31,6 @@
     border-top: 1px solid rgba(0,0,0,0.2);
     border-radius: 0;
     color: #2B2129;
-    font-family: Cormorant;
     font-weight: bold;
 }
 
@@ -64,7 +62,7 @@
     min-height: 95vh;
 }
 
-#home-container .col-lg-6 {
+#home-container .col-xl-6 {
     min-height: 100px;
 }
 
@@ -74,6 +72,33 @@
 
 .slice:hover {
     cursor: pointer;
+}
+
+#info-container {
+    position: relative;
+}
+
+#home-div {
+    width: 100%;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: left;
+}
+
+#home-resume {
+    outline: none;
+    border: 1px solid rgba(169,160,139,0.7);
+    color: rgba(96, 92, 83, 0.9);
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 15%;
+}
+
+#home-resume:hover {
+    color: rgb(96, 92, 83);
+    text-decoration: none;
 }
 
 /* experience section */
@@ -148,7 +173,7 @@
 /* bottom (years) */
 #deck-years {
     background-color: white;
-    height: 80px;
+    min-height: 80px;
 }
 
 #deck-years .card-body {
