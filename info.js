@@ -13,7 +13,7 @@ const navOptions = ["Home","Experience","Portfolio","Contact"];
 
 const contactInfo = ["pohallison@gmail.com","linkedin.com/in/allisonpoh","apoh3.github.io"];
 
-const homeText = "Software Engineer with MS degree in Computer Science.";
+const homeText = "Software Engineer with MS in Computer Science.";
 
 var firstYr = 2015;
 var lastYr = 2020;
@@ -157,7 +157,7 @@ const experience = [
         date:"Summer 2018",
         info: [
             "topic: Web Provenance Studies",
-            "researched data visualization techniques for displaying and tracking provenances for web analytics, including provenance manipulation, user collaboration, and streaming data",
+            "researched data visualization techniques for displaying and tracking provenances for web analytics",
             "created highly interactive web pages for testing ease-of-implementation and effectiveness of a new provenance tracking library called SIMProv.js"
         ]
     },
