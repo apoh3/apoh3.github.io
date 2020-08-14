@@ -1,25 +1,26 @@
-/* general */
+/* 
+    Personal Website - styles
+    as of Aug. 2020
+    by Allison Poh
 
-/*
-    colors:
-    gold - 173,77,0
-    yellow - 247,154,50
-    light purple - 164,121,115
-    purple - 90,31,49
-    dark purple - 41,21,23
-    grey - 169,160,139
+    color palette:
+    gold - rgb(173,77,0)
+    yellow - rgb(247,154,50)
+    light purple - rgb(164,121,115)
+    purple - rgb(90,31,49)
+    dark purple - rgb(41,21,23)
+    grey - rgb(169,160,139)
 */
 
+/* general */
 body {
     font-family: 'Quattrocento Sans', sans-serif;
 }
 
-
-#home-title, .jumbotron-h3, #deck-activity .card-title, #portfolio-container .card-title {
+#home-title, .jumbotron-h3, #deck-expereince .card-title, #portfolio-container .card-title {
     font-family: 'Ovo', serif;
 }
 
-/* navigation bar */
 .navbar {
     padding: 10px 30px;
 	background-color: rgb(90,31,49);
@@ -35,15 +36,7 @@ body {
     margin-top: -40px;
     border-top: 1px solid rgba(0,0,0,0.2);
     border-radius: 0;
-    color: #2B2129;
-    
-}
-
-.jumbotron-first {
-    border: none;
-    height: 1px;
-    padding: 0;
-    margin: 0;
+    color: #2B2129; 
 }
 
 .jumbotron-h3 {
@@ -57,6 +50,13 @@ body {
 }
 
 /* home section */
+#home {
+    border: none;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+}
+
 #home, #home-container {
 	background-color: white;
 }
@@ -67,23 +67,12 @@ body {
     min-height: 95vh;
 }
 
-#home-container .col-xl-6 {
-    min-height: 100px;
-}
-
-#skills-container {
-    text-align: center;
-}
-
-.slice:hover {
-    cursor: pointer;
-}
-
 #info-container {
+    min-height: 100px;
     position: relative;
 }
 
-#home-div {
+#info-div {
     width: 100%;
     position: absolute;
     top: 50%; 
@@ -92,11 +81,11 @@ body {
     text-align: left;
 }
 
-#home-title {
+#info-title {
     font-weight: bold;
 }
 
-#home-resume {
+#info-resume {
     outline: none;
     border: 1px solid rgba(169,160,139,0.7);
     color: rgba(96, 92, 83, 0.9);
@@ -105,9 +94,17 @@ body {
     padding: 5px 15%;
 }
 
-#home-resume:hover {
+#info-resume:hover {
     color: rgb(59, 57, 52);
     text-decoration: none;
+}
+
+#skills-container {
+    text-align: center;
+}
+
+#skills-container .slice:hover {
+    cursor: pointer;
 }
 
 /* experience section */
@@ -115,48 +112,21 @@ body {
     margin-bottom: 80px;
 }
 
-/* top (info) */
-#exp-info-row {
+#experience-row {
     border-bottom: 10px solid white;
 }
 
-#exp-info-row .col-sm-1 {
-    background-color: rgba(169,160,139,0.7);
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-    cursor: pointer;
-}
-
-#exp-info-row .col-sm-1:hover {
-    background-color: rgba(169,160,139,0.85);
-}
-
-#exp-info-row .col-sm-1:active {
-    background-color: rgba(169,160,139,1);
-}
-
-#exp-info-row .col-sm-1 .fa {
-    font-size: 50px !important;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* info cards */
-#deck-activity .card {
+#deck-expereince .card {
     border: 1px solid rgba(247,154,50,0.5);
     border-radius: 0;
     min-height: 20vh;
 }
 
-#deck-activity .card-body {
+#deck-expereince .card-body {
     padding: 0;
 }
 
-#deck-activity .card-title {
+#deck-expereince .card-title {
     margin: 0;
     margin-bottom: 10px;
     padding: 12px;
@@ -166,21 +136,20 @@ body {
     width: 100%;
 }
 
-#deck-activity i {
+#deck-expereince i {
     float: right;
     font-size: 30px;
     margin-left: 5px;
 }
 
-#deck-activity .card-text-date {
+#deck-expereince .card-text-date {
     font-weight: none;
 }
 
-#deck-activity .card-text-info {
+#deck-expereince .card-text-info {
     padding: 0 12px 12px 12px;
 }
 
-/* bottom (years) */
 #deck-years {
     background-color: white;
     margin-bottom: -40px;
@@ -237,37 +206,6 @@ body {
 }
 
 /* portfolio section */
-.card {
-    margin-bottom: 20px;
-    margin-right: 20px;
-    border: 1px solid rgba(0,0,0,0.2);
-    background-color: none;
-}
-
-.card-img {
-    border: 1px solid rgba(0,0,0,0.2);
-    border-radius: 0;
-}
-
-.card-img:hover {
-    opacity: 0.5;
-    cursor: zoom-in;
-}
-
-.card-text {
-    padding-top: 18px;
-}
-
-.card-text2 {
-	padding-top: 0;
-	margin-top: 0;
-}
-
-.card-found {
-    background-color: rgba(0,0,0,0.1);
-}
-
-/* portfolio carousel */
 .search-container {
     font-size: 16px;
     vertical-align: baseline;
@@ -313,6 +251,46 @@ body {
     outline: 0;
 }
 
+.card {
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background-color: none;
+}
+
+.card-img {
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 0;
+}
+
+.card-img:hover {
+    opacity: 0.5;
+    cursor: zoom-in;
+}
+
+.card-text {
+    padding-top: 18px;
+}
+
+.card-text2 {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.card-found {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.card-link {
+    color: rgb(95, 65, 0);
+}
+
+.card-link:hover {
+    text-decoration: none;
+    color: rgb(34, 23, 0);
+}
+
+/* portfolio carousel */
 #overlay {
     position: fixed;
     display: none;
@@ -387,4 +365,13 @@ body {
     vertical-align: middle;
     border-top: 1px solid rgba(0,0,0,0.2);
     border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+#contact-table a {
+    color: black;
+}
+
+#contact-table a:hover {
+    text-decoration: none;
+    color: rgb(90,31,49);
 }

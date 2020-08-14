@@ -1,12 +1,15 @@
-var name = "AP";
+var name = "Allison Poh";
 var jobAbbr = "SWE";
 var profile = "img/profile.jpg";
+var resume = "resume-apoh.pdf";
 var firstYr = 2015;
 var lastYr = 2020;
 
 const navOptions = ["Home","Experience","Portfolio","Contact"];
 
 const contactInfo = ["pohallison@gmail.com","linkedin.com/in/allisonpoh","apoh3.github.io"];
+
+const homeText = "software engineer blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah";
 
 const experience = [
     //2015
