@@ -1,15 +1,22 @@
+/* 
+    Personal Website - all text on web page
+    as of Aug. 2020
+    by Allison Poh
+*/
+
 var name = "Allison Poh";
 var jobAbbr = "SWE";
 var profile = "img/profile.jpg";
-var resume = "resume-apoh.pdf";
-var firstYr = 2015;
-var lastYr = 2020;
+var resume = "resume_apoh.pdf";
 
 const navOptions = ["Home","Experience","Portfolio","Contact"];
 
 const contactInfo = ["pohallison@gmail.com","linkedin.com/in/allisonpoh","apoh3.github.io"];
 
-const homeText = "software engineer blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah";
+const homeText = "Software Engineer with MS degree in Computer Science.";
+
+var firstYr = 2015;
+var lastYr = 2020;
 
 const experience = [
     //2015
@@ -19,40 +26,73 @@ const experience = [
         title:"Enrolled in UMassD Computer Science Program",
         date:"Fall 2015",
         info: [
-            "blah blah blah",
-            "blah blah blah"
+            
+        ]
+    },
+    {
+        year:"2015",
+        keyword:"work",
+        title:"Volunteer STEM Mentor and Tutor",
+        date:"Fall 2015 - Spring 2016",
+        info: [
+            "helped middle school students with homework and projects related to their STEM studies and promoted interest in the STEM fields through demonstrations and games"
         ]
     },
     {
         year:"2015",
         keyword:"work",
         title:"Phonathon",
-        date:"Spring 2016 - Fall 2017",
+        date:"Fall 2015 - Spring 2016",
         info: [
-            "blah blah blah",
-            "blah blah blah"
+            "called alumni and friends of UMass Dartmouth to update them on current events and to encourage them to financially support the University and upcoming events"
         ]
     },
 
     //2016
     {
         year:"2016",
-        keyword:"award",
-        title:"Carrier-Pisarczyk Scholarship Recipient",
-        date:"September 2016",
+        keyword:"work",
+        title:"Volunteer STEM Mentor and Tutor",
+        date:"Fall 2015 - Spring 2016",
         info: [
-            "blah blah blah",
-            "blah blah blah"
+            "helped middle school students with homework and projects related to their STEM studies and promoted interest in the STEM fields through demonstrations and games"
         ]
     },
     {
         year:"2016",
         keyword:"work",
         title:"Phonathon",
-        date:"Spring 2016 - Fall 2017",
+        date:"Fall 2015 - Spring 2016",
         info: [
-            "blah blah blah",
-            "blah blah blah"
+            "called alumni and friends of UMass Dartmouth to update them on current events and to encourage them to financially support the University and upcoming events"
+        ]
+    },
+    {
+        year:"2016",
+        keyword:"award",
+        title:"Carrier-Pisarczyk Scholarship Recipient",
+        date:"September 2016",
+        info: [
+            "awarded to a full-time, matriculated undergraduate or graduate student based on academic merit and financial need"
+        ]
+    },
+    {
+        year:"2016",
+        keyword:"work",
+        title:"Lab Assistant",
+        date:"Fall 2016",
+        info: [
+            "assisted labs for EGR 111 Introduction to Engineering and Computing"
+        ]
+    },
+    {
+        year:"2016",
+        keyword:"work",
+        title:"WRC Tutor",
+        date:"Fall 2016 - Spring 2018",
+        info: [
+            "worked one-on-one with students (primarily first-year and STEM students) to guide them through all stages of the writing process, including idea development, research, and documentation",
+            "participated in and facilitated weekly workshops with other tutors for continued growth"
         ]
     },
 
@@ -60,11 +100,11 @@ const experience = [
     {
         year:"2017",
         keyword:"work",
-        title:"Teaching Assistant",
-        date:"Fall 2017",
+        title:"WRC Tutor",
+        date:"Fall 2016 - Spring 2018",
         info: [
-            "blah blah blah",
-            "blah blah blah"
+            "worked one-on-one with students (primarily first-year and STEM students) to guide them through all stages of the writing process, including idea development, research, and documentation",
+            "participated in and facilitated weekly workshops with other tutors for continued growth"
         ]
     },
     {
@@ -73,30 +113,30 @@ const experience = [
         title:"Regina Rheault Scholarship Recipient",
         date:"April 2017",
         info: [
-            "blah blah blah",
-            "blah blah blah"
-        ]
-    },
-    {
-        year:"2017",
-        keyword:"work",
-        title:"WRC Tutor",
-        date:"Fall 2017 - Spring 2018",
-        info: [
-            "blah blah blah",
-            "blah blah blah"
+            "awarded to an outstanding female student majoring in computer science"
         ]
     },
 
     //2018
     {
         year:"2018",
+        keyword:"work",
+        title:"WRC Tutor",
+        date:"Fall 2016 - Spring 2018",
+        info: [
+            "worked one-on-one with students (primarily first-year and STEM students) to guide them through all stages of the writing process, including idea development, research, and documentation",
+            "participated in and facilitated weekly workshops with other tutors for continued growth"
+        ]
+    },
+    {
+        year:"2018",
         keyword:"moment",
         title:"Completed Senior Capstone",
         date:"May 2018",
         info: [
-            "CIS 181 Object-Oriented Programming II lab instructor",
-            "CIS 381 Social and Ethical Aspects of Computing grader"
+            "title: AIS Data Archiver (ADA)",
+            "worked for the Naval Undersea Warfare Center (NUWC) Division Newport",
+            "try AIS Data Archiver in Portfolio below"
         ]
     },
     {
@@ -105,18 +145,9 @@ const experience = [
         title:"BS in Computer Science",
         date:"May 2018",
         info: [
+            "earned a bachelor's degree from the University of Massachusetts Dartmouth",
             "GPA: 3.85",
             "summa cum laude"
-        ]
-    },
-    {
-        year:"2018",
-        keyword:"work",
-        title:"WRC Tutor",
-        date:"Fall 2017 - Spring 2018",
-        info: [
-            "blah blah blah",
-            "blah blah blah"
         ]
     },
     {
@@ -125,7 +156,9 @@ const experience = [
         title:"Research Assistant",
         date:"Summer 2018",
         info: [
-            "Topic: Web Provenance Studies"
+            "topic: Web Provenance Studies",
+            "researched data visualization techniques for displaying and tracking provenances for web analytics, including provenance manipulation, user collaboration, and streaming data",
+            "created highly interactive web pages for testing ease-of-implementation and effectiveness of a new provenance tracking library called SIMProv.js"
         ]
     },
     {
@@ -134,8 +167,8 @@ const experience = [
         title:"Teacher Assistant",
         date:"Fall 2018",
         info: [
-            "CIS 180 Object-Oriented Programming I (Java) lab instructor",
-            "CIS 272 Introduction to Computing Systems grader"
+            "prepared, instructed, and graded labs for CIS 180 Object-Oriented Programming I (Java)",
+            "graded coursework for CIS 272 Introduction to Computing Systems"
         ]
     },
 
@@ -146,8 +179,7 @@ const experience = [
         title:"Teacher Assistant",
         date:"Spring 2019",
         info: [
-            "CIS 180 Object-Oriented Programming I (Java) lab instructor",
-            "CIS 181 Object-Oriented Programming II (Java) lab instructor",
+            "prepared, instructed, and graded labs for CIS 180 Object-Oriented Programming I (Java) and CIS 181 Object-Oriented Programming II (Java)"
         ]
     },
     {
@@ -156,7 +188,9 @@ const experience = [
         title:"Research Assistant",
         date:"Summer 2019",
         info: [
-            "Topic: Visualizing Uncertainty in Data"
+            "topic: Visualizing Uncertainty in Data",
+            "developed a web tool to test researched methods and self proposed techniques for visualizing missing and imputed data in common data visualizations",
+            "view Visualizing Uncertainty in Portfolio below"
         ]
     },
     {
@@ -165,8 +199,8 @@ const experience = [
         title:"Teacher Assistant",
         date:"Fall 2019",
         info: [
-            "CIS 180 Object-Oriented Programming I (Java) lab instructor",
-            "CIS 370 Design of Operating Systems lab helper and grader"
+            "prepared, instructed, and graded labs for CIS 180 Object-Oriented Programming I (Java)",
+            "graded coursework and assisted labs for CIS 370 Design of Operating Systems (Linux/C)"
         ]
     },
 
@@ -177,17 +211,19 @@ const experience = [
         title:"Teacher Assistant",
         date:"Spring 2020",
         info: [
-            "CIS 181 Object-Oriented Programming II (Java) lab instructor",
-            "CIS 381 Social and Ethical Aspects of Computing grader"
+            "prepared, instructed, and graded labs for CIS 181 Object-Oriented Programming II (Java)",
+            "graded coursework for CIS 381 Social and Ethical Aspects of Computing"
         ]
     },
     {
         year:"2020",
         keyword:"moment",
-        title:"Defended MS Thesis",
+        title:"MS Thesis",
         date:"May 2020",
         info: [
-            "nucleoSLIDE: A Citizen Science Game for the Motif Finding Problem"
+            "title: nucleoSLIDE: A Citizen Science Game for the Motif Finding Problem",
+            "targeted topics include bioinformatics, algorithms, game design, human-computer interaction",
+            "try nucleoSLIDE in Portfolio below"
         ]
     },
     {
@@ -196,6 +232,7 @@ const experience = [
         title:"MS in Computer Science",
         date:"May 2020",
         info: [
+            "earned MS in Computer Science from the University of Massachusetts Dartmouth",
             "GPA: 3.84"
         ]
     }

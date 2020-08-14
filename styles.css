@@ -17,7 +17,7 @@ body {
     font-family: 'Quattrocento Sans', sans-serif;
 }
 
-#home-title, .jumbotron-h3, #deck-expereince .card-title, #portfolio-container .card-title {
+#info-title, .jumbotron-h3, #deck-expereince .card-title, #portfolio-container .card-title {
     font-family: 'Ovo', serif;
 }
 
@@ -136,10 +136,15 @@ body {
     width: 100%;
 }
 
-#deck-expereince i {
+#deck-expereince .title-fa {
     float: right;
     font-size: 30px;
     margin-left: 5px;
+}
+
+#deck-expereince .bullet-fa {
+    padding-right: 1px;
+    margin-left: -10px;
 }
 
 #deck-expereince .card-text-date {

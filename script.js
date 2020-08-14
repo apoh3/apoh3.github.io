@@ -65,13 +65,24 @@ function buildNavLinks() {
 function buildHome() {
     $("#home-container").append(
         $("<div>").attr("class","row").append(
-            $("<div>").attr("id","info-container").attr("class","col col-xl-6"),
-            $("<div>").attr("id","skills-container").attr("class","col col-xl-6")
+            $("<div>").attr("id","info-container").attr("class","col-lg-6 home-col"),
+            $("<div>").attr("id","skills-container").attr("class","col-lg-6 home-col")
         )
     );
 
     buildIntro();  //info-container
     buildSkills(); //skills-container
+
+    if($(window).width() < 992) {
+        $("#info-container").css({
+            "margin-top":$(".navbar").height()*1.5, 
+            "margin-bottom":$(".navbar").height()
+        });
+
+        $("#info-div").css({
+            "text-align":"center"
+        });
+    }
 
     function buildIntro() {
         $("#info-container").append(
@@ -285,7 +296,7 @@ function createExperienceCards(yr) {
         var infoArr = experience[i].info; 
         
         for(var j = 0; j < infoArr.length; j++) {
-            div.append(infoArr[j]); 
+            div.append($("<i>").attr("class","fa fa-angle-double-right bullet-fa bullet-fa-"+i).attr("aria-hidden","true"),infoArr[j]); 
     
             if(j != infoArr.length) {
                 div.append($("<br>"));
@@ -296,27 +307,33 @@ function createExperienceCards(yr) {
     function setCardColor(key,i) {
         var card = $("#card-exp-"+i);
         var cardTitle = $("#card-title-"+i);
+        var bulletIcon = $(".bullet-fa-"+i);
     
         switch(key) {
             case "grad":
                 card.css("border","1px solid rgba(247,154,50,0.5)");
                 cardTitle.css("background-color","rgb(247,154,50)");
+                bulletIcon.css("color","rgb(247,154,50)");
                 break;
             case "award":
                 card.css("border","1px solid rgba(41,21,23,0.5)");
                 cardTitle.css("background-color","rgb(41,21,23)");
+                bulletIcon.css("color","rgb(41,21,23)");
                 break;
             case "research":
                 card.css("border","1px solid rgba(164,121,115,0.5)");
                 cardTitle.css("background-color","rgb(164,121,115)");
+                bulletIcon.css("color","rgb(164,121,115)");
                 break;
             case "work":
                 card.css("border","1px solid rgba(90,31,49,0.5)");
                 cardTitle.css("background-color","rgb(90,31,49)");
+                bulletIcon.css("color","rgb(90,31,49)");
                 break;
             default:
                 card.css("border","1px solid rgba(173,77,0,0.5)");
                 cardTitle.css("background-color","rgb(173,77,0)");
+                bulletIcon.css("color","rgb(173,77,0)");
         }
     }
     
@@ -326,22 +343,22 @@ function createExperienceCards(yr) {
     
         switch(key) {
             case "grad":
-                icon = $("<i>").attr("class","fa fa-graduation-cap ").attr("aria-hidden","true");
+                icon = $("<i>").attr("class","fa fa-graduation-cap title-fa").attr("aria-hidden","true");
                 break;
             case "award":
-                icon = $("<i>").attr("class","fa fa-star").attr("aria-hidden","true");
+                icon = $("<i>").attr("class","fa fa-star title-fa").attr("aria-hidden","true");
                 break;
             case "research":
-                icon = $("<i>").attr("class","fa fa-desktop").attr("aria-hidden","true");
+                icon = $("<i>").attr("class","fa fa-desktop title-fa").attr("aria-hidden","true");
                 break;
             case "work":
-                icon = $("<i>").attr("class","fa fa-briefcase").attr("aria-hidden","true");
+                icon = $("<i>").attr("class","fa fa-briefcase title-fa").attr("aria-hidden","true");
                 break;
             case "moment":
-                icon = $("<i>").attr("class","fa fa-university").attr("aria-hidden","true");
+                icon = $("<i>").attr("class","fa fa-university title-fa").attr("aria-hidden","true");
                 break;
             default:
-                icon = $("<i>").attr("class","fa fa-caret-left").attr("aria-hidden","true");
+                icon = $("<i>").attr("class","fa fa-caret-left title-fa").attr("aria-hidden","true");
         }
     
         cardTitle.prepend(icon);
