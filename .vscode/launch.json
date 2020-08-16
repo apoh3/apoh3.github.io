@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "C:/Users/pohal/Git_Repo/apoh3.github.io/index.html",
+            "url": "...",
             "webRoot": "${workspaceFolder}"
         }
     ]
