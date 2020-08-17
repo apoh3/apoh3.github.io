@@ -13,7 +13,7 @@ const navOptions = ["Home","Experience","Portfolio","Contact"];
 
 const contactInfo = ["pohallison@gmail.com","linkedin.com/in/allisonpoh","apoh3.github.io"];
 
-const homeText = "Software Engineer with MS in Computer Science.";
+const homeText = "Software Engineer | MS in Computer Science.";
 
 var firstYr = 2015;
 var lastYr = 2020;
@@ -275,7 +275,7 @@ const portfolioProjects = [
     {
         title:"Visualizing Uncertainty", 
         image:"img/v/5.jpg",
-        text:"Web tool for testing researched methods and self-proposed techniques for visualizing missing and imputed data in line and bar graphs (including highlighting, downplaying, and annotating data points).", 
+        text:"Web tool for testing researched and self-proposed techniques for visualizing missing and imputed data in line and bar graphs (including highlighting, downplaying, and annotating data marks and channels).", 
 		tech:"JavaScript (D3.js), HTML/CSS",
         link:"visUncertainty/index.html",
 		code:"https://github.com/apoh3/Visualizing-Uncertainty",
@@ -285,7 +285,7 @@ const portfolioProjects = [
     {
         title:"AIS Data Archiver",
         image:"img/a/2.jpg",
-        text:"Desktop application for viewing and managing live AIS data (vessel traffic data) that is gathered and stored from web resources without user operation.", 
+        text:"Desktop application for viewing and managing live AIS data (vessel traffic data) that is scraped and stored from web resources without user operation.", 
 		tech:"Java (JavaFX, Jsoup, JDBC), MySQL database, HTML/CSS, Google Maps API",
         link:"x",
 		code:"https://github.com/apoh3/AIS-Data-Archiver",
@@ -295,7 +295,7 @@ const portfolioProjects = [
     {
         title:"TCS Marathon Results",
         image:"img/t/1.jpg",
-        text:"Desktop application for querying a multi-table database of marathon results.", 
+        text:"Desktop application for querying a multi-table database of marathon results, including results of race divisions, specific runners, and award category recipients.", 
 		tech:"Java (JavaFX, JDBC), SQLite database, CSS",
         link:"x",
 		code:"https://github.com/apoh3/TCSMarathonResults",
@@ -305,12 +305,22 @@ const portfolioProjects = [
 	{
         title:"Jeopardy",
         image:"img/j/2.jpg",
-        text:"Jeopardy desktop game with admin access to edit and create rounds.", 
+        text:"Jeopardy desktop game with complete admin access to create and edit stored games through a clean and simple user interface.",
 		tech:"Java (JavaFX, JDBC), SQLite database, CSS",
         link:"x",
 		code:"https://github.com/apoh3/Jeopardy",
         slides:4,
         theme:"light"
+    },
+    {
+        title:"Quote Finder - The Office",
+        image:"img/q/1.jpg",
+        text:"Application that scrapes transcripts of The Office episodes from a web page to find quotes based on user input (season, episode, speaker, and/or keywords).", 
+		tech:"Python (Tkinter, Beautiful Soup)",
+        link:"x",
+		code:"https://github.com/apoh3/The-Office-Web-Scraper",
+        slides:4,
+        theme:"dark"
     },
     {
         title:"Resume Website",
