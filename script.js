@@ -386,7 +386,7 @@ function buildPortfolio() {
         var cardBody = $("<div>").attr("class","card-body").append(
             $("<h5>").attr("class","card-title").append(portfolioProjects[i].title + " "),
             $("<img>").attr("id","card-img-"+i).attr("class","card-img").attr("src",portfolioProjects[i].image).attr("alt",portfolioProjects[i].title+" screenshot"),
-            $("<p>").attr("class","card-text").append(portfolioProjects[i].text),
+            $("<p>").attr("class","card-text").append(portfolioProjects[i].text + " Developed for " + portfolioProjects[i].purpose + "."),
             $("<p>").attr("class","card-text card-text2").append(
                 $("<i>").attr("class","fa fa-gear").attr("aria-hidden","true"),
                 " " + portfolioProjects[i].tech

@@ -259,7 +259,7 @@ const skills = [
     },
 	{
         title:"Web Development",
-        includes:"JavaScript;(jQuery, Angular, D3.js, Node.js);HTML/CSS (Bootstrap);TypeScript;PHP",
+        includes:"JavaScript;(jQuery, Angular, D3.js, Node.js);HTML/CSS (Bootstrap);PHP",
     },
     {
         title:"Databases",
@@ -267,11 +267,11 @@ const skills = [
     },
     {
         title:"Tools and Environments",
-        includes:"Visual Studio Code;Eclipse;Android Studio;Unity;Git"
+        includes:"Visual Studio Code;Eclipse;Git/Github"
     },
     {
         title:"Other",
-        includes:"Linux;Agile (Scrum)"
+        includes:"Linux;Agile;Scrum"
     }
 ];
 
@@ -280,7 +280,8 @@ const portfolioProjects = [
         title:"nucleoSLIDE",
         image:"img/n/5.jpg",
         text:"Online citizen science puzzle game for finding unknown patterns of length k in multiple DNA sequences (known as the Motif Finding Problem in bioinformatics).",
-		tech:"JavaScript, HTML/CSS, PHP, SQLite database, Apache server",
+        tech:"JavaScript, HTML/CSS, PHP, SQLite database, Apache server",
+        purpose:"MS thesis",
         link:"http://www.cis.umassd.edu/~apoh/",
 		code:"https://github.com/apoh3/nucleoSLIDE",
         slides:5,
@@ -290,7 +291,8 @@ const portfolioProjects = [
         title:"Visualizing Uncertainty", 
         image:"img/v/5.jpg",
         text:"Web tool for testing researched and self-proposed techniques for visualizing missing and imputed data in line and bar graphs (including highlighting, downplaying, and annotating data marks and channels).", 
-		tech:"JavaScript (D3.js), HTML/CSS",
+        tech:"JavaScript (D3.js), HTML/CSS",
+        purpose:"research assistant position",
         link:"visUncertainty/index.html",
 		code:"https://github.com/apoh3/Visualizing-Uncertainty",
         slides:5,
@@ -300,7 +302,8 @@ const portfolioProjects = [
         title:"AIS Data Archiver",
         image:"img/a/2.jpg",
         text:"Desktop application for viewing and managing live AIS data (vessel traffic data) that is scraped and stored from web resources without user operation.", 
-		tech:"Java (JavaFX, Jsoup, JDBC), MySQL database, HTML/CSS, Google Maps API",
+        tech:"Java (JavaFX, Jsoup, JDBC), MySQL database, HTML/CSS, Google Maps API",
+        purpose:"BS senior capstone",
         link:"x",
 		code:"https://github.com/apoh3/AIS-Data-Archiver",
         slides:3,
@@ -310,7 +313,8 @@ const portfolioProjects = [
         title:"TCS Marathon Results",
         image:"img/t/1.jpg",
         text:"Desktop application for querying a multi-table database of marathon results, including results of race divisions, specific runners, and award category recipients.", 
-		tech:"Java (JavaFX, JDBC), SQLite database, CSS",
+        tech:"Java (JavaFX, JDBC), SQLite database, CSS",
+        purpose:"database systems course",
         link:"x",
 		code:"https://github.com/apoh3/TCSMarathonResults",
         slides:3,
@@ -320,7 +324,8 @@ const portfolioProjects = [
         title:"Jeopardy",
         image:"img/j/2.jpg",
         text:"Jeopardy desktop game with complete admin access to create and edit stored games through a clean and simple user interface.",
-		tech:"Java (JavaFX, JDBC), SQLite database, CSS",
+        tech:"Java (JavaFX, JDBC), SQLite database, CSS",
+        purpose:"independent project",
         link:"x",
 		code:"https://github.com/apoh3/Jeopardy",
         slides:4,
@@ -330,7 +335,8 @@ const portfolioProjects = [
         title:"Quote Finder - The Office",
         image:"img/q/1.jpg",
         text:"Application that scrapes transcripts of The Office episodes from a web page to find quotes based on user input (season, episode, speaker, and/or keywords).", 
-		tech:"Python (Tkinter, Beautiful Soup)",
+        tech:"Python (Tkinter, Beautiful Soup)",
+        purpose:"independent project",
         link:"x",
 		code:"https://github.com/apoh3/The-Office-Web-Scraper",
         slides:4,
@@ -340,7 +346,8 @@ const portfolioProjects = [
         title:"Resume Website",
         image:"img/r/1.jpg",
         text:"GitHub Pages website.", 
-		tech:"JavaScript (jQuery, D3.js), HTML/CSS (Bootstrap)",
+        tech:"JavaScript (jQuery, D3.js), HTML/CSS (Bootstrap)",
+        purpose:"independent project",
         link:"x",
 		code:"https://github.com/apoh3/apoh3.github.io",
         slides:1,
