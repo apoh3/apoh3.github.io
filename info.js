@@ -11,7 +11,7 @@ var resume = "resume_apoh.pdf";
 
 const navOptions = ["Home","Experience","Portfolio","Contact"];
 
-const contactInfo = ["pohallison@gmail.com","linkedin.com/in/allisonpoh","apoh3.github.io"];
+const contactInfo = ["pohallison@gmail.com","linkedin.com/in/allisonpoh","github.com/apoh3"];
 
 const homeText = "Software Engineer | MS in Computer Science.";
 
@@ -23,28 +23,28 @@ const experience = [
     {
         year:"2015",
         keyword:"moment",
-        title:"Enrolled in UMassD Computer Science Program",
-        date:"Fall 2015",
+        title:"Computer Science Candidate",
+        date:"Sept. 2015",
         info: [
-            
+            "Enrolled in the Computer Science program at the University of Massachusetts Dartmouth."
         ]
     },
     {
         year:"2015",
         keyword:"work",
         title:"Volunteer STEM Mentor and Tutor",
-        date:"Fall 2015 - Spring 2016",
+        date:"Sept. 2015 - May 2016",
         info: [
-            "helped middle school students with homework and projects related to their STEM studies and promoted interest in the STEM fields through demonstrations and games"
+            "Increased math literacy and interest in middle school students by helping students with STEM related homework, performing STEM demonstrations, and leading math games."
         ]
     },
     {
         year:"2015",
         keyword:"work",
         title:"Phonathon",
-        date:"Fall 2015 - Spring 2016",
+        date:"Sept. 2015 - May 2016",
         info: [
-            "called alumni and friends of UMass Dartmouth to update them on current events and to encourage them to financially support the University and upcoming events"
+            "Increased donations for UMass Dartmouth by calling 150+ alumni and friends of the University per night, updating them on current events and encouraging them to financially support the University."
         ]
     },
 
@@ -53,46 +53,46 @@ const experience = [
         year:"2016",
         keyword:"work",
         title:"Volunteer STEM Mentor and Tutor",
-        date:"Fall 2015 - Spring 2016",
+        date:"Sept. 2015 - May 2016",
         info: [
-            "helped middle school students with homework and projects related to their STEM studies and promoted interest in the STEM fields through demonstrations and games"
+            "Increased math literacy and interest in middle school students by helping students with STEM related homework, performing STEM demonstrations, and leading math games."
         ]
     },
     {
         year:"2016",
         keyword:"work",
         title:"Phonathon",
-        date:"Fall 2015 - Spring 2016",
+        date:"Sept. 2015 - May 2016",
         info: [
-            "called alumni and friends of UMass Dartmouth to update them on current events and to encourage them to financially support the University and upcoming events"
+            "Increased donations for UMass Dartmouth by calling 150+ alumni and friends of the University per night, updating them on current events and encouraging them to financially support the University."
         ]
     },
     {
         year:"2016",
         keyword:"award",
         title:"Carrier-Pisarczyk Scholarship Recipient",
-        date:"September 2016",
+        date:"Sept. 2016",
         info: [
-            "awarded to a full-time, matriculated undergraduate or graduate student based on academic merit and financial need"
+            "Awarded to a full-time, matriculated undergraduate or graduate student based on academic merit and financial need."
         ]
     },
     {
         year:"2016",
         keyword:"work",
-        title:"Lab Assistant",
-        date:"Fall 2016",
+        title:"Engineering Lab Assistant",
+        date:"Sept. 2016 - Dec. 2016",
         info: [
-            "assisted labs for EGR 111 Introduction to Engineering and Computing"
+            "Improved first-year engineering students' understanding of engineering disciplines by assisting with projects in Introduction to Engineering and Computing labs."
         ]
     },
     {
         year:"2016",
         keyword:"work",
-        title:"WRC Tutor",
-        date:"Fall 2016 - Spring 2018",
+        title:"Writing and Reading Tutor",
+        date:"Sept. 2016 - May 2018",
         info: [
-            "worked one-on-one with students (primarily first-year and STEM students) to guide them through all stages of the writing process, including idea development, research, and documentation",
-            "participated in and facilitated weekly workshops with other tutors for continued growth"
+            "Strengthened communication and analytical skills by aiding students throughout the writing process.",
+            "Educated other tutors on web design and web development by leading a digital literacy workshop."
         ]
     },
 
@@ -100,20 +100,20 @@ const experience = [
     {
         year:"2017",
         keyword:"work",
-        title:"WRC Tutor",
-        date:"Fall 2016 - Spring 2018",
+        title:"Writing and Reading Tutor",
+        date:"Sept. 2016 - May 2018",
         info: [
-            "worked one-on-one with students (primarily first-year and STEM students) to guide them through all stages of the writing process, including idea development, research, and documentation",
-            "participated in and facilitated weekly workshops with other tutors for continued growth"
+            "Strengthened communication and analytical skills by aiding students throughout the writing process.",
+            "Educated other tutors on web design and web development by leading a digital literacy workshop."
         ]
     },
     {
         year:"2017",
         keyword:"award",
         title:"Regina Rheault Scholarship Recipient",
-        date:"April 2017",
+        date:"Apr. 2017",
         info: [
-            "awarded to an outstanding female student majoring in computer science"
+            "Awarded to an outstanding female student majoring in computer science."
         ]
     },
 
@@ -121,22 +121,33 @@ const experience = [
     {
         year:"2018",
         keyword:"work",
-        title:"WRC Tutor",
-        date:"Fall 2016 - Spring 2018",
+        title:"Writing and Reading Tutor",
+        date:"Sept. 2016 - May 2018",
         info: [
-            "worked one-on-one with students (primarily first-year and STEM students) to guide them through all stages of the writing process, including idea development, research, and documentation",
-            "participated in and facilitated weekly workshops with other tutors for continued growth"
+            "Strengthened communication and analytical skills by aiding students throughout the writing process.",
+            "Educated other tutors on web design and web development by leading a digital literacy workshop."
+        ]
+    },
+    {
+        year:"2017",
+        keyword:"moment",
+        title:"Senior Capstone",
+        date:"Sept. 2017 - May 2018",
+        info: [
+            "Improved vessel tracking by developing a Java application for scraping and displaying live data for the Naval Undersea Warfare Center Division Newport.",
+            "Managed Agile development as Scrum Master by leading scrum meetings, resulting in healthy progress and excellent team dynamic.",
+            "View AIS Data Archiver in Portfolio below."
         ]
     },
     {
         year:"2018",
         keyword:"moment",
-        title:"Completed Senior Capstone",
-        date:"May 2018",
+        title:"Senior Capstone",
+        date:"Sept. 2017 - May 2018",
         info: [
-            "title: AIS Data Archiver (ADA)",
-            "worked for the Naval Undersea Warfare Center (NUWC) Division Newport",
-            "try AIS Data Archiver in Portfolio below"
+            "Improved vessel tracking by developing a Java application for scraping and displaying live data for the Naval Undersea Warfare Center Division Newport.",
+            "Managed Agile development as Scrum Master by leading scrum meetings, resulting in healthy progress and excellent team dynamic.",
+            "View AIS Data Archiver in Portfolio below."
         ]
     },
     {
@@ -145,30 +156,26 @@ const experience = [
         title:"BS in Computer Science",
         date:"May 2018",
         info: [
-            "earned a bachelor's degree from the University of Massachusetts Dartmouth",
-            "GPA: 3.85",
-            "summa cum laude"
+            "Earned an BS in Computer Science with highest distinction from the University of Massachusetts Dartmouth."
         ]
     },
     {
         year:"2018",
         keyword:"research",
         title:"Research Assistant",
-        date:"Summer 2018",
+        date:"June 2018 - Aug. 2018",
         info: [
-            "topic: Web Provenance Studies",
-            "researched data visualization techniques for displaying and tracking provenances for web analytics",
-            "created highly interactive web pages for testing ease-of-implementation and effectiveness of a new provenance tracking library called SIMProv.js"
+            "Validated a new JavaScript framework by testing its ease-of-implementation, correctness, and portability on 3 interactive web pages."
         ]
     },
     {
         year:"2018",
         keyword:"work",
-        title:"Teacher Assistant",
-        date:"Fall 2018",
+        title:"Computer Science Teacher Assistant",
+        date:"Sept. 2018 - Dec. 2018",
         info: [
-            "prepared, instructed, and graded labs for CIS 180 Object-Oriented Programming I (Java)",
-            "graded coursework for CIS 272 Introduction to Computing Systems"
+            "Prepared, instructed, and graded 2 lab sections of Object-Oriented Programming I (Java).",
+            "Graded coursework of 80+ students for Introduction to Computing Systems."
         ]
     },
 
@@ -176,54 +183,62 @@ const experience = [
     {
         year:"2019",
         keyword:"work",
-        title:"Teacher Assistant",
-        date:"Spring 2019",
+        title:"Computer Science Teacher Assistant",
+        date:"Jan. 2019 - May 2019",
         info: [
-            "prepared, instructed, and graded labs for CIS 180 Object-Oriented Programming I (Java) and CIS 181 Object-Oriented Programming II (Java)"
+            "Prepared, instructed, and graded 3 lab sections of Object-Oriented Programming I and II (Java).",
         ]
     },
     {
         year:"2019",
         keyword:"research",
         title:"Research Assistant",
-        date:"Summer 2019",
+        date:"June 2019 - Aug. 2019",
         info: [
-            "topic: Visualizing Uncertainty in Data",
-            "developed a web tool to test researched methods and self proposed techniques for visualizing missing and imputed data in common data visualizations",
-            "view Visualizing Uncertainty in Portfolio below"
+            "Illustrated 18 methods to visualize and interact with imputed data by developing a web tool using JavaScript, setting grounds for a user study.",
+            "Try Visualizing Uncertainty in Portfolio below."
         ]
     },
     {
         year:"2019",
         keyword:"work",
-        title:"Teacher Assistant",
-        date:"Fall 2019",
+        title:"Computer Science Teacher Assistant",
+        date:"Sept. 2019 - Dec. 2019",
         info: [
-            "prepared, instructed, and graded labs for CIS 180 Object-Oriented Programming I (Java)",
-            "graded coursework and assisted labs for CIS 370 Design of Operating Systems (Linux/C)"
+            "Prepared, instructed, and graded 2 lab sections of Object-Oriented Programming I (Java).",
+            "Graded coursework of 80+ students and assisted in labs for Design of Operating Systems (Linux and C)."
+        ]
+    },
+    {
+        year:"2019",
+        keyword:"moment",
+        title:"MS Thesis",
+        date:"Sept. 2019 - May 2020",
+        info: [
+            "Reduced complexity of an NP-complete bioinformatics problem by developing a web game, allowing non-scientists to aid genomic research.",
+            "View nucleoSLIDE in Portfolio below."
         ]
     },
 
     //2020
     {
         year:"2020",
-        keyword:"work",
-        title:"Teacher Assistant",
-        date:"Spring 2020",
+        keyword:"moment",
+        title:"MS Thesis",
+        date:"Sept. 2019 - May 2020",
         info: [
-            "prepared, instructed, and graded labs for CIS 181 Object-Oriented Programming II (Java)",
-            "graded coursework for CIS 381 Social and Ethical Aspects of Computing"
+            "Reduced complexity of an NP-complete bioinformatics problem by developing a web game, allowing non-scientists to aid genomic research.",
+            "View nucleoSLIDE in Portfolio below."
         ]
     },
     {
         year:"2020",
-        keyword:"moment",
-        title:"MS Thesis",
-        date:"May 2020",
+        keyword:"work",
+        title:"Computer Science Teacher Assistant",
+        date:"Jan. 2020 - May 2020",
         info: [
-            "title: nucleoSLIDE: A Citizen Science Game for the Motif Finding Problem",
-            "targeted topics include bioinformatics, algorithms, game design, human-computer interaction",
-            "try nucleoSLIDE in Portfolio below"
+            "Prepared, instructed, and graded an Object-Oriented Programming II (Java) lab.",
+            "Graded coursework of 80+ students for Social and Ethical Aspects of Computing."
         ]
     },
     {
@@ -232,8 +247,7 @@ const experience = [
         title:"MS in Computer Science",
         date:"May 2020",
         info: [
-            "earned MS in Computer Science from the University of Massachusetts Dartmouth",
-            "GPA: 3.84"
+            "Earned an MS in Computer Science with a 3.84 GPA from the University of Massachusetts Dartmouth."
         ]
     }
 ];
