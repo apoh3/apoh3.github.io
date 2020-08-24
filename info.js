@@ -348,7 +348,7 @@ const portfolioProjects = [
         text:"GitHub Pages website.", 
         tech:"JavaScript (jQuery, D3.js), HTML/CSS (Bootstrap)",
         purpose:"independent project",
-        link:"x",
+        link:"LB/index.html",
 		code:"https://github.com/apoh3/apoh3.github.io",
         slides:1,
         theme:"dark"
