@@ -255,7 +255,7 @@ const experience = [
 const skills = [
     {
         title:"Programming",
-        includes:"Java;JavaScript;C#;C;C++;Python"
+        includes:"Java;JavaScript;C#;C++;Python"
     },
 	{
         title:"Web Development",
