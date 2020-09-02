@@ -41,7 +41,7 @@ const experience = [
     {
         year:"2015",
         keyword:"work",
-        title:"Phonathon",
+        title:"Phonathon Caller",
         date:"Sept. 2015 - May 2016",
         info: [
             "Increased donations for UMass Dartmouth by calling 150+ alumni and friends of the University per night, updating them on current events and encouraging them to financially support the University."
@@ -61,7 +61,7 @@ const experience = [
     {
         year:"2016",
         keyword:"work",
-        title:"Phonathon",
+        title:"Phonathon Caller",
         date:"Sept. 2015 - May 2016",
         info: [
             "Increased donations for UMass Dartmouth by calling 150+ alumni and friends of the University per night, updating them on current events and encouraging them to financially support the University."
@@ -88,7 +88,7 @@ const experience = [
     {
         year:"2016",
         keyword:"work",
-        title:"Writing and Reading Tutor",
+        title:"Literacy Tutor",
         date:"Sept. 2016 - May 2018",
         info: [
             "Strengthened communication and analytical skills by aiding students throughout the writing process.",
@@ -100,7 +100,7 @@ const experience = [
     {
         year:"2017",
         keyword:"work",
-        title:"Writing and Reading Tutor",
+        title:"Literacy Tutor",
         date:"Sept. 2016 - May 2018",
         info: [
             "Strengthened communication and analytical skills by aiding students throughout the writing process.",
@@ -121,7 +121,7 @@ const experience = [
     {
         year:"2018",
         keyword:"work",
-        title:"Writing and Reading Tutor",
+        title:"Literacy Tutor",
         date:"Sept. 2016 - May 2018",
         info: [
             "Strengthened communication and analytical skills by aiding students throughout the writing process.",
@@ -171,7 +171,7 @@ const experience = [
     {
         year:"2018",
         keyword:"work",
-        title:"Computer Science Teacher Assistant",
+        title:"CS Teacher Assistant",
         date:"Sept. 2018 - Dec. 2018",
         info: [
             "Prepared, instructed, and graded 2 lab sections of Object-Oriented Programming I (Java).",
@@ -183,7 +183,7 @@ const experience = [
     {
         year:"2019",
         keyword:"work",
-        title:"Computer Science Teacher Assistant",
+        title:"CS Teacher Assistant",
         date:"Jan. 2019 - May 2019",
         info: [
             "Prepared, instructed, and graded 3 lab sections of Object-Oriented Programming I and II (Java).",
@@ -202,7 +202,7 @@ const experience = [
     {
         year:"2019",
         keyword:"work",
-        title:"Computer Science Teacher Assistant",
+        title:"CS Teacher Assistant",
         date:"Sept. 2019 - Dec. 2019",
         info: [
             "Prepared, instructed, and graded 2 lab sections of Object-Oriented Programming I (Java).",
@@ -234,7 +234,7 @@ const experience = [
     {
         year:"2020",
         keyword:"work",
-        title:"Computer Science Teacher Assistant",
+        title:"CS Teacher Assistant",
         date:"Jan. 2020 - May 2020",
         info: [
             "Prepared, instructed, and graded an Object-Oriented Programming II (Java) lab.",
