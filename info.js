@@ -10,7 +10,7 @@ var profile = "img/profile.jpg";
 var resume = "resume_apoh.pdf";
 
 //const navOptions = ["Home","Experience","Portfolio","Contact"];
-const navOptions = ["Home","Portfolio","Contact"];
+const navOptions = ["Home","","Portfolio","Contact"];
 
 const contactInfo = ["pohallison@gmail.com","linkedin.com/in/allisonpoh","github.com/apoh3"];
 
