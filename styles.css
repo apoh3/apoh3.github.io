@@ -1,3 +1,20 @@
+#container-intro  {
+    min-height: 100vh;
+}
+
+#container-intro img {
+    max-height: 250px;
+    margin-bottom: 15px;
+}
+
+#container-intro p {
+    opacity: 0.7;
+}
+
+#intro-text {
+    font-size: large;
+}
+
 .container-section  {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -16,24 +33,29 @@
     border: none;
 }
 
-#footer ul {
+#footer ul, #container-intro ul {
     justify-content: center;
     display: flex;
 }
 
-#footer li {
+#academicons-list li {
     float: left; 
     padding-left: 6px;
     padding-right: 6px;
     font-size: 24px;
 }
 
-#footer a {
+#academicons-list a {
     color: white;
     opacity: 0.7;
 }
 
-#footer a:hover {
+#academicons-list a:hover {
     color: white;
     opacity: 1;
+}
+
+#footer p {
+    font-size: 14px;
+    opacity: 0.7;
 }
