@@ -1,6 +1,10 @@
 .container-section  {
     padding-top: 80px;
-    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+#container-service {
+    padding-bottom: 30px;
 }
 
 .h1-section {
