@@ -20,6 +20,11 @@
     padding-bottom: 80px;
 }
 
+#container-research a {
+    color: black;
+    text-decoration: none;
+}
+
 #container-service {
     padding-bottom: 30px;
 }
