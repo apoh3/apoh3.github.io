@@ -5,13 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+<!-- NAV -->
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Allison Poh</a>
+            <a class="navbar-brand" href="#container-intro">Allison Poh</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -20,17 +22,17 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Research</a>
+                        <a class="nav-link" href="#container-research">Research</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Teaching</a>
+                        <a class="nav-link dropdown-toggle" href="#container-teaching" role="button" data-bs-toggle="dropdown">Teaching</a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">UMass Amherst</a></li>
-                            <li><a class="dropdown-item" href="#">UMass Dartmouth</a></li>
+                            <li><a class="dropdown-item" href="#container-teaching">UMass Amherst</a></li>
+                            <li><a class="dropdown-item" href="#container-teaching">UMass Dartmouth</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Service</a>
+                        <a class="nav-link" href="#container-service">Service</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">CV</a>
@@ -40,9 +42,33 @@
         </div>
     </nav>
 
-    <div class="container-fluid p-5 bg-dark text-white text-center">
+    <!-- INTRO -->
+    <div id="container-intro" class="container-fluid container-section bg-dark text-white text-center">
         <h1>Allison</h1>
         <p>PhD Student in Computer Science</p> 
+    </div>
+
+    <!-- RESEARCH -->
+    <div id="container-research" class="container-fluid container-section text-center">
+        <h1>Research</h1>
+        <p>Text</p> 
+    </div>
+
+    <!-- TEACHING -->
+    <div id="container-teaching" class="container-fluid container-section bg-dark text-white text-center">
+        <h1>Teaching</h1>
+        <p>Text</p> 
+    </div>
+
+    <!-- SERVICE -->
+    <div id="container-service" class="container-fluid container-section text-center">
+        <h1>Service</h1>
+        <p>Text</p> 
+    </div>
+
+    <!-- FOOTER -->
+    <div class="mt-5 p-4 bg-dark text-white text-center">
+        <p>Allison Poh</p>
     </div>
     
 </body>
