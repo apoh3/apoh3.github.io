@@ -1,33 +1,34 @@
-/* .text-warning {
-    color: rgb(255, 0, 76) !important;
+/*
+https://colorhunt.co/palette/ecf2ff3e54ac655dbbbface2
+*/
+
+body, .navbar {
+    color: rgb(23, 23, 23);
+}
+
+.bg-dark {
+    background-color: #ECF2FF !important;
 }
 
 .bg-primary {
-    background-color: rgb(255, 0, 76) !important;
-} */
-
-.text-secondary {
-    color: rgb(2, 162, 255) !important; /*on grey*/
+    background-color: #3E54AC !important; 
 }
 
-.bg-primary {
-    background-color: rgb(20, 145, 218) !important; /*on white*/
+.text-primary {
+    color: #3E54AC !important; 
+    font-weight: bold;
 }
 
-.bg-secondary {
-    background-color: rgb(27, 136, 199) !important; /*on grey*/
-}
-
-#container-intro  {
+#bio  {
     min-height: 100vh;
 }
 
-#container-intro img {
+#bio img {
     max-height: 250px;
     margin-bottom: 15px;
 }
 
-#container-intro p {
+#bio p {
     opacity: 0.7;
 }
 
@@ -48,15 +49,20 @@
     padding-bottom: 80px;
 }
 
-#container-intro  {
+#bio  {
     padding-top: 40px;
 }
 
-#container-research a, #container-intro a {
+#research a, #bio a {
     text-decoration: none;
 }
 
-#container-service {
+#research a:hover, #bio a:hover {
+    text-decoration: none;
+    color: #2d396a !important;
+}
+
+#service {
     padding-bottom: 30px;
 }
 
@@ -73,7 +79,7 @@
     font-size: x-large;
 }
 
-#footer ul, #container-intro ul {
+#footer ul, #bio ul {
     justify-content: center;
     display: flex;
 }
@@ -86,13 +92,11 @@
 }
 
 #academicons-list a {
-    color: white;
-    opacity: 0.7;
+    color: #3E54AC;
 }
 
 #academicons-list a:hover {
-    color: white;
-    opacity: 1;
+    color: #2d396a;
 }
 
 #footer p {
