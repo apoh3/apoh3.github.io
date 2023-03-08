@@ -1,3 +1,23 @@
+/* .text-warning {
+    color: rgb(255, 0, 76) !important;
+}
+
+.bg-primary {
+    background-color: rgb(255, 0, 76) !important;
+} */
+
+.text-secondary {
+    color: rgb(2, 162, 255) !important; /*on grey*/
+}
+
+.bg-primary {
+    background-color: rgb(20, 145, 218) !important; /*on white*/
+}
+
+.bg-secondary {
+    background-color: rgb(27, 136, 199) !important; /*on grey*/
+}
+
 #container-intro  {
     min-height: 100vh;
 }
