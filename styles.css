@@ -7,20 +7,20 @@ body, .navbar {
 }
 
 .bg-dark {
-    background-color: #ECF2FF !important;
+    background-color: #FCF6F5FF !important;
 }
 
 .bg-primary {
-    background-color: #3E54AC !important; 
+    background-color: #2BAE66FF !important; 
 }
 
 .text-primary {
-    color: #3E54AC !important; 
+    color: #2BAE66FF !important; 
     font-weight: bold;
 }
 
-#bio  {
-    min-height: 100vh;
+#navbar-name {
+    color: rgb(29, 121, 70) !important;
 }
 
 #bio img {
