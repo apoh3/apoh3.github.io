@@ -55,7 +55,7 @@ body, .navbar {
 
 #research a:hover, #bio a:hover {
     text-decoration: none;
-    color: #2d396a !important;
+    color: rgb(29, 140, 79) !important;
 }
 
 #service {
@@ -87,11 +87,11 @@ body, .navbar {
     font-size: 24px;
 }
 
-#academicons-list a {
-    color: #3E54AC;
+#academicons-list a, .link {
+    color: #3E54AC !important;
 }
 
-#academicons-list a:hover {
+#academicons-list a:hover, .link:hover {
     color: #2d396a;
 }
 
