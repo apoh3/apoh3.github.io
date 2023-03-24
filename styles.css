@@ -6,6 +6,7 @@ body {
 
 .badge {
     background-color: #1e38cf;
+    margin-left: 8px;
 }
 
 .container-section  {
@@ -13,13 +14,13 @@ body {
     padding-bottom: 80px;
 }
 
-.h1-section {
+.h1-section { /* main sections */
     color: #3e6921;
     letter-spacing: .24rem;
     text-align: left;
 }
 
-.display-6 {
+.display-6 { /* subsections */
     color: #3e6921;
     text-transform: uppercase;
     letter-spacing: .16rem;
@@ -38,7 +39,7 @@ body {
 .navbar {
     background-color: white;
     letter-spacing: .12rem;
-    border-bottom: 1px solid #ededed;
+    border-bottom: 2px solid #ededed;
 }
 
 .navbar-brand {
@@ -56,6 +57,7 @@ body {
 #intro {
     text-align: left;
     padding-top: 40px;
+    min-height: 100vh;
 }
 
 #intro img {
@@ -87,18 +89,17 @@ body {
     font-size: medium;
 }
 
-.text-link {
-    font-weight: bold;
+.intro-hello {
     color: #3e6921;
-    opacity: 0.8;
-}
-
-.text-link:hover {
-    color: #2c4b17;
-    opacity: 1;
+    letter-spacing: .1rem;
+    font-size: x-large;
 }
 
 /* research *************************************/
+#research, #research .list-group-item {
+    background-color: #ededed;
+}
+
 #research a {
     text-decoration: none;
 }
@@ -115,15 +116,19 @@ body {
     padding-bottom: 30px;
 }
 
+#service, #service .list-group-item {
+    background-color: #ededed;
+}
+
 /* links ***************************************/
 .source-link {
     font-weight: bold;
-    color: #3e6921;
+    color: #1e38cf;
     opacity: 0.8;
 }
 
 .source-link:hover {
-    color: #2c4b17;
+    color: #1930b4;
     opacity: 1;
 }
 
@@ -139,12 +144,12 @@ body {
 }
 
 .big-icon {
-    color: #3e6921;
-    opacity: 0.8;
+    color: #1e38cf;
+    opacity: 0.9;
 }
 
 .big-icon:hover {
-    color: #2c4b17;
+    color: #1930b4;
     opacity: 1;
 }
 
