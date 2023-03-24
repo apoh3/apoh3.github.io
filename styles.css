@@ -10,8 +10,8 @@ body {
 }
 
 .container-section  {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .h1-section { /* main sections */
@@ -37,9 +37,8 @@ body {
 
 /* navbar *****************************************/
 .navbar {
-    background-color: white;
+    background-color: #ededed;
     letter-spacing: .12rem;
-    border-bottom: 2px solid #ededed;
 }
 
 .navbar-brand {
@@ -56,7 +55,6 @@ body {
 /* intro *****************************************/
 #intro {
     text-align: left;
-    padding-top: 40px;
     min-height: 100vh;
 }
 
@@ -112,10 +110,6 @@ body {
 
 
 /* service **************************************/
-#service {
-    padding-bottom: 30px;
-}
-
 #service, #service .list-group-item {
     background-color: #ededed;
 }
