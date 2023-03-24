@@ -1,7 +1,11 @@
 /* general ****************************************/
 body {
     color: #171717;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.badge {
+    background-color: #1e38cf;
 }
 
 .container-section  {
@@ -9,24 +13,38 @@ body {
     padding-bottom: 80px;
 }
 
+.h1-section {
+    color: #3e6921;
+    letter-spacing: .24rem;
+    text-align: left;
+}
+
+.display-6 {
+    color: #3e6921;
+    text-transform: uppercase;
+    letter-spacing: .16rem;
+}
+
 .list-group-h1, .list-group-h3, .list-group-item {
     text-align: left;
     border: none;
 }
 
-.list-group-h3 {
+.list-group-h1, .list-group-h3 {
     font-size: x-large;
 }
 
 /* navbar *****************************************/
 .navbar {
-    letter-spacing: .1rem;
+    background-color: white;
+    letter-spacing: .12rem;
+    border-bottom: 1px solid #ededed;
 }
 
 .navbar-brand {
     color: #3e6921;
     font-weight: bold;
-    letter-spacing: .18rem;
+    letter-spacing: .16rem;
     padding-right: 10px;
 }
 
@@ -69,6 +87,17 @@ body {
     font-size: medium;
 }
 
+.text-link {
+    font-weight: bold;
+    color: #3e6921;
+    opacity: 0.8;
+}
+
+.text-link:hover {
+    color: #2c4b17;
+    opacity: 1;
+}
+
 /* research *************************************/
 #research a {
     text-decoration: none;
@@ -76,10 +105,6 @@ body {
 
 #research a:hover {
     text-decoration: none;
-}
-
-#research .source-link {
-    font-weight: bold;
 }
 
 /* teaching *************************************/
@@ -90,17 +115,43 @@ body {
     padding-bottom: 30px;
 }
 
-/* icon list ************************************/
-#icons-list li {
+/* links ***************************************/
+.source-link {
+    font-weight: bold;
+    color: #3e6921;
+    opacity: 0.8;
+}
+
+.source-link:hover {
+    color: #2c4b17;
+    opacity: 1;
+}
+
+.icons-list li {
     float: left; 
     padding-left: 6px;
     padding-right: 6px;
     font-size: 24px;
 }
 
+.icons-list:first-child {
+    padding-left: 0px;
+}
+
+.big-icon {
+    color: #3e6921;
+    opacity: 0.8;
+}
+
+.big-icon:hover {
+    color: #2c4b17;
+    opacity: 1;
+}
+
 /* footer ***************************************/
 #footer p {
-    font-size: 14px;
+    font-size: 10px;
+    letter-spacing: .12rem;
 }
 
 #footer ul {
