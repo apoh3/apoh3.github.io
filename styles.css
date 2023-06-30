@@ -1,11 +1,38 @@
+/* colors ******************************************/
+.c-text {
+    color: #171717;
+}
+
+.bg-section {
+    background-color: #f2f2f2;
+}
+
+.bg-highlight {
+    background-color: #058b7a;
+}
+
+.c-header {
+    color: #058b7a;
+}
+
+.bg-badge {
+    background-color: #e9871f;
+}
+
+.c-link {
+    color: #0270ca;
+}
+
+.c-link-h:hover {
+    color: #004074;
+}
+
 /* general ****************************************/
 body {
-    color: #171717;
     font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .badge {
-    background-color: #1e38cf;
     margin-left: 8px;
 }
 
@@ -15,13 +42,11 @@ body {
 }
 
 .h1-section { /* main sections */
-    color: #3e6921;
     letter-spacing: .24rem;
     text-align: left;
 }
 
 .display-6 { /* subsections */
-    color: #3e6921;
     text-transform: uppercase;
     letter-spacing: .16rem;
 }
@@ -37,12 +62,10 @@ body {
 
 /* navbar *****************************************/
 .navbar {
-    background-color: #ededed;
     letter-spacing: .12rem;
 }
 
 .navbar-brand {
-    color: #3e6921;
     font-weight: bold;
     letter-spacing: .16rem;
     padding-right: 10px;
@@ -55,7 +78,7 @@ body {
 /* intro *****************************************/
 #intro {
     text-align: left;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 #intro img {
@@ -75,29 +98,20 @@ body {
     display: flex;
 }
 
-#intro-bio {
-    font-size: large;
-}
-
-#intro-interests {
+#intro-interests, #intro-news {
     font-size: x-large;
 }
 
-#intro-education .school_name {
+.degree-info, .interests-info {
     font-size: medium;
 }
 
 .intro-hello {
-    color: #3e6921;
     letter-spacing: .1rem;
     font-size: x-large;
 }
 
 /* research *************************************/
-#research, #research .list-group-item {
-    background-color: #ededed;
-}
-
 #research a {
     text-decoration: none;
 }
@@ -106,23 +120,31 @@ body {
     text-decoration: none;
 }
 
+.paper-title {
+    font-weight: bold;
+}
+
+.author-name {
+    font-weight: bold;
+}
+
+.link-icon {
+    font-size: large;
+}
+
 /* teaching *************************************/
 
 
 /* service **************************************/
-#service, #service .list-group-item {
-    background-color: #ededed;
-}
+
 
 /* links ***************************************/
 .source-link {
     font-weight: bold;
-    color: #1e38cf;
     opacity: 0.8;
 }
 
 .source-link:hover {
-    color: #1930b4;
     opacity: 1;
 }
 
@@ -138,12 +160,10 @@ body {
 }
 
 .big-icon {
-    color: #1e38cf;
     opacity: 0.9;
 }
 
 .big-icon:hover {
-    color: #1930b4;
     opacity: 1;
 }
 

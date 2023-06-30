@@ -20,8 +20,8 @@
 </head>
 
 <!-- NAV -->
-<body data-bs-spy="scroll" data-bs-target="#navbar">
-    <nav class="navbar navbar-expand-sm navbar-light fixed-top">
+<body data-bs-spy="scroll" data-bs-target="#navbar" class="c-text">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-highlight">
         <div class="container-fluid">
             <a class="navbar-brand" href="#bio">ALLISON POH</a>
 
@@ -41,9 +41,6 @@
                         <a class="nav-link" href="#service">SERVICE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="" >BLOG</a>
-                    </li> 
-                    <li class="nav-item">
                         <a class="nav-link" href="cv.pdf" target="_blank">CV</a>
                     </li>    
                 </ul>
@@ -56,45 +53,45 @@
         <div class="container pt-5">
             <div class="row">
                 <div class="col-md-4">
-                    <img class="img-fluid"  src="img/profile.png" class="rounded" alt="Profile Image">
-                    <h1 id="intro-name" class="display-6">ALLISON POH</h1>
+                    <img class="img-fluid rounded-circle" src="img/profile.jpg" alt="Profile Image">
+                    <h1 id="intro-name" class="display-6 c-header">ALLISON POH</h1>
                     <p>
                         PhD Student, Computer Science </br>
-                        University of Massachusetts Amherst
+                        University of Massachusetts (UMass) Amherst
                     </p> 
                     <ul class="list-unstyled icons-list">
                         <li>
-                            <a href="mailto: apoh@umass.edu" target="_blank">
-                                <i class="fas fa-envelope big-icon"></i>
+                            <a href="mailto: apoh@umass.edu" title="Email (apoh@umass.edu)" target="_blank">
+                                <i class="fas fa-envelope big-icon c-link c-link-h"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/allisonpoh/" target="_blank">
-                                <i class="fab fa-linkedin big-icon"></i>
+                            <a href="https://www.linkedin.com/in/allisonpoh/" title="LinkedIn (linkedin.com/in/allisonpoh)" target="_blank">
+                                <i class="fab fa-linkedin big-icon c-link c-link-h"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.github.com/apoh3" target="_blank">
-                                <i class="fab fa-github big-icon"></i>
+                            <a href="https://www.github.com/apoh3" title="GitHub (apoh3)" target="_blank">
+                                <i class="fab fa-github big-icon c-link c-link-h"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="cv.pdf" target="_blank">
-                                <i class="ai ai-cv big-icon"></i>
+                            <a href="cv.pdf" title="CV Available as PDF" target="_blank">
+                                <i class="ai ai-cv big-icon c-link c-link-h"></i>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div id="intro-bio" class="col-md-8">
-                    <span class="intro-highlight intro-hello">HELLO!</span> I'm a PhD student in Computer Science at UMass Amherst. My current research focuses on <span class="intro-highlight">human computer interaction</span> within the educational learning space. I'm a member of the <span class="intro-highlight">Advanced Learning Technologies Lab</span> where I study the design, development, and evaluation of tools for enabling teachers to better support their students. I'm also interested in CS education and have <span class="intro-highlight">instructed courses at both UMass Amherst and UMass Dartmouth</span>, including Data Mining & Knowledge Acquisition and Foundations of Programming. Before starting my PhD program, I worked at Procter & Gamble as a Data Engineer.
+                    <span class="intro-hello c-header">HELLO!</span> I'm a PhD student in Computer Science at UMass Amherst. My current research focuses on <strong>human computer interaction within the educational learning space</strong>. I'm a member of the <a href="https://advancedlearningtech.com/" title="Advanced Learning Technologies Lab at UMass Amherst" class="c-link c-link-h" target="_blank">Advanced Learning Technologies Lab</a> where I study the design, development, and evaluation of tools for enabling teachers to better support their students. I'm also interested in computer science education and have instructed courses at both UMass Amherst and UMass Dartmouth. Before starting my PhD program, I worked at Procter & Gamble as a Data Engineer.
 
                     </br></br>
 
                     <span>
-                        <span id="intro-interests" class="display-6">Interests</span>
+                        <span id="intro-interests" class="display-6 c-header">Interests</span>
                         <ul class="list-group">
-                            <li class="list-group-item">
-                                HCI, CS Education, Gamification, Educational Data Mining, Data Visualization
+                            <li class="list-group-item c-text c-text interests-info">
+                                <strong>HCI</strong>, Data Visualization, Gamification, EdTech, CS Education
                             </li>
                         </ul>
                     </span>
@@ -103,19 +100,22 @@
 
                     <div id="intro-education" class="row">
                         <div class="col-md text-center">
-                            <h3 class="display-6 list-group-h3">Education</h3>
+                            <h3 class="display-6 c-header list-group-h3">Education</h3>
                             <ul class="list-group">
-                                <li class="list-group-item">
-                                    PhD in Computer Science, 2026 (<i>exp.</i>)</br>
-                                    <span class="school_name">UMass Amherst</span>
+                                <li class="list-group-item c-text c-text">
+                                    <span class="degree-info">
+                                    <strong>PhD in Computer Science</strong>, 2026 (<i>exp.</i>)</br>
+                                    UMass Amherst</span>
                                 </li>
-                                <li class="list-group-item">
-                                    MS in Computer Science, 2020</br>
-                                    <span class="school_name">UMass Dartmouth</span>
+                                <li class="list-group-item c-text">
+                                    <span class="degree-info">
+                                    <strong>MS in Computer Science</strong>, 2020</br>
+                                    UMass Dartmouth</span>
                                 </li>
-                                <li class="list-group-item">
-                                    BS in Computer Science, 2018, <i>summa cum laude</i></br>
-                                    <span class="school_name">UMass Dartmouth</span>
+                                <li class="list-group-item c-text">
+                                    <span class="degree-info">
+                                    <strong>BS in Computer Science</strong>, 2018, <i>summa cum laude</i></br>
+                                    UMass Dartmouth</span>
                                 </li>
                             </ul>
                         </div>
@@ -126,33 +126,34 @@
     </div>
 
     <!-- RESEARCH -->
-    <div id="research" class="container-fluid container-section text-center">
+    <div id="research" class="container-fluid container-section text-center bg-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h1 class="h1-section display-4">RESEARCH</h1>
+                    <h1 class="h1-section c-header display-4">RESEARCH</h1>
                 </div>
                 <div class="col-md-8">
-                    <h1 class="display-6 list-group-h1">Publications</h1>
+                    <h1 class="display-6 c-header list-group-h1">Publications</h1>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>Design Principles for Teacher Dashboards to Support In-Class Learning</strong>
-                            <span class="badge bg-highlight">First Author</span> </br>
-                            <strong>Allison Poh</strong>, Francisco Castro, and Ivon Arroyo </br>
-                            ICLS 2023 &#x2022; <i>accepted for publication</i>
+                        <li class="list-group-item c-text bg-section">
+                            <span class="paper-title">Design Principles for Teacher Dashboards to Support In-Class Learning</span>
+                            <span class="badge bg-badge">First Author</span> </br>
+                            <span class="author-name">Allison Poh</span>, Francisco Castro, and Ivon Arroyo </br>
+                            ICLS 2023 &#x2022; <a href="https://osf.io/mxkjh" title="Paper Available on OSF" target="_blank" class="source-link c-link c-link-h link"><i class="link-icon ai ai-osf"></i></a> 
+                                      &#x2022; <a href="https://youtu.be/UBgwUPge1Ak" title="Presentation Available on YouTube" target="_blank" class="source-link c-link c-link-h link"><i class="link-icon fa fa-youtube"></i></a>
                         </li>
-                        <li class="list-group-item">
-                            <strong>Developing Computational Thinking through Modeling, Simulation and Computational Problem Solving</strong> </br>
-                            Injila Rasul, Danielle Crabtree, Francisco Castro, <strong>Allison Poh</strong>, Sai Gattupalli, Krishna Kathala, and Ivon Arroyo </br>
-                            ICLS 2023 &#x2022; <i>accepted for publication</i>
+                        <li class="list-group-item c-text bg-section">
+                            <span class="paper-title">Developing Computational Thinking through Modeling, Simulation and Computational Problem Solving</span> </br>
+                            Injila Rasul, Danielle Crabtree, Francisco Castro, <span class="author-name">Allison Poh</span>, Sai Gattupalli, Krishna Kathala, and Ivon Arroyo </br>
+                            ICLS 2023 &#x2022; <a href="https://osf.io/d73yh" title="Paper Available on OSF" target="_blank" class="source-link c-link c-link-h link"><i class="link-icon ai ai-osf"></i></a>
                         </li>
                     </ul>
 
-                    <h1 class="display-6 list-group-h1 pt-4">Other</h1>
+                    <h1 class="display-6 c-header list-group-h1 pt-4">Other</h1>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>nucleoSLIDE: A Citizen Science Game for the Motif Finding Problem</strong> </br>
-                            Master's Thesis &#x2022; <a href="https://umassd.primo.exlibrisgroup.com/discovery/delivery/01MA_DM_INST:umassd_library/12117857170001301" target="_blank" class="source-link link"><i class="fa fa-link"></i></a>
+                        <li class="list-group-item c-text bg-section">
+                            <span class="paper-title">nucleoSLIDE: A Citizen Science Game for the Motif Finding Problem</span> </br>
+                            Master's Thesis &#x2022; <a href="https://umassd.primo.exlibrisgroup.com/discovery/delivery/01MA_DM_INST:umassd_library/12117857170001301" title="Paper Available on UMassD's Library Website" target="_blank" class="source-link c-link c-link-h link"><i class="link-icon fa fa-external-link"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -165,47 +166,47 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h1 class="h1-section display-4">TEACHING</h1>
+                    <h1 class="h1-section c-header display-4">TEACHING</h1>
                 </div>
                 <div class="col-md-8">
-                    <h1 class="display-6 list-group-h1">UMass Amherst</h1>
+                    <h1 class="display-6 c-header list-group-h1">UMass Amherst</h1>
                     <ul class="list-group">
-                        <li class="list-group-item">
+                        <li class="list-group-item c-text">
                             Foundations of Programming <strong>Instructor</strong> - S23
-                            <span class="badge">Instructor</span>
+                            <span class="badge bg-badge">Instructor</span>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item c-text">
                             First-Year Seminar: Mobile & Wearable Technologies <strong>Instructor</strong> - F22
-                            <span class="badge">Instructor</span>
+                            <span class="badge bg-badge">Instructor</span>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item c-text">
                             Programming with Data Structures <strong>TA</strong> - S22, F22
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item c-text">
                             Computer Crime Law <strong>TA</strong> - F21
                         </li>
                     </ul>
 
-                    <h1 class="display-6 list-group-h1 pt-4">UMass Dartmouth</h1>
+                    <h1 class="display-6 c-header list-group-h1 pt-4">UMass Dartmouth</h1>
                     <ul class="list-group">
                         <ul class="list-group">
-                            <li class="list-group-item">
+                            <li class="list-group-item c-text">
                                 Data Mining & Knowledge Discovery <strong>Instructor</strong> - F22
-                                <span class="badge">Instructor</span>
+                                <span class="badge bg-badge">Instructor</span>
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item c-text">
                                 Social & Ethical Aspects of Computing <strong>Grader</strong> - S20
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item c-text">
                                 Design of Operating Systems <strong>TA</strong> - F19
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item c-text">
                                 Object-Oriented Programming II <strong>TA</strong> - S19, S20
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item c-text">
                                 Object-Oriented Programming I <strong>TA</strong> - F18, S19, F19
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item c-text">
                                 Introduction to Computing Systems <strong>TA</strong> - F18
                             </li>
                         </ul>
@@ -216,37 +217,30 @@
     </div>
 
     <!-- SERVICE -->
-    <div id="service" class="container-fluid container-section text-center">
+    <div id="service" class="container-fluid container-section text-center bg-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h1 class="h1-section display-4">SERVICE</h1>
+                    <h1 class="h1-section c-header display-4">SERVICE</h1>
                 </div>
                 <div class="col-md-8">
                     <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            DataFest VIP Consultant <strong>Volunteer</strong> - S23
-                         </li> -->
-                        <li class="list-group-item">
-                           Graduate Women in STEM Mentoring Committee <strong>Co-Chair</strong> - F22-S23
-                           <span class="badge">Co-Chair</span>
-                        </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item c-text bg-section">
                             Undergraduate Research Volunteer <strong>Mentor</strong> - W23
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item c-text bg-section">
                             PhD Applicant Support Program <strong>Volunteer</strong> - F21, F22
                         </li>
-                        <li class="list-group-item">
-                            Sound Bites Caf&eacute; at Local Middle Schools <strong>Presenter</strong> - F21-S22
+                        <li class="list-group-item c-text bg-section">
+                            Sound Bites Caf&eacute; at Local Middle Schools <strong>Volunteer</strong> - F21-S22
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item c-text bg-section">
                             Graduate Women in STEM Mentoring <strong>Committee Member</strong> - F21-S22
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item c-text bg-section">
                             Graduate Women in STEM Outreach <strong>Committee Member</strong> - F21-S22
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item c-text bg-section">
                             Women in Engineering & Computing Career Day <strong>Volunteer</strong> - F21
                         </li>
                     </ul>
@@ -256,33 +250,33 @@
     </div>
 
     <!-- FOOTER -->
-    <div id="footer" class="mt-5 p-4 text-center display-6">
+    <div id="footer" class="mt-5 p-4 text-center display-6 c-header">
         <ul class="list-unstyled icons-list">
             <!-- <li>
-                <i class="fas fa-graduation-cap big-icon"></i>
+                <i class="fas fa-graduation-cap big-icon c-link c-link-h"></i>
             </li> -->
             <li>
-                <a href="mailto: apoh@umass.edu" target="_blank">
-                    <i class="fas fa-envelope big-icon"></i>
+                <a href="mailto: apoh@umass.edu" title="Email (apoh@umass.edu)" target="_blank">
+                    <i class="fas fa-envelope big-icon c-link c-link-h"></i>
                 </a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/allisonpoh/" target="_blank">
-                    <i class="fab fa-linkedin big-icon"></i>
+                <a href="https://www.linkedin.com/in/allisonpoh/" title="LinkedIn (linkedin.com/in/allisonpoh)" target="_blank">
+                    <i class="fab fa-linkedin big-icon c-link c-link-h"></i>
                 </a>
             </li>
             <li>
-                <a href="https://www.github.com/apoh3" target="_blank">
-                    <i class="fab fa-github big-icon"></i>
+                <a href="https://www.github.com/apoh3" title="GitHub (apoh3)" target="_blank">
+                    <i class="fab fa-github big-icon c-link c-link-h"></i>
                 </a>
             </li>
             <li>
-                <a href="cv.pdf" target="_blank">
-                    <i class="ai ai-cv big-icon"></i>
+                <a href="cv.pdf" title="CV Available as PDF" target="_blank">
+                    <i class="ai ai-cv big-icon c-link c-link-h"></i>
                 </a>
             </li>
         </ul>
-        <p>last updated: 08 March 2023</p>
+        <p class="c-text">last updated: 30 June 2023</p>
     </div>
     
 </body>
