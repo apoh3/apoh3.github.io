@@ -199,6 +199,7 @@ body {
 
     #intro-quick-info .icons-list {
         justify-content: center;
+        padding-bottom: 22px;
     }
 
     .list-group-item {
