@@ -19,7 +19,7 @@
     background-color: #e9871f;
 }
 
-.c-link {
+.c-link, .c-text-h:hover, #footer hr {
     color: #0270ca;
 }
 
@@ -176,4 +176,11 @@ body {
 #footer ul {
     display: flex;
     justify-content: center;
+}
+
+#footer hr {
+    width: 30%;
+    margin: auto;
+    padding-bottom: 16px;
+    min-width: 300px;
 }
