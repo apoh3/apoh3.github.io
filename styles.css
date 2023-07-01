@@ -187,6 +187,17 @@ body {
     opacity: 1;
 }
 
+/* prof dev *************************************/
+#prof-dev-title-long {
+    display: block;
+    visibility: hidden;
+}
+
+#prof-dev-title-short {
+    display: block;
+    visibility: hidden;
+}
+
 /* footer ***************************************/
 #footer p {
     font-size: 10px;
