@@ -14,9 +14,7 @@ window.addEventListener('load', function() {
 
 window.addEventListener('resize', function() {
     adjustColumns();
-
-    clearTimeout(timeOutFunctionId);
-    timeOutFunctionId = setTimeout(truncateProfDev, 500);
+    truncateProfDev();
 });
 
 backToTopBtn.addEventListener("click", backToTop);
@@ -56,16 +54,23 @@ function adjustColumns() {
 }
 
 // Determine if text is split into more than two lines.
-function isOverTwoLines(element) {
+function isOverTwoLines() {
     var pdLongElement = document.getElementById('prof-dev-title-long');
     var pdShortElement = document.getElementById('prof-dev-title-short');
 
-    if (pdLongElement.scrollHeight/pdShortElement.scrollHeight >= 4) {
-        pdLongElement.style.visibility = "visible"
-        pdShortElement.style.visibility = "hidden"
-    } else {
+    pdLongElement.style.display = "block" 
+    pdShortElement.style.display = "block" 
+
+    // console.log(parseFloat(pdLongElement.scrollHeight/pdShortElement.scrollHeight))
+
+    if (parseFloat(pdLongElement.scrollHeight/pdShortElement.scrollHeight) > 3) {
         pdShortElement.style.visibility = "visible"
         pdLongElement.style.visibility = "hidden"
+        pdLongElement.style.display = "none" 
+    } else {
+        pdLongElement.style.visibility = "visible"
+        pdShortElement.style.visibility = "hidden"
+        pdShortElement.style.display = "none" 
     }
 }
 

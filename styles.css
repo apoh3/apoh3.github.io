@@ -189,11 +189,13 @@ body {
 
 /* prof dev *************************************/
 #prof-dev-title-long {
+    overflow: none;
     display: block;
     visibility: hidden;
 }
 
 #prof-dev-title-short {
+    overflow: none;
     display: block;
     visibility: hidden;
 }
