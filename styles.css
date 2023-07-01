@@ -77,6 +77,7 @@ body {
     color: white;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    z-index: 9999;
 }
 
 /* navbar *****************************************/
@@ -245,14 +246,5 @@ body {
 
     #footer {
         margin-top: 0;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) { /* tablet */
-}
-
-@media (min-width: 1024px) { /* desktop */
-    .c-text {
-        color: #171717;
     }
 }
