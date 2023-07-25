@@ -53,15 +53,15 @@ function adjustColumns() {
     }
 }
 
-// Determine if text is split into more than two lines.
-function isOverTwoLines() {
+// Determine if text should be the long version or short version.
+function switchPDText() {
     var pdLongElement = document.getElementById('prof-dev-title-long');
     var pdShortElement = document.getElementById('prof-dev-title-short');
 
     pdLongElement.style.display = "block" 
     pdShortElement.style.display = "block" 
 
-    // console.log(parseFloat(pdLongElement.scrollHeight/pdShortElement.scrollHeight))
+    console.log(parseFloat(pdLongElement.scrollHeight/pdShortElement.scrollHeight))
 
     if (parseFloat(pdLongElement.scrollHeight/pdShortElement.scrollHeight) > 3) {
         pdShortElement.style.visibility = "visible"
@@ -76,7 +76,7 @@ function isOverTwoLines() {
 
 // Truncate PROFESSIONAL DEVELOPMENT to PROF. DEV. based on screen size.
 function truncateProfDev() {
-    isOverTwoLines();
+    switchPDText();
     // if (isOverTwoLines()) {
     //     profDevElement.textContent = 'PROF. DEV.';
     // } else {
