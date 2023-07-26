@@ -15,6 +15,15 @@ window.addEventListener('load', function() {
 window.addEventListener('resize', function() {
     adjustColumns();
     truncateProfDev();
+    checkExpandedNavBar();
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    checkExpandedNavBar()
+});
+
+document.querySelector('.navbar-toggler').addEventListener('click', function() { 
+    checkExpandedNavBar()
 });
 
 backToTopBtn.addEventListener("click", backToTop);
@@ -61,8 +70,6 @@ function switchPDText() {
     pdLongElement.style.display = "block" 
     pdShortElement.style.display = "block" 
 
-    console.log(parseFloat(pdLongElement.scrollHeight/pdShortElement.scrollHeight))
-
     if (parseFloat(pdLongElement.scrollHeight/pdShortElement.scrollHeight) > 3) {
         pdShortElement.style.visibility = "visible"
         pdLongElement.style.visibility = "hidden"
@@ -82,4 +89,47 @@ function truncateProfDev() {
     // } else {
     //     profDevElement.textContent = 'PROFESSIONAL DEVELOPMENT';
     // }
+}
+
+// Checks is a link is visible to the user.
+function isLinkVisibleInViewport(link) {
+    var linkRect = link.getBoundingClientRect();
+
+    return (
+        linkRect.top >= 0 &&
+        linkRect.left >= 0 &&
+        linkRect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        linkRect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// If navbar is not expanded amd not all links are visible, shrink font.
+function checkExpandedNavBar() {
+    var navbarToggler = document.querySelector('.navbar-toggler');
+    var links = document.querySelectorAll('.nav-link');
+    var isExpanded = false
+    var allLinksVisible = true
+
+    if (navbarToggler.offsetParent !== null && navbarToggler.offsetWidth > 0) {
+        isExpanded = true
+    }
+
+    if (isExpanded == false) {
+        links.forEach((link) => {
+            if (!isLinkVisibleInViewport(link)) {
+              allLinksVisible = false
+              return
+            }
+        });
+    }
+
+    if (!isExpanded && !allLinksVisible) {
+        links.forEach((link) => {
+            link.style.fontSize = '80%'
+        });
+    } else {
+        links.forEach((link) => {
+            link.style.fontSize = '100%'
+        });
+    }
 }
