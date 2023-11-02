@@ -80,6 +80,21 @@ body {
     z-index: 9999;
 }
 
+.expand-all, .collapse-all {
+    cursor: pointer;
+    color: white;
+    margin-left: auto; 
+}
+
+.collapse-all {
+    display: none;
+}
+
+.div-hidden-details {
+    display: none;
+    font-style: italic;
+}
+
 /* navbar *****************************************/
 .navbar {
     letter-spacing: .12rem;
@@ -93,6 +108,12 @@ body {
 
 .nav-item {
     padding-right: 10px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: start;
+    width: 100%;
 }
 
 /* intro *****************************************/
@@ -284,5 +305,11 @@ body {
 
     #footer {
         margin-top: 0;
+    }
+
+    .expand-all, .collapse-all {
+        cursor: pointer;
+        color: white;
+        margin-left: 0; 
     }
 }

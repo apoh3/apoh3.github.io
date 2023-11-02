@@ -26,6 +26,41 @@ document.querySelector('.navbar-toggler').addEventListener('click', function() {
     checkExpandedNavBar()
 });
 
+// Expand or collapse details about each item in a section
+document.addEventListener('DOMContentLoaded', function() {
+    var expandAllListItem = document.querySelector('.nav-item.expand-all');
+    var collapseAllListItem = document.querySelector('.nav-item.collapse-all');
+    var hiddenDetailsDivs = document.querySelectorAll('.div-hidden-details');
+
+    expandAllListItem.addEventListener('click', function() {
+        hiddenDetailsDivs.forEach(function(div) {
+            if(div.style.display == 'block') {
+                div.style.display = 'none';
+                expandAllListItem.style.display = 'block';
+                collapseAllListItem.style.display = 'none';
+            } else {
+                div.style.display = 'block';
+                expandAllListItem.style.display = 'none';
+                collapseAllListItem.style.display = 'block';
+            }
+        });
+    });
+
+    collapseAllListItem.addEventListener('click', function() {
+        hiddenDetailsDivs.forEach(function(div) {
+            if(div.style.display == 'block') {
+                div.style.display = 'none';
+                expandAllListItem.style.display = 'block';
+                collapseAllListItem.style.display = 'none';
+            } else {
+                div.style.display = 'block';
+                expandAllListItem.style.display = 'none';
+                collapseAllListItem.style.display = 'block';
+            }
+        });
+    });
+});
+
 backToTopBtn.addEventListener("click", backToTop);
 
 // On scroll, change the opacity of back-to-top button.
@@ -131,5 +166,9 @@ function checkExpandedNavBar() {
         links.forEach((link) => {
             link.style.fontSize = '100%'
         });
+    }
+
+    if (isExpanded) {
+        
     }
 }
