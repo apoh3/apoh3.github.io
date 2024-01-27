@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var hiddenDetailsDivs = document.querySelectorAll('.div-hidden-details');
 
     var sectionResearch = document.querySelector('#research');
-    var sectionTeaching = document.querySelector('#teaching');
+    // var sectionTeaching = document.querySelector('#teaching');
     var sectionService = document.querySelector('#service');
 
     expandAllListItem.addEventListener('click', function() {
         sectionResearch.style.fontWeight = 'bold';
-        sectionTeaching.style.fontWeight = 'bold';
+        // sectionTeaching.style.fontWeight = 'bold';
         sectionService.style.fontWeight = 'bold';
 
         hiddenDetailsDivs.forEach(function(div) {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     collapseAllListItem.addEventListener('click', function() {
         sectionResearch.style.fontWeight = 'normal';
-        sectionTeaching.style.fontWeight = 'normal';
+        // sectionTeaching.style.fontWeight = 'normal';
         sectionService.style.fontWeight = 'normal';
 
         hiddenDetailsDivs.forEach(function(div) {
