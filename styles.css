@@ -93,6 +93,8 @@ body {
 .div-hidden-details {
     display: none;
     font-style: italic;
+    padding-top: 10px;
+    text-align: justify;
 }
 
 /* navbar *****************************************/
@@ -127,11 +129,11 @@ body {
     margin-bottom: 15px;
 }
 
-#intro a {
+a {
     text-decoration: none;
 }
 
-#intro a:hover {
+a:hover {
     text-decoration: none;
 }
 
@@ -150,6 +152,10 @@ body {
 .intro-hello {
     letter-spacing: .1rem;
     font-size: x-large;
+}
+
+#bio-paragraph {
+    text-align: justify;
 }
 
 /* research *************************************/
@@ -195,11 +201,11 @@ body {
 
 /* service **************************************/
 
-
 /* links ***************************************/
 .source-link {
     font-weight: bold;
     opacity: 0.8;
+    text-decoration: none;
 }
 
 .source-link:hover {

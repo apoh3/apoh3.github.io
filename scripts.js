@@ -32,7 +32,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var collapseAllListItem = document.querySelector('.nav-item.collapse-all');
     var hiddenDetailsDivs = document.querySelectorAll('.div-hidden-details');
 
+    var sectionResearch = document.querySelector('#research');
+    var sectionTeaching = document.querySelector('#teaching');
+    var sectionService = document.querySelector('#service');
+
     expandAllListItem.addEventListener('click', function() {
+        sectionResearch.style.fontWeight = 'bold';
+        sectionTeaching.style.fontWeight = 'bold';
+        sectionService.style.fontWeight = 'bold';
+
         hiddenDetailsDivs.forEach(function(div) {
             if(div.style.display == 'block') {
                 div.style.display = 'none';
@@ -40,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 collapseAllListItem.style.display = 'none';
             } else {
                 div.style.display = 'block';
+                div.style.fontWeight = 'normal';
                 expandAllListItem.style.display = 'none';
                 collapseAllListItem.style.display = 'block';
             }
@@ -47,6 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     collapseAllListItem.addEventListener('click', function() {
+        sectionResearch.style.fontWeight = 'normal';
+        sectionTeaching.style.fontWeight = 'normal';
+        sectionService.style.fontWeight = 'normal';
+
         hiddenDetailsDivs.forEach(function(div) {
             if(div.style.display == 'block') {
                 div.style.display = 'none';
