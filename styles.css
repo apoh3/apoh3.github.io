@@ -92,7 +92,7 @@ body {
 
 .div-hidden-details {
     display: none;
-    font-style: italic;
+    /* font-style: italic; */
     padding-top: 10px;
     text-align: justify;
 }
