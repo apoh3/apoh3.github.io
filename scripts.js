@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 expandAllListItem.style.display = 'none';
                 collapseAllListItem.style.display = 'block';
             }
-        });
+        });   
     });
 
     collapseAllListItem.addEventListener('click', function() {
