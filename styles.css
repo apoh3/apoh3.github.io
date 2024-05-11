@@ -92,9 +92,9 @@ body {
 
 .div-hidden-details {
     display: none;
-    /* font-style: italic; */
     padding-top: 10px;
     text-align: justify;
+    font-size: 95%;
 }
 
 /* navbar *****************************************/
@@ -158,6 +158,10 @@ a:hover {
     text-align: justify;
 }
 
+.university-text {
+    font-size: 95%;
+}
+
 /* research *************************************/
 #research a {
     text-decoration: none;
@@ -167,16 +171,31 @@ a:hover {
     text-decoration: none;
 }
 
-.paper-title {
-    font-weight: bold;
-}
-
-.author-name {
+.pub-title {
     font-weight: bold;
 }
 
 .link-icon {
     font-size: large;
+}
+
+#research .list-group-item {
+    display: flex;
+    align-items: start;
+}
+
+.pub-number {
+    flex-shrink: 0;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.pub-details {
+    flex-grow: 1;
+}
+
+.pub-author-location {
+    font-size: 95%;
 }
 
 /* teaching *************************************/

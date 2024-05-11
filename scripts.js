@@ -35,11 +35,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var sectionResearch = document.querySelector('#research');
     var sectionTeaching = document.querySelector('#teaching');
     var sectionService = document.querySelector('#service');
+    var profdevService = document.querySelector('#profdev');
 
     expandAllListItem.addEventListener('click', function() {
         sectionResearch.style.fontWeight = 'bold';
         sectionTeaching.style.fontWeight = 'bold';
         sectionService.style.fontWeight = 'bold';
+        profdevService.style.fontWeight = 'bold';
 
         hiddenDetailsDivs.forEach(function(div) {
             if(div.style.display == 'block') {
@@ -59,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionResearch.style.fontWeight = 'normal';
         sectionTeaching.style.fontWeight = 'normal';
         sectionService.style.fontWeight = 'normal';
+        profdevService.style.fontWeight = 'normal';
 
         hiddenDetailsDivs.forEach(function(div) {
             if(div.style.display == 'block') {
