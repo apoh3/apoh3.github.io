@@ -263,6 +263,10 @@ a:hover {
     visibility: hidden;
 }
 
+.prof-dev-link {
+    color: #171717;
+}
+
 /* footer ***************************************/
 #footer p {
     font-size: 10px;
@@ -279,6 +283,11 @@ a:hover {
     margin: auto;
     padding-bottom: 16px;
     min-width: 300px;
+}
+
+.ai-cv {
+    padding-left: none;
+    margin-left: none;
 }
 
 /* responsiveness *******************************/
