@@ -8,7 +8,7 @@ import Page from "./Page.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/apoh3.github.io">
+    <BrowserRouter>
       <Navbar />
       <Page />
     </BrowserRouter>
