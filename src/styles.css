@@ -31,7 +31,7 @@ body {
 
 /* NAVIGATION ******************************************/
 nav {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
@@ -63,31 +63,54 @@ main {
   color: var(--readable-grey);
 }
 
-/* PAGES - PUBLICATIONS *******************************/
-.publications {
+.publications,
+.teaching {
   max-width: 50%;
   margin: 2rem auto;
   padding: 1rem;
 }
 
 @media (max-width: 1200px) {
-  .publications {
+
+  .publications,
+  .teaching {
     max-width: 70%;
   }
 }
 
 @media (max-width: 768px) {
-  .publications {
+
+  .publications,
+  .teaching {
     max-width: 90%;
   }
 }
 
-.publications h2 {
+.publications h2,
+.teaching h2 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+  margin-top: 2rem;
 }
 
+.publications h2:first-of-type,
+.teaching h2:first-of-type {
+  margin-top: 1rem;
+}
+
+.publications a,
+.teaching a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.publications a:hover,
+.teaching a:hover {
+  text-decoration: underline;
+}
+
+/* PAGES - PUBLICATIONS *******************************/
 .publications ol {
   list-style: decimal;
   margin: 0;
@@ -110,19 +133,14 @@ main {
   margin: 0.2rem 0;
 }
 
-.publications .authors, .publications .venue {
+.publications .authors,
+.publications .venue {
   font-size: 0.9rem;
   margin: 0.2rem 0;
 }
 
 .publications a {
   font-size: 0.9rem;
-  color: var(--link);
-  text-decoration: none;
-}
-
-.publications a:hover {
-  text-decoration: underline;
 }
 
 .publications .link_paper {
@@ -138,4 +156,42 @@ main {
   width: 16px;
   height: 16px;
   vertical-align: middle;
+}
+
+/* PAGES - TEACHING ***********************************/
+.teaching-list {
+  margin: 0;
+  padding: 0;
+}
+
+.teaching-item {
+  padding-left: 2rem;
+  text-indent: -0.5rem;
+}
+
+.workshop-item {
+  padding-left: 0;
+  text-indent: 0;
+}
+
+.teaching-item p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.teaching h2 {
+  margin-top: 2.5rem;
+}
+
+.teaching h2:first-of-type {
+  margin-top: 1rem;
+}
+
+.teaching-university h4 {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.teaching-university, .workshop-item {
+  padding-left: 0.5rem;
 }
