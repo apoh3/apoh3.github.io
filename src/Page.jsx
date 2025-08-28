@@ -1,24 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-
-function About() {
-  return <h2>This is home</h2>;
-}
-
-function Publications() {
-  return <h2>This site is temporarily underconstruction</h2>;
-}
-
-function Teaching() {
-  return <h2>This site is temporarily underconstruction</h2>;
-}
-
-function Service() {
-  return <h2>This site is temporarily underconstruction</h2>;
-}
-
-function CV() {
-  return <h2>This site is temporarily underconstruction</h2>;
-}
+import About from "./pages/About";
+import Publications from "./pages/Publications";
+import Teaching from "./pages/Teaching";
+import Service from "./pages/Service";
+import CV from "./pages/CV";
 
 function Page() {
   return (

@@ -1,6 +1,5 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   font-weight: 400;
 
   font-synthesis: none;
@@ -23,9 +22,11 @@ body {
   min-height: 100vh;
 }
 
-/* PAGES ***********************************************/
-main {
-  padding: 0rem 2rem;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--readable-grey);
+    background-color: var(--background-white);
+  }
 }
 
 /* NAVIGATION ******************************************/
@@ -56,9 +57,85 @@ nav .links a:hover {
   text-decoration: underline;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--readable-grey);
-    background-color: var(--background-white);
+/* PAGES ***********************************************/
+main {
+  padding: 0rem 2rem;
+  color: var(--readable-grey);
+}
+
+/* PAGES - PUBLICATIONS *******************************/
+.publications {
+  max-width: 50%;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .publications {
+    max-width: 70%;
   }
+}
+
+@media (max-width: 768px) {
+  .publications {
+    max-width: 90%;
+  }
+}
+
+.publications h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.publications ol {
+  list-style: decimal;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.publications li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--readable-grey-faint);
+  padding-left: 0.5rem;
+}
+
+.publications li:last-child {
+  border-bottom: none;
+}
+
+.publications .title {
+  font-weight: 600;
+  margin: 0.2rem 0;
+}
+
+.publications .authors, .publications .venue {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.publications a {
+  font-size: 0.9rem;
+  color: var(--link);
+  text-decoration: none;
+}
+
+.publications a:hover {
+  text-decoration: underline;
+}
+
+.publications .link_paper {
+  margin-right: 0.5rem;
+}
+
+.publications .link_talk {
+  margin-left: 0.5rem;
+}
+
+.publications .icon {
+  margin-right: 0.2rem;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
 }
