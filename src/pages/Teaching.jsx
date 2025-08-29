@@ -9,7 +9,7 @@ function Teaching() {
       university: "UMass Amherst",
       link_syllabus: "https://drive.google.com/file/d/1Yz-5qXAWWpWXKXjE6GLe8VAZUxt-_QW0/view?usp=sharing",
       link_presentation: null,
-      semesters: "Fall 24",
+      semesters: "Fall 2024",
       type: "primary"
     },
     {
