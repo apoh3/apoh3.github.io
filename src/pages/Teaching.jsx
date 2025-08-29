@@ -1,4 +1,4 @@
-import { FileText, SquarePlay } from "lucide-react";
+import { Presentation } from "lucide-react";
 
 function Teaching() {
   const teachings = [
@@ -135,11 +135,11 @@ function Teaching() {
     // --- Workshops ---
     {
       title: "Better Collaborative Problem Solving: The Driver-Navigator Approach",
-      university: "UMass Amherst",
+      university: "Teaching Academy @ UMass Amherst",
       link_syllabus: null,
       link_presentation:
         "https://drive.google.com/file/d/1yirEyTLdHNJ9GU8g9257ZIjmQZA8pn22/view?usp=sharing",
-      semesters: "Fall 2024",
+      semesters: "2024",
       type: "workshop",
     },
   ];
@@ -182,34 +182,31 @@ function Teaching() {
     ));
   };
 
-  const renderWorkshops = (items) => {
-    return (
-      <div className="workshop-list">
-        {items.map((teach, i) => {
-          const link = teach.link_syllabus || teach.link_presentation;
-          return (
-            <div key={i} className="workshop-item">
-              <p className="title">
-                {link ? (
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="title-link"
-                  >
-                    {teach.title}
-                  </a>
-                ) : (
-                  teach.title
-                )}{" "}
-                ({teach.university}) — {teach.semesters}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
+  const renderWorkshops = (items) => (
+    <ol className="workshop-list">
+      {items.map((teach, i) => (
+        <li key={i} className="workshop-item">
+          <p className="title">{teach.title}</p>
+          <p className="venue">
+            {teach.university} {teach.semesters}
+          </p>
+          <div className="links">
+            {teach.link_presentation && (
+              <a
+                className="link_presentation"
+                href={teach.link_presentation}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Presentation className="icon" />
+                Presentation
+              </a>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
 
   return (
     <section className="teaching">
@@ -219,7 +216,7 @@ function Teaching() {
       <h2>Teaching Assistant</h2>
       {renderGrouped(teachings.filter((t) => t.type === "ta"))}
 
-      <h2>Pedagogical Workshops</h2>
+      <h2>Pedagogical Talks</h2>
       {renderWorkshops(teachings.filter((t) => t.type === "workshop"))}
     </section>
   );

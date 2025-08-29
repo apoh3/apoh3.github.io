@@ -92,6 +92,8 @@ main {
   font-weight: bold;
   margin-bottom: 1.5rem;
   margin-top: 2rem;
+  background-color: var(--accent-primary);
+  padding-left: 0.5rem;
 }
 
 .publications h2:first-of-type,
@@ -110,8 +112,17 @@ main {
   text-decoration: underline;
 }
 
+.publications .icon,
+.workshop-item .icon {
+  margin-right: 0.2rem;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
 /* PAGES - PUBLICATIONS *******************************/
-.publications ol {
+.publications ol,
+.teaching ol {
   list-style: decimal;
   margin: 0;
   padding-left: 1.5rem;
@@ -128,7 +139,8 @@ main {
   border-bottom: none;
 }
 
-.publications .title {
+.publications .title,
+.worksop-item .title {
   font-weight: 600;
   margin: 0.2rem 0;
 }
@@ -151,20 +163,13 @@ main {
   margin-left: 0.5rem;
 }
 
-.publications .icon {
-  margin-right: 0.2rem;
-  width: 16px;
-  height: 16px;
-  vertical-align: middle;
-}
-
 /* PAGES - TEACHING ***********************************/
-.teaching-list {
+.teaching-list, .service-list {
   margin: 0;
   padding: 0;
 }
 
-.teaching-item {
+.teaching-item, .service-item {
   padding-left: 2rem;
   text-indent: -0.5rem;
 }
@@ -174,7 +179,7 @@ main {
   text-indent: 0;
 }
 
-.teaching-item p {
+.teaching-item p, .service-item p {
   margin: 0.25rem 0;
   font-size: 0.95rem;
 }
@@ -187,11 +192,56 @@ main {
   margin-top: 1rem;
 }
 
-.teaching-university h4 {
+.teaching-university h4, .service-year h4 {
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
-.teaching-university, .workshop-item {
+.teaching-university, .workshop-item, .service-year {
   padding-left: 0.5rem;
+}
+
+.workshop-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0.5rem;
+}
+
+.workshop-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--readable-grey-faint);
+}
+
+.workshop-item:last-child {
+  border-bottom: none;
+}
+
+.workshop-item .title {
+  font-weight: 600;
+  margin: 0.2rem 0;
+}
+
+.workshop-item .venue {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.workshop-item .links a {
+  font-size: 0.9rem;
+}
+
+/* PAGES - SERVICE ************************************/
+
+
+/* FOOTER *********************************************/
+.footer {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 0.8rem;
+  color: var(--readable-grey);
+  border-top: 1px solid var(--readable-grey-faint);
+  background: var(--background);
 }
