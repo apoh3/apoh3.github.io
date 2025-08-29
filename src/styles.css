@@ -63,9 +63,8 @@ main {
   color: var(--readable-grey);
 }
 
-.publications,
-.teaching {
-  max-width: 50%;
+.publications, .teaching, .curriculum-vitae {
+  max-width: 60%;
   margin: 2rem auto;
   padding: 1rem;
 }
@@ -240,10 +239,25 @@ main {
 .footer {
   margin-top: 1rem;
   padding: 0.5rem;
+  padding-top: 1rem;
   text-align: center;
   font-size: 0.9rem;
   line-height: 0.8rem;
   color: var(--readable-grey);
   border-top: 1px solid var(--readable-grey-faint);
   background: var(--background);
+}
+
+.footer .icon {
+  margin-right: 0.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: middle;
+  fill: var(--link);
+}
+
+.footer .ai-google-scholar {
+  font-size: 1.2rem;
+  margin-right: 0;
+  color: var(--link);
 }
