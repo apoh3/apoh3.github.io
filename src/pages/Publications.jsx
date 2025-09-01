@@ -14,7 +14,7 @@ function Publications() {
       title: "Example Explorers and Persistent Finishers: Exploring Student Practice Behaviors in a Python Practice System",
       authors: "Allison Poh, Anurata Prabha Hridi, Jordan Barria-Pineda, Peter Brusilovsky and Bita Akram",
       venue: "CSEDM Workshop @ EDM 2025",
-      link_paper: "https://sites.google.com/view/csedm-workshop-edm25/schedule-proceedings?authuser=0",
+      link_paper: "https://ceur-ws.org/Vol-4019/paper_05.pdf",
       link_talk: null,
       type: "publications"
     },

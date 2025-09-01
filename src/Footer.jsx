@@ -30,7 +30,7 @@ function Footer() {
           <i className="ai ai-google-scholar icon"></i>
         </a>
       </div>
-      <p>Last updated: August 2025</p>
+      <p>Last updated: Sept. 2025</p>
       <p>© {new Date().getFullYear()} Allison Poh</p>
     </footer>
   );
