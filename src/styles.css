@@ -13,7 +13,7 @@
   --readable-grey-faint: rgba(21, 21, 21, 0.2);
 
   --accent-primary: rgb(252, 196, 25);
-  --accent-secondary: rgb(252, 83, 25);
+  --accent-secondary: #fc5319;
   --link: rgb(25, 81, 252);
 }
 
@@ -35,7 +35,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: white;
+  background: var(--background-white);
   color: var(--readable-grey);
   position: sticky;
   top: 0;
@@ -45,6 +45,14 @@ nav {
 nav .brand {
   font-size: 1.5rem;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.brand-logo {
+  width: 26px;
+  height: 26px;
 }
 
 nav .links a {
@@ -63,7 +71,10 @@ main {
   color: var(--readable-grey);
 }
 
-.publications, .teaching, .curriculum-vitae {
+.publications,
+.teaching,
+.curriculum-vitae,
+.about {
   max-width: 60%;
   margin: 2rem auto;
   padding: 1rem;
@@ -72,7 +83,8 @@ main {
 @media (max-width: 1200px) {
 
   .publications,
-  .teaching {
+  .teaching,
+  .about {
     max-width: 70%;
   }
 }
@@ -80,7 +92,8 @@ main {
 @media (max-width: 768px) {
 
   .publications,
-  .teaching {
+  .teaching,
+  .about {
     max-width: 90%;
   }
 }
@@ -96,28 +109,208 @@ main {
 }
 
 .publications h2:first-of-type,
-.teaching h2:first-of-type {
+.teaching h2:first-of-type,
+.about h2:first-of-type {
   margin-top: 1rem;
 }
 
 .publications a,
-.teaching a {
+.teaching a,
+.about a {
   color: var(--link);
   text-decoration: none;
 }
 
 .publications a:hover,
-.teaching a:hover {
+.teaching a:hover,
+.about a:hover {
   text-decoration: underline;
 }
 
 .publications .icon,
-.workshop-item .icon {
+.workshop-item .icon,
+.about .icon {
   margin-right: 0.2rem;
   width: 16px;
   height: 16px;
   vertical-align: middle;
 }
+
+/* PAGES - ABOUT **************************************/
+.about {
+  padding: 1rem;
+  color: var(--readable-grey);
+}
+
+.about-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  line-height: 1.6rem;
+}
+
+.about-photo {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--readable-grey-faint);
+  flex-shrink: 0;
+  margin-top: 1rem;
+}
+
+.about-text h1 {
+  margin: 0;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+.about-text h2 {
+  margin: 0.3rem 0 1rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--readable-grey);
+}
+
+.about-interests h2,
+.about-news h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  background-color: var(--accent-primary);
+  padding-left: 0.5rem;
+}
+
+.about-interests ul,
+.about-news ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.about-news {
+  margin-top: 3rem;
+}
+
+.research-graphic {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.about-news ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 0.8rem;
+}
+
+.about-news li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.about-news strong {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .about-hero {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-hero h1 {
+    margin-top: 0;
+  }
+
+  .about-hero .blurb {
+    text-align: justify;
+  }
+
+  .about-buttons {
+    justify-content: center;
+  }
+
+  .about-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-buttons .btn {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-text h2 {
+    font-size: 1rem;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  text-decoration: none;
+  color: var(--background-white);
+  background: var(--link);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.about-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.about-buttons .btn {
+  text-decoration: none;
+  color: var(--background-white);
+  background: var(--link);
+}
+
+.about-buttons .btn:hover {
+  text-decoration: none;
+}
+
+.about-buttons .btn:active {
+  text-decoration: none;
+  background-color: rgb(14, 57, 186);
+}
+
+.about-news .btn {
+  display: block;
+  margin: 0.2rem auto;
+  padding: 0.3rem 0.7rem;
+  background-color: rgb(50, 50, 50);
+}
+
+.about-news .btn:active {
+  background-color: var(--readable-grey);
+}
+
 
 /* PAGES - PUBLICATIONS *******************************/
 .publications ol,
@@ -163,12 +356,14 @@ main {
 }
 
 /* PAGES - TEACHING ***********************************/
-.teaching-list, .service-list {
+.teaching-list,
+.service-list {
   margin: 0;
   padding: 0;
 }
 
-.teaching-item, .service-item {
+.teaching-item,
+.service-item {
   padding-left: 2rem;
   text-indent: -0.5rem;
 }
@@ -178,7 +373,8 @@ main {
   text-indent: 0;
 }
 
-.teaching-item p, .service-item p {
+.teaching-item p,
+.service-item p {
   margin: 0.25rem 0;
   font-size: 0.95rem;
 }
@@ -191,12 +387,15 @@ main {
   margin-top: 1rem;
 }
 
-.teaching-university h4, .service-year h4 {
+.teaching-university h4,
+.service-year h4 {
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
-.teaching-university, .workshop-item, .service-year {
+.teaching-university,
+.workshop-item,
+.service-year {
   padding-left: 0.5rem;
 }
 
