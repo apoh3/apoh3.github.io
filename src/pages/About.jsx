@@ -2,6 +2,7 @@ import { useState } from "react";
 import profilePic from "../assets/profile.jpg";
 import researchInterests from "../assets/research_highlight.svg";
 import researchInterestsSmall from "../assets/research_highlight_small.svg";
+import pdf from "../assets/cv_apoh_aug2025.pdf";
 
 function About() {
   const [showAllNews, setShowAllNews] = useState(false);
@@ -116,12 +117,12 @@ function About() {
           </p>
           <div className="about-buttons">
             <a
-              href="https://scholar.google.com/citations?hl=en&user=r4sloMMAAAAJ"
+              href={pdf}
               target="_blank"
               rel="noopener noreferrer"
               className="btn"
             >
-              Google Scholar
+              Download CV
             </a>
           </div>
         </div>
