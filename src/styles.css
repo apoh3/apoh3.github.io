@@ -20,6 +20,8 @@
 body {
   margin: 0;
   min-height: 100vh;
+  color: var(--readable-grey);
+  background: var(--background-white);
 }
 
 @media (prefers-color-scheme: light) {

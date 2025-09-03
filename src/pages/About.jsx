@@ -11,7 +11,15 @@ function About() {
       date: "May 2025",
       text: (
         <>
-          Our work <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-99264-3_7" target="_blank" rel="noopener noreferrer" className="link">"Enhancing Teacher Support in Learning Technologies: A Human-Centered Approach with WearableLearning"</a></em> was accepted to the Late-Breaking Results track at AIED 2025, and <em><a href="https://ceur-ws.org/Vol-4019/paper_05.pdf" target="_blank" rel="noopener noreferrer" className="link">"Example Explorers and Persistent Finishers: Exploring Student Practice Behaviors in a Python Practice System"</a></em> was accepted to the CSEDM Workshop @ EDM'25.
+          Our work <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-99264-3_7" target="_blank" rel="noopener noreferrer" className="link">"Enhancing Teacher Support in Learning Technologies: A Human-Centered Approach with WearableLearning"</a></em> was accepted to the Late-Breaking Results track at AIED 2025.
+        </>
+      ),
+    },
+    {
+      date: "May 2025",
+      text: (
+        <>
+          Our work <em><a href="https://ceur-ws.org/Vol-4019/paper_05.pdf" target="_blank" rel="noopener noreferrer" className="link">"Example Explorers and Persistent Finishers: Exploring Student Practice Behaviors in a Python Practice System"</a></em> was accepted to the CSEDM Workshop @ EDM'25.
         </>
       ),
     },
