@@ -116,12 +116,12 @@ function About() {
           </p>
           <div className="about-buttons">
             <a
-              href="/apoh3.github.io/docs/cv_apoh_aug2025.pdf"
+              href="https://scholar.google.com/citations?hl=en&user=r4sloMMAAAAJ"
               target="_blank"
               rel="noopener noreferrer"
               className="btn"
             >
-              Download CV
+              Google Scholar
             </a>
           </div>
         </div>
