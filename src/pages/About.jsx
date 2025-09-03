@@ -1,7 +1,7 @@
 import { useState } from "react";
 import profilePic from "../assets/profile.jpg";
-import researchInterests from "../assets/research_highlight.svg";
-import researchInterestsSmall from "../assets/research_highlight_small.svg";
+import researchInterests from "../assets/research.svg";
+import researchInterestsSmall from "../assets/research_small.svg";
 import pdf from "../assets/cv_apoh_aug2025.pdf";
 
 function About() {
