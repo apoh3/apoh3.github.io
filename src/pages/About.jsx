@@ -69,7 +69,6 @@ function About() {
 
   return (
     <section className="about">
-      {/* Hero section */}
       <div className="about-hero">
         <img src={profilePic} alt="Allison Poh" className="about-photo" />
         <div className="about-text">
@@ -123,7 +122,7 @@ function About() {
       <div className="about-interests">
         <h2>Research Interests</h2>
         <picture>
-          <source media="(max-width: 768px)" srcSet={researchInterestsSmall} />
+          <source media="(max-width: 1200px)" srcSet={researchInterestsSmall} />
           <img
             src={researchInterests}
             alt="Research Interests Graphic"
