@@ -1,5 +1,6 @@
+import pdf from "../assets/cv_apoh_aug2025.pdf";
+
 function CV() {
-  const pdfUrl = `${import.meta.env.BASE_URL}docs/cv_apoh_aug2025.pdf`; // adjust path if needed
 
   return (
     <section className="teaching">
@@ -9,7 +10,7 @@ function CV() {
         <a href="mailto:apoh@umass.edu">apoh@umass.edu</a>
       </p>
       <iframe
-        src={pdfUrl}
+        src={pdf}
         width="100%"
         height="1000px"
         style={{ border: 'none' }}
