@@ -4,6 +4,7 @@ import Publications from "./pages/Publications";
 import Teaching from "./pages/Teaching";
 import Service from "./pages/Service";
 import CV from "./pages/CV";
+import Personal from "./pages/Personal";
 
 function Page() {
   return (
@@ -15,6 +16,7 @@ function Page() {
         <Route path="/teaching" element={<Teaching />} />
         <Route path="/service" element={<Service />} />
         <Route path="/cv" element={<CV />} />
+        <Route path="/personal" element={<Personal />} />
       </Routes>
     </main>
   );

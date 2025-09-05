@@ -5,7 +5,6 @@ import favicon from "./assets/favicon.png";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // ✅ Close menu when resizing above mobile width
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
@@ -31,6 +30,7 @@ function Navbar() {
           <Link to="/teaching">Teaching</Link>
           <Link to="/service">Service</Link>
           <Link to="/cv">CV</Link>
+          <Link to="/personal">Personal</Link>
         </div>
 
         {/* Hamburger */}
@@ -52,6 +52,7 @@ function Navbar() {
         <Link to="/teaching" onClick={() => setMenuOpen(false)}>Teaching</Link>
         <Link to="/service" onClick={() => setMenuOpen(false)}>Service</Link>
         <Link to="/cv" onClick={() => setMenuOpen(false)}>CV</Link>
+        <Link to="/personal" onClick={() => setMenuOpen(false)}>Personal</Link>
       </div>
     </>
   );
