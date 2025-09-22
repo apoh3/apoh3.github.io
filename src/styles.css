@@ -500,7 +500,8 @@ main {
 
 .teaching-university,
 .workshop-item,
-.service-year {
+.service-year,
+.personal-blurb {
   padding-left: 0.5rem;
 }
 
