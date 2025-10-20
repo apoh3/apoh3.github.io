@@ -35,6 +35,7 @@ function Personal() {
     { name: "Maine Coast Marathon in Wells, ME (2024)", coordinates: [-70.5805, 43.3222], state: "ME" },
     { name: "Buffalo Marathon in Buffalo, NY (2024)", coordinates: [-78.8789, 42.8869], state: "NY" },
     { name: "Mad Marathon in Mad River Valley, VT (2024)", coordinates: [-72.7893, 44.2203], state: "VT" },
+    { name: "Hartford Marathon in Hartford, CT (2025)", coordinates: [-72.6734, 41.7658], state: "CT" }
   ];
 
   const ultras = [

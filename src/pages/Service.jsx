@@ -42,6 +42,12 @@ function Service() {
     {
       title: "Responsible Technology Coalition",
       role: "Co-Chair",
+      year: "2025 - 2026",
+      type: "university"
+    },
+    {
+      title: "Responsible Technology Coalition",
+      role: "Co-Chair",
       year: "2024 - 2025",
       type: "university"
     },
