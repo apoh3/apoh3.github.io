@@ -10,7 +10,8 @@ import Footer from "./Footer.jsx"
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* <BrowserRouter> */}
+    <BrowserRouter basename="/apoh3.github.io">
       <ScrollToTop />
       <Navbar />
       <Page />
@@ -18,5 +19,3 @@ createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </StrictMode>
 );
-
-//<BrowserRouter basename="/apoh3.github.io">

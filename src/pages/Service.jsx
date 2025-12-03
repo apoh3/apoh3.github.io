@@ -2,6 +2,12 @@ function Service() {
   const services = [
     // --- Professional Service ---
     {
+      title: "ISLS",
+      role: "Reviewer",
+      year: 2026,
+      type: "professional"
+    },
+    {
       title: "SIGCSE TS",
       role: "Reviewer",
       year: 2026,
@@ -45,6 +51,18 @@ function Service() {
       year: "2025 - 2026",
       type: "university"
     },
+    {
+      title: "HackUMass XIII",
+      role: "Judge",
+      year: "2025 - 2026",
+      type: "university"
+    },
+    {
+      title: "PhD Applicant Support Program",
+      role: "Volunteer",
+      year: "2025 - 2026",
+      type: "university"
+    },  
     {
       title: "Responsible Technology Coalition",
       role: "Co-Chair",

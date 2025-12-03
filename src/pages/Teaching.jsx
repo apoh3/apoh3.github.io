@@ -3,6 +3,16 @@ import { Presentation } from "lucide-react";
 function Teaching() {
   const teachings = [
     // --- PRIMARY ---
+    // --- Campus ---
+    {
+      title: "Vibe Coding 101",
+      university: "Campus",
+      link_syllabus: "https://campus.edu/vibe-coding",
+      link_presentation: null,
+      semesters: "Winter 2026",
+      type: "primary"
+    },
+    
     // --- UMass Amherst ---
     {
       title: "Intro to Programming",
