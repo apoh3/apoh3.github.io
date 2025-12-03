@@ -28,7 +28,7 @@ function About() {
       date: "Apr. 2025",
       text: (
         <>
-          Our work <em><a href="https://osf.io/whz2p" target="_blank" rel="noopener noreferrer" className="link">"Educators' Evolving Attitudes Toward AI: Analysis of Discussions from r/Teachers and r/Professors"</a></em> was accepted to <strong>EDULEARN25</strong>.
+          Our work <em><a href="https://osf.io/whz2p" target="_blank" rel="noopener noreferrer" className="link">"Educators' Evolving Attitudes Toward AI: Analysis of Discussions from r/Teachers and r/Professors"</a></em> was accepted to EDULEARN25.
         </>
       ),
     },
