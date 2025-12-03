@@ -91,8 +91,8 @@ function Personal() {
       <h2>Personal</h2>
       <p className="personal-blurb">
         🏃‍♀️ Running is my favorite way to explore new places! I've completed{" "}
-        <span style={{ color: "#0078d7" }}>{totalMarathons} marathons</span>,{" "}
-        <span style={{ color: "#af0d1a" }}>{totalUltras} ultras</span>, and countless half marathons. My goal is to run a marathon in every state. Below is a map of my marathon and ultra adventures so far:
+        <span style={{ color: "#af0d1a" }}>{totalMarathons} marathons</span>,{" "}
+        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. My goal is to run a marathon in every state. Below is a map of my marathon and ultra adventures so far:
       </p>
 
       <div className="w-full max-w-3xl">
@@ -144,7 +144,7 @@ function Personal() {
             <Marker key={name} coordinates={coordinates}>
               <circle
                 r={4}
-                fill={type === "marathon" ? "#0078d7" : "#af0d1a"}
+                fill={type === "marathon" ? "#af0d1a" : "#0078d7"}
                 stroke="#fff"
                 strokeWidth={1}
                 onMouseEnter={(e) => {
