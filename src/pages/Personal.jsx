@@ -94,7 +94,7 @@ function Personal() {
         <br></br>
         So far, I've completed{" "}
         <span style={{ color: "#af0d1a" }}>{totalMarathons} marathons</span>,{" "}
-        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons (if on desktop, hover below to see which ones).<br></br>
+        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. (If on desktop, hover below to see which ones!)<br></br>
         <br></br>
         <em>Reach out if you have any race suggestions!</em>
       </p>
