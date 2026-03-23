@@ -90,9 +90,13 @@ function Personal() {
     <section className="teaching">
       <h2>Personal</h2>
       <p className="personal-blurb">
-        <em>How do I stay sane in academia?</em> I run ... a lot 🏃‍♀️<br></br>So far, I've completed{" "}
+        <em>How do I stay sane in academia?</em> I run ... a lot 🏃‍♀️<br></br>
+        <br></br>
+        So far, I've completed{" "}
         <span style={{ color: "#af0d1a" }}>{totalMarathons} marathons</span>,{" "}
-        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons (if on a desktop, hover below to find out which ones!). Reach out if you have any race suggestions!
+        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons (if on desktop, hover below to see which ones).<br></br>
+        <br></br>
+        <em>Reach out if you have any race suggestions!</em>
       </p>
 
       <div className="w-full max-w-3xl">
