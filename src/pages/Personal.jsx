@@ -90,9 +90,9 @@ function Personal() {
     <section className="teaching">
       <h2>Personal</h2>
       <p className="personal-blurb">
-        🏃‍♀️ Running is my favorite way to explore new places! I've completed{" "}
+        <em>How do I stay sane in academia?</em> I run ... a lot 🏃‍♀️<br></br>So far, I've completed{" "}
         <span style={{ color: "#af0d1a" }}>{totalMarathons} marathons</span>,{" "}
-        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. My goal is to run a marathon in every state. Below is a map of my marathon and ultra adventures so far:
+        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons (if on a desktop, hover below to find out which ones!). Reach out if you have any race suggestions!
       </p>
 
       <div className="w-full max-w-3xl">
