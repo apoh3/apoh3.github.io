@@ -2,17 +2,7 @@ import { Presentation } from "lucide-react";
 
 function Teaching() {
   const teachings = [
-    // --- PRIMARY ---
-    // --- Campus ---
-    {
-      title: "Vibe Coding 101",
-      university: "Campus",
-      link_syllabus: "https://campus.edu/vibe-coding",
-      link_presentation: null,
-      semesters: "Winter 2026",
-      type: "primary"
-    },
-    
+    // --- PRIMARY ---    
     // --- UMass Amherst ---
     {
       title: "Intro to Programming",
@@ -78,6 +68,16 @@ function Teaching() {
       link_syllabus: "https://drive.google.com/file/d/1vqBFNhVNdqJjdLHC83SNXtzuUq0naufZ/view?usp=sharing",
       link_presentation: null,
       semesters: "Fall 2022, Fall 2023",
+      type: "primary"
+    },
+
+    // --- Campus ---
+    {
+      title: "Vibe Coding 101 @ Campus",
+      university: "Other",
+      link_syllabus: "https://campus.edu/vibe-coding",
+      link_presentation: null,
+      semesters: "Winter 2026",
       type: "primary"
     },
 

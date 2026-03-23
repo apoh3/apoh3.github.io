@@ -9,6 +9,14 @@ function About() {
 
   const newsItems = [
     {
+      date: "Mar. 2026",
+      text: (
+        <>
+          Our work <em>"What Do Future Teachers Look For in Movement-Based Learning? Implications For Multimodal Systems"</em> was accepted to AIED 2026.
+        </>
+      ),
+    },
+    {
       date: "May 2025",
       text: (
         <>

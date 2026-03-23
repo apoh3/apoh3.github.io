@@ -2,6 +2,12 @@ function Service() {
   const services = [
     // --- Professional Service ---
     {
+      title: "AIED",
+      role: "Reviewer",
+      year: 2026,
+      type: "professional"
+    },
+    {
       title: "ISLS",
       role: "Reviewer",
       year: 2026,

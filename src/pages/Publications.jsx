@@ -3,6 +3,14 @@ import { FileText, SquarePlay } from "lucide-react";
 function Publications() {
   const publications = [
     {
+      title: "What Do Future Teachers Look For in Movement-Based Learning? Implications For Multimodal Systems",
+      authors: "Allison Poh and Ivon Arroyo",
+      venue: "AIED 2026 (accepted)",
+      link_paper: null,
+      link_talk: null,
+      type: "publications"
+    },
+    {
       title: "Enhancing Teacher Support in Learning Technologies: A Human-Centered Approach with WearableLearning",
       authors: "Allison Poh, Yuqian Shi, Francisco Castro and Ivon Arroyo",
       venue: "AIED 2025",
