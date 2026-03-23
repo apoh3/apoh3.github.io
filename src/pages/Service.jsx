@@ -52,12 +52,6 @@ function Service() {
 
     // --- University Service ---
     {
-      title: "Responsible Technology Coalition",
-      role: "Co-Chair",
-      year: "2025 - 2026",
-      type: "university"
-    },
-    {
       title: "HackUMass XIII",
       role: "Judge",
       year: "2025 - 2026",
