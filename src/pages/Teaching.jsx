@@ -84,6 +84,14 @@ function Teaching() {
     // --- TA ---
     // --- UMass Amherst ---
     {
+      title: "A Mathematical Foundation for Informatics",
+      university: "UMass Amherst",
+      link_syllabus: null,
+      link_presentation: null,
+      semesters: "Spring 2026",
+      type: "ta",
+    },
+    {
       title: "Object-Oriented Programming",
       university: "UMass Amherst",
       link_syllabus: null,
