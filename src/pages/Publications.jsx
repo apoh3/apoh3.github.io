@@ -69,7 +69,7 @@ function Publications() {
   ];
 
   const renderList = (items) => (
-    <ol className="pub-list">
+    <ol className="pub-list" reversed>
       {items.map((pub, i) => (
         <li key={i}>
           <p className="title">{pub.title}</p>
