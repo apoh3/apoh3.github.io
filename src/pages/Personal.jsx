@@ -5,6 +5,7 @@ import {
   Marker,
 } from "react-simple-maps";
 import { useState, useEffect } from "react";
+import ironmanLogo from "../assets/ironman_logo.png";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
@@ -99,7 +100,7 @@ function Personal() {
         <em>How do I stay sane in academia?</em> I run ... a lot 🏃‍♀️<br></br>
         <br></br>
         So far, I've completed{" "}
-        <span style={{ color: "#2c6e49" }}>{totalMarathons} marathons</span>,{" "}
+        <span style={{ color: "#0eb154" }}>{totalMarathons} marathons</span>,{" "}
         <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. (If on desktop, hover below to see which ones!)<br></br>
         <br></br>
         <em>Reach out if you have any race suggestions!</em>
@@ -151,71 +152,66 @@ function Personal() {
           </Geographies>
 
           {events.map(({ name, coordinates, state, type }) => {
-          const markerProps = {
-            onMouseEnter: (e) => {
-              if (isMobile) return;
-              const fullState = Object.keys(STATE_ABBR).find(
-                key => STATE_ABBR[key] === state
-              );
+            const markerProps = {
+              onMouseEnter: (e) => {
+                if (isMobile) return;
 
-              setTooltip({
-                show: true,
-                x: e.clientX,
-                y: e.clientY,
-                state: fullState,
-                items: eventsByState[state] || [],
-              });
-            },
-            onMouseMove: (e) => {
-              if (isMobile) return;
-              setTooltip((t) => ({ ...t, x: e.clientX, y: e.clientY }));
-            },
-            onMouseLeave: () => {
-              if (isMobile) return;
-              setTooltip({
-                show: false,
-                x: 0,
-                y: 0,
-                state: "",
-                items: [],
-              });
-            },
-          };
+                const fullState = Object.keys(STATE_ABBR).find(
+                  key => STATE_ABBR[key] === state
+                );
 
-          return (
-            <Marker key={name} coordinates={coordinates}>
-              {type === "ironman" ? (
-                // Ironman "M-dot" style icon
-                <g
-                  transform="scale(0.6)"
-                  style={{ cursor: "pointer" }}
-                  {...markerProps}
-                >
-                  {/* red dot */}
-                  <circle cx="0" cy="-10" r="5" fill="#e10600" stroke="#fff" strokeWidth="1" />
+                setTooltip({
+                  show: true,
+                  x: e.clientX,
+                  y: e.clientY,
+                  state: fullState,
+                  items: eventsByState[state] || [],
+                });
+              },
 
-                  {/* red M */}
-                  <path
-                    d="M -12 10 L -8 -10 L 0 4 L 8 -10 L 12 10"
-                    fill="none"
-                    stroke="#e10600"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+              onMouseMove: (e) => {
+                if (isMobile) return;
+                setTooltip((t) => ({ ...t, x: e.clientX, y: e.clientY }));
+              },
+
+              onMouseLeave: () => {
+                if (isMobile) return;
+
+                setTooltip({
+                  show: false,
+                  x: 0,
+                  y: 0,
+                  state: "",
+                  items: [],
+                });
+              },
+            };
+
+            return (
+              <Marker key={name} coordinates={coordinates}>
+                {type === "ironman" ? (
+                  <image
+                    href={ironmanLogo}
+                    width={18}
+                    height={18}
+                    x={-9}
+                    y={-9}
+                    style={{ cursor: "pointer" }}
+                    {...markerProps}
                   />
-                </g>
-              ) : (
-                <circle
-                  r={4}
-                  fill={type === "marathon" ? "#2c6e49" : "#0078d7"}
-                  stroke="#fff"
-                  strokeWidth={1}
-                  {...markerProps}
-                />
-              )}
-            </Marker>
-          );
-        })}
+                ) : (
+                  <circle
+                    r={4}
+                    fill={type === "marathon" ? "#0eb154" : "#0078d7"}
+                    stroke="#fff"
+                    strokeWidth={1}
+                    style={{ cursor: "pointer" }}
+                    {...markerProps}
+                  />
+                )}
+              </Marker>
+            );
+          })}
         </ComposableMap>
       </div>
 
@@ -238,7 +234,24 @@ function Personal() {
             {tooltip.items.map((it, i) => {
               const match = it.text.match(/^(.*)\s*\(([^)]*)\)\s*$/);
               if (!match) {
-                const icon = it.type === "marathon" ? "🏅" : "🥇";
+                const icon =
+                  it.type === "marathon" ? (
+                    "🏅"
+                  ) : it.type === "ultra" ? (
+                    "🥇"
+                  ) : (
+                    <img
+                      src={ironmanLogo}
+                      alt="Ironman"
+                      style={{
+                        width: "14px",
+                        height: "14px",
+                        display: "inline-block",
+                        verticalAlign: "middle",
+                        marginRight: "4px",
+                      }}
+                    />
+                  );
                 return <li key={i}>{icon} {it.text}</li>;
               }
 
@@ -246,12 +259,35 @@ function Personal() {
               const yearsArr = match[2]
                 .split(",")
                 .map(y => `’${y.trim().slice(-2)}`);
-              const icon = it.type === "marathon" ? "🏅" : "🥇";
+              const icon =
+                it.type === "marathon" ? (
+                  "🏅"
+                ) : it.type === "ultra" ? (
+                  "🥇"
+                ) : (
+                  <img
+                    src={ironmanLogo}
+                    alt="Ironman"
+                    style={{
+                      width: "14px",
+                      height: "14px",
+                      display: "inline-block",
+                      verticalAlign: "middle",
+                      marginRight: "4px",
+                    }}
+                  />
+                );
               const icons = icon.repeat(Math.max(1, yearsArr.length));
 
               return (
                 <li key={i}>
-                  {icons} {race} ({yearsArr.join(", ")})
+                  {Array.from({ length: Math.max(1, yearsArr.length) }).map((_, idx) => (
+                    <span key={idx}>
+                      {icon}
+                    </span>
+                  ))}
+                  {" "}
+                  {race} ({yearsArr.join(", ")})
                 </li>
               );
             })}
