@@ -101,7 +101,7 @@ function Personal() {
         <br></br>
         So far, I've completed{" "}
         <span style={{ color: "#0eb154" }}>{totalMarathons} marathons</span>,{" "}
-        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. (If on desktop, hover below to see which ones!)<br></br>
+        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. More recently, I expanded into triathlons 🏊‍♀️🚴‍♀️🏃‍♀️ completed my first <span style={{ color: "#f00c0c" }}>IRONMAN</span>. If on desktop, hover below to see which races I've completed.<br></br>
         <br></br>
         <em>Reach out if you have any race suggestions!</em>
       </p>
@@ -120,7 +120,7 @@ function Personal() {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    fill={isRunState ? "#ffeca0" : "#f5f5f5"}
+                    fill={isRunState ? "#ffe990" : "#e7e7e7"}
                     stroke="#111"
                     onMouseEnter={(e) => {
                       if (isMobile || items.length === 0) return;
@@ -249,7 +249,8 @@ function Personal() {
                         width: "16px",
                         height: "16px",
                         display: "inline-block",
-                        verticalAlign: "middle"
+                        verticalAlign: "middle",
+                        paddingLeft: "2px"
                       }}
                     />
                   );
