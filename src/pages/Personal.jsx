@@ -43,9 +43,15 @@ function Personal() {
     { name: "Anchor Down Ultra (24 Hrs) in Bristol, RI (2025)", coordinates: [-71.2662, 41.6771], state: "RI" },
   ];
 
+  const ironmans = [
+    { name: "IRONMAN 140.6 Texas in The Woodlands, TX (2026)", coordinates: [-95.4611, 30.1658], state: "TX" },
+    { name: "IRONMAN 70.3 Western Massachusetts in Springfield, MA (2025)", coordinates: [-72.5893, 42.1013], state: "MA" },
+  ];
+
   const events = [
     ...marathons.map(m => ({ ...m, type: "marathon" })),
     ...ultras.map(u => ({ ...u, type: "ultra" })),
+    ...ironmans.map(u => ({ ...u, type: "ironman" })),
   ];
 
   const eventsByState = events.reduce((acc, ev) => {
@@ -93,7 +99,7 @@ function Personal() {
         <em>How do I stay sane in academia?</em> I run ... a lot 🏃‍♀️<br></br>
         <br></br>
         So far, I've completed{" "}
-        <span style={{ color: "#af0d1a" }}>{totalMarathons} marathons</span>,{" "}
+        <span style={{ color: "#2c6e49" }}>{totalMarathons} marathons</span>,{" "}
         <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. (If on desktop, hover below to see which ones!)<br></br>
         <br></br>
         <em>Reach out if you have any race suggestions!</em>
@@ -113,7 +119,7 @@ function Personal() {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    fill={isRunState ? "#facc15" : "#eaeaea"}
+                    fill={isRunState ? "#fde06d" : "#eaeaea"}
                     stroke="#111"
                     onMouseEnter={(e) => {
                       if (isMobile || items.length === 0) return;
@@ -144,35 +150,72 @@ function Personal() {
             }
           </Geographies>
 
-          {events.map(({ name, coordinates, state, type }) => (
+          {events.map(({ name, coordinates, state, type }) => {
+          const markerProps = {
+            onMouseEnter: (e) => {
+              if (isMobile) return;
+              const fullState = Object.keys(STATE_ABBR).find(
+                key => STATE_ABBR[key] === state
+              );
+
+              setTooltip({
+                show: true,
+                x: e.clientX,
+                y: e.clientY,
+                state: fullState,
+                items: eventsByState[state] || [],
+              });
+            },
+            onMouseMove: (e) => {
+              if (isMobile) return;
+              setTooltip((t) => ({ ...t, x: e.clientX, y: e.clientY }));
+            },
+            onMouseLeave: () => {
+              if (isMobile) return;
+              setTooltip({
+                show: false,
+                x: 0,
+                y: 0,
+                state: "",
+                items: [],
+              });
+            },
+          };
+
+          return (
             <Marker key={name} coordinates={coordinates}>
-              <circle
-                r={4}
-                fill={type === "marathon" ? "#af0d1a" : "#0078d7"}
-                stroke="#fff"
-                strokeWidth={1}
-                onMouseEnter={(e) => {
-                  if (isMobile) return;
-                  const fullState = Object.keys(STATE_ABBR).find(key => STATE_ABBR[key] === state);
-                  setTooltip({
-                    show: true,
-                    x: e.clientX,
-                    y: e.clientY,
-                    state: fullState,
-                    items: eventsByState[state] || [],
-                  });
-                }}
-                onMouseMove={(e) => {
-                  if (isMobile) return;
-                  setTooltip((t) => ({ ...t, x: e.clientX, y: e.clientY }));
-                }}
-                onMouseLeave={() => {
-                  if (isMobile) return;
-                  setTooltip({ show: false, x: 0, y: 0, state: "", items: [] });
-                }}
-              />
+              {type === "ironman" ? (
+                // Ironman "M-dot" style icon
+                <g
+                  transform="scale(0.6)"
+                  style={{ cursor: "pointer" }}
+                  {...markerProps}
+                >
+                  {/* red dot */}
+                  <circle cx="0" cy="-10" r="5" fill="#e10600" stroke="#fff" strokeWidth="1" />
+
+                  {/* red M */}
+                  <path
+                    d="M -12 10 L -8 -10 L 0 4 L 8 -10 L 12 10"
+                    fill="none"
+                    stroke="#e10600"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </g>
+              ) : (
+                <circle
+                  r={4}
+                  fill={type === "marathon" ? "#2c6e49" : "#0078d7"}
+                  stroke="#fff"
+                  strokeWidth={1}
+                  {...markerProps}
+                />
+              )}
             </Marker>
-          ))}
+          );
+        })}
         </ComposableMap>
       </div>
 
