@@ -46,7 +46,7 @@ function Personal() {
 
   const ironmans = [
     { name: "IRONMAN 140.6 Texas in The Woodlands, TX (2026)", coordinates: [-95.4611, 30.1658], state: "TX" },
-    // { name: "IRONMAN 70.3 Western Massachusetts in Springfield, MA (2025)", coordinates: [-72.5893, 42.1013], state: "MA" },
+    { name: "IRONMAN 70.3 Western Massachusetts in Springfield, MA (2025)", coordinates: [-72.5893, 42.1013], state: "MA" },
   ];
 
   const events = [
@@ -101,7 +101,7 @@ function Personal() {
         <br></br>
         So far, I've completed{" "}
         <span style={{ color: "#0eb154" }}>{totalMarathons} marathons</span>,{" "}
-        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. More recently, I expanded into triathlons 🏊‍♀️🚴‍♀️🏃‍♀️ and completed my first <span style={{ color: "#f00c0c" }}>IRONMAN</span>. If on desktop, hover below to see which races I've completed!<br></br>
+        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. More recently, I expanded into triathlons 🏊‍♀️🚴‍♀️🏃‍♀️ and completed my first full <span style={{ color: "#f00c0c" }}>IRONMAN</span>. If on desktop, hover below to see which races I've completed!<br></br>
         <br></br>
         <em>Please reach out if you have any race suggestions!</em>
       </p>
@@ -246,8 +246,8 @@ function Personal() {
                       src={ironmanLogo}
                       alt="Ironman"
                       style={{
-                        width: "16px",
-                        height: "16px",
+                        width: "14px",
+                        height: "14px",
                         display: "inline-block",
                         verticalAlign: "middle",
                         marginLeft: "5px",
