@@ -46,7 +46,7 @@ function Personal() {
 
   const ironmans = [
     { name: "IRONMAN 140.6 Texas in The Woodlands, TX (2026)", coordinates: [-95.4611, 30.1658], state: "TX" },
-    { name: "IRONMAN 70.3 Western Massachusetts in Springfield, MA (2025)", coordinates: [-72.5893, 42.1013], state: "MA" },
+    { name: "IRONMAN 70.3 Western Massachusetts in Springfield, MA (2025)", coordinates: [-72.5893, 42.4400], state: "MA" },
   ];
 
   const events = [
@@ -192,12 +192,12 @@ function Personal() {
                 {type === "ironman" ? (
                   <image
                     href={ironmanLogo}
-                    width={16}
-                    height={16}
+                    width={14}
+                    height={14}
                     stroke="#fff"
                     strokeWidth={1}
-                    x={-8}
-                    y={-8}
+                    x={-7}
+                    y={-7}
                     style={{ cursor: "pointer" }}
                     {...markerProps}
                   />
