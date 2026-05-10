@@ -249,7 +249,9 @@ function Personal() {
                         width: "16px",
                         height: "16px",
                         display: "inline-block",
-                        verticalAlign: "middle"
+                        verticalAlign: "middle",
+                        marginLeft: "5px",
+                        marginRight: "4px"
                       }}
                     />
                   );
@@ -273,7 +275,9 @@ function Personal() {
                       width: "14px",
                       height: "14px",
                       display: "inline-block",
-                      verticalAlign: "middle"
+                      verticalAlign: "middle",
+                      marginLeft: "5px",
+                      marginRight: "4px"
                     }}
                   />
                 );
