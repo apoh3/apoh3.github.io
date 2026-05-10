@@ -46,7 +46,7 @@ function Personal() {
 
   const ironmans = [
     { name: "IRONMAN 140.6 Texas in The Woodlands, TX (2026)", coordinates: [-95.4611, 30.1658], state: "TX" },
-    { name: "IRONMAN 70.3 Western Massachusetts in Springfield, MA (2025)", coordinates: [-72.5893, 42.1013], state: "MA" },
+    // { name: "IRONMAN 70.3 Western Massachusetts in Springfield, MA (2025)", coordinates: [-72.5893, 42.1013], state: "MA" },
   ];
 
   const events = [
@@ -120,7 +120,7 @@ function Personal() {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    fill={isRunState ? "#fde06d" : "#eaeaea"}
+                    fill={isRunState ? "#ffeca0" : "#f5f5f5"}
                     stroke="#111"
                     onMouseEnter={(e) => {
                       if (isMobile || items.length === 0) return;
@@ -192,10 +192,12 @@ function Personal() {
                 {type === "ironman" ? (
                   <image
                     href={ironmanLogo}
-                    width={18}
-                    height={18}
-                    x={-9}
-                    y={-9}
+                    width={16}
+                    height={16}
+                    stroke="#fff"
+                    strokeWidth={1}
+                    x={-8}
+                    y={-8}
                     style={{ cursor: "pointer" }}
                     {...markerProps}
                   />
@@ -244,11 +246,10 @@ function Personal() {
                       src={ironmanLogo}
                       alt="Ironman"
                       style={{
-                        width: "14px",
-                        height: "14px",
+                        width: "16px",
+                        height: "16px",
                         display: "inline-block",
-                        verticalAlign: "middle",
-                        marginRight: "4px",
+                        verticalAlign: "middle"
                       }}
                     />
                   );
