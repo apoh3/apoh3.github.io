@@ -277,7 +277,6 @@ function Personal() {
                     }}
                   />
                 );
-              const icons = icon.repeat(Math.max(1, yearsArr.length));
 
               return (
                 <li key={i}>
