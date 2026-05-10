@@ -101,9 +101,9 @@ function Personal() {
         <br></br>
         So far, I've completed{" "}
         <span style={{ color: "#0eb154" }}>{totalMarathons} marathons</span>,{" "}
-        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. More recently, I expanded into triathlons 🏊‍♀️🚴‍♀️🏃‍♀️ completed my first <span style={{ color: "#f00c0c" }}>IRONMAN</span>. If on desktop, hover below to see which races I've completed.<br></br>
+        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. More recently, I expanded into triathlons 🏊‍♀️🚴‍♀️🏃‍♀️ and completed my first <span style={{ color: "#f00c0c" }}>IRONMAN</span>. If on desktop, hover below to see which races I've completed!<br></br>
         <br></br>
-        <em>Reach out if you have any race suggestions!</em>
+        <em>Please reach out if you have any race suggestions!</em>
       </p>
 
       <div className="w-full max-w-3xl">
@@ -120,7 +120,7 @@ function Personal() {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    fill={isRunState ? "#ffe990" : "#e7e7e7"}
+                    fill={isRunState ? "#ffe682" : "#eeeeee"}
                     stroke="#111"
                     onMouseEnter={(e) => {
                       if (isMobile || items.length === 0) return;
@@ -249,8 +249,7 @@ function Personal() {
                         width: "16px",
                         height: "16px",
                         display: "inline-block",
-                        verticalAlign: "middle",
-                        paddingLeft: "2px"
+                        verticalAlign: "middle"
                       }}
                     />
                   );
@@ -274,8 +273,7 @@ function Personal() {
                       width: "14px",
                       height: "14px",
                       display: "inline-block",
-                      verticalAlign: "middle",
-                      marginRight: "4px",
+                      verticalAlign: "middle"
                     }}
                   />
                 );
