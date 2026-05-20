@@ -6,7 +6,7 @@ function Publications() {
       title: "What Do Future Teachers Look For in Movement-Based Learning? Implications For Multimodal Systems",
       authors: "Allison Poh and Ivon Arroyo",
       venue: "AIED 2026 (accepted)",
-      link_paper: null,
+      link_paper: "https://osf.io/yng97/files/vpazx",
       link_talk: null,
       type: "publications"
     },
@@ -38,7 +38,7 @@ function Publications() {
       title: "Aligning AIED Systems to Embodied Cognition and Learning Theories",
       authors: "Ivon Arroyo, Injila Rasul, Danielle Crabtree, Francisco Castro, Allison Poh, Sai Gattupalli, William Lee, Hannah Smith and Matthew Micciolo",
       venue: "AIED 2024",
-      link_paper: "https://link.springer.com/chapter/10.1007/978-3-031-64315-6_1",
+      link_paper: "https://osf.io/7t86k/files/z6db9",
       link_talk: null,
       type: "publications"
     },
