@@ -105,10 +105,9 @@ function About() {
               Advanced Learning Technologies lab
             </a>{" "}
             at UMass Amherst, where I study the design and evaluation of educational
-            technologies. My current work focuses on designing a multimodal dashboard to
+            technologies. My current work focuses on building a multimodal dashboard to
             support K-12 teachers during embodied learning activities. I’m also interested
-            in computer science education and have taught courses at UMass Amherst and UMass
-            Dartmouth, as well as served as a graduate research assistant for{" "}
+            in computer science education and have taught courses in AI, data mining, data analysis, data visualization, and introductory programming across the UMass System, as well as served as a graduate research assistant for{" "}
             <a
               href="https://www.datascience4everyone.org/"
               target="_blank"
@@ -116,8 +115,7 @@ function About() {
               className="link"
             >
               Data Science 4 Everyone
-            </a>
-            . Before starting my PhD, I was a data engineer at Procter & Gamble.
+            </a>. Before starting my PhD, I was a data engineer at Procter & Gamble.
           </p>
           <p className="contact-me">
             The best way to contact me is by email:{" "}
