@@ -14,7 +14,7 @@ function Publications() {
       title: "Enhancing Teacher Support in Learning Technologies: A Human-Centered Approach with WearableLearning",
       authors: "Allison Poh, Yuqian Shi, Francisco Castro and Ivon Arroyo",
       venue: "AIED 2025",
-      link_paper: "https://link.springer.com/chapter/10.1007/978-3-031-99264-3_7",
+      link_paper: "https://osf.io/7gn9p/files/suwr3",
       link_talk: null,
       type: "publications"
     },
