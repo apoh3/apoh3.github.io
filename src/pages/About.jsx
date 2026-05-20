@@ -12,7 +12,7 @@ function About() {
       date: "Mar. 2026",
       text: (
         <>
-          Our work <em>"What Do Future Teachers Look For in Movement-Based Learning? Implications For Multimodal Systems"</em> was accepted to AIED 2026.
+          Our work <em><a href="https://osf.io/yng97/files/vpazx" target="_blank" rel="noopener noreferrer" className="link">"What Do Future Teachers Look For in Movement-Based Learning? Implications For Multimodal Systems"</a></em> was accepted to AIED 2026.
         </>
       ),
     },
@@ -20,7 +20,7 @@ function About() {
       date: "May 2025",
       text: (
         <>
-          Our work <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-99264-3_7" target="_blank" rel="noopener noreferrer" className="link">"Enhancing Teacher Support in Learning Technologies: A Human-Centered Approach with WearableLearning"</a></em> was accepted to the Late-Breaking Results track at AIED 2025.
+          Our work <em><a href="https://osf.io/7gn9p/files/suwr3" target="_blank" rel="noopener noreferrer" className="link">"Enhancing Teacher Support in Learning Technologies: A Human-Centered Approach with WearableLearning"</a></em> was accepted to the Late-Breaking Results track at AIED 2025.
         </>
       ),
     },
@@ -68,7 +68,7 @@ function About() {
       date: "Apr. 2024",
       text: (
         <>
-          Our work <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-64315-6_1" target="_blank" rel="noopener noreferrer" className="link">"Aligning AIED Systems to Embodied Cognition and Learning Theories"</a></em> was accepted to the BlueSky track at AIED 2024.
+          Our work <em><a href="https://osf.io/7t86k/files/z6db9" target="_blank" rel="noopener noreferrer" className="link">"Aligning AIED Systems to Embodied Cognition and Learning Theories"</a></em> was accepted to the BlueSky track at AIED 2024.
         </>
       ),
     },
