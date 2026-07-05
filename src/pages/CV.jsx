@@ -1,4 +1,4 @@
-import pdf from "../assets/cv_apoh_july_2026.pdf";
+import pdf from "../assets/curriculum vitae (apoh).pdf";
 
 function CV() {
 
