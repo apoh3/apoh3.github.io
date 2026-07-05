@@ -2,7 +2,7 @@ import { useState } from "react";
 import profilePic from "../assets/profile.jpg";
 import researchInterests from "../assets/research.svg";
 import researchInterestsSmall from "../assets/research_small.svg";
-import pdf from "../assets/curriculum vitae (apoh).pdf";
+import pdf from "../assets/curriculum vitae.pdf";
 
 function About() {
   const [showAllNews, setShowAllNews] = useState(false);
