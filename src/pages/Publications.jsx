@@ -5,7 +5,7 @@ function Publications() {
     {
       title: "What Do Future Teachers Look For in Movement-Based Learning? Implications For Multimodal Systems",
       authors: "Allison Poh and Ivon Arroyo",
-      venue: "AIED 2026 (accepted)",
+      venue: "AIED 2026",
       link_paper: "https://osf.io/yng97/files/vpazx",
       link_talk: null,
       type: "publications"
