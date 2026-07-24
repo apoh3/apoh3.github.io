@@ -151,7 +151,7 @@ function Service() {
     // --- Other ---
     {
       title: "Letters to a Pre-Scientist",
-      role: "Pen Pal",
+      role: "Volunteer",
       year: "2024 - present",
       type: "other"
     },
