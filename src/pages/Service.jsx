@@ -52,8 +52,8 @@ function Service() {
 
     // --- University Service ---
     {
-      title: "HackUMass XIII",
-      role: "Judge",
+      title: "HackUMass XIII Judge",
+      role: "Volunteer",
       year: "2025 - 2026",
       type: "university"
     },
