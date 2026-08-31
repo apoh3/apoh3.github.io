@@ -41,7 +41,7 @@ function Personal() {
 
   const ultras = [
     { name: "Spring Fling 600 (10 Hrs) in Southington, CT (2024)", coordinates: [-72.8776, 41.5965], state: "CT" },
-    { name: "Anchor Down Ultra (24 Hrs) in Bristol, RI (2025)", coordinates: [-71.2662, 41.6771], state: "RI" },
+    { name: "Anchor Down Ultra (24 Hrs) in Bristol, RI (2025, 2026)", coordinates: [-71.2662, 41.6771], state: "RI" },
   ];
 
   const ironmans = [

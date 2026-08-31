@@ -88,7 +88,7 @@ function Teaching() {
       university: "UMass Amherst",
       link_syllabus: null,
       link_presentation: null,
-      semesters: "Spring 2026",
+      semesters: "Spring 2026, Fall 2026",
       type: "ta",
     },
     {
