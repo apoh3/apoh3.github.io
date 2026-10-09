@@ -18,10 +18,10 @@ function Navbar() {
   return (
     <>
       <nav className={menuOpen ? "open" : ""}>
-        <div className="brand">
+        <Link to="/" className="brand" onClick={() => setMenuOpen(false)}>
           <img src={favicon} alt="Logo" className="brand-logo" />
           <span>Allison Poh</span>
-        </div>
+        </Link>
 
         {/* Desktop */}
         <div className="links desktop-links">
