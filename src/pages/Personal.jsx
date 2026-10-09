@@ -36,7 +36,8 @@ function Personal() {
     { name: "Maine Coast Marathon in Wells, ME (2024)", coordinates: [-70.5805, 43.3222], state: "ME" },
     { name: "Buffalo Marathon in Buffalo, NY (2024)", coordinates: [-78.8789, 42.8869], state: "NY" },
     { name: "Mad Marathon in Mad River Valley, VT (2024)", coordinates: [-72.7893, 44.2203], state: "VT" },
-    { name: "Hartford Marathon in Hartford, CT (2025)", coordinates: [-72.6734, 41.7658], state: "CT" }
+    { name: "Hartford Marathon in Hartford, CT (2025)", coordinates: [-72.6734, 41.7658], state: "CT" },
+    { name: "NipMuck Trail Marathon in Ashford, CT (2026)", coordinates: [-72.1214, 41.8731], state: "CT" }
   ];
 
   const ultras = [
@@ -81,14 +82,14 @@ function Personal() {
   }, []);
 
   const totalMarathons = marathons.reduce((sum, m) => {
-    const match = m.name.match(/\(([^)]+)\)/);
+    const match = m.name.match(/\(([^)]+)\)\s*$/);
     if (!match) return sum;
     const parts = match[1].split(",").map(s => s.trim());
     return sum + parts.length;
   }, 0);
 
   const totalUltras = ultras.reduce((sum, u) => {
-    const match = u.name.match(/\(([^)]+)\)/);
+    const match = u.name.match(/\(([^)]+)\)\s*$/);
     if (!match) return sum;
     const parts = match[1].split(",").map(s => s.trim());
     return sum + parts.length;
