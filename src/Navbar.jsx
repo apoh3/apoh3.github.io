@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import favicon from "./assets/favicon.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  // "/" also renders the About page, so highlight About there too
+  const aboutClass = ({ isActive }) =>
+    isActive || pathname === "/" ? "active" : "";
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,12 +30,12 @@ function Navbar() {
 
         {/* Desktop */}
         <div className="links desktop-links">
-          <Link to="/about">About</Link>
-          <Link to="/publications">Publications</Link>
-          <Link to="/teaching">Teaching</Link>
-          <Link to="/service">Service</Link>
-          <Link to="/cv">CV</Link>
-          <Link to="/personal">Personal</Link>
+          <NavLink to="/about" className={aboutClass}>About</NavLink>
+          <NavLink to="/publications">Publications</NavLink>
+          <NavLink to="/teaching">Teaching</NavLink>
+          <NavLink to="/service">Service</NavLink>
+          <NavLink to="/cv">CV</NavLink>
+          <NavLink to="/personal">Personal</NavLink>
         </div>
 
         {/* Hamburger */}
@@ -47,12 +52,12 @@ function Navbar() {
 
       {/* Mobile */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
-        <Link to="/publications" onClick={() => setMenuOpen(false)}>Publications</Link>
-        <Link to="/teaching" onClick={() => setMenuOpen(false)}>Teaching</Link>
-        <Link to="/service" onClick={() => setMenuOpen(false)}>Service</Link>
-        <Link to="/cv" onClick={() => setMenuOpen(false)}>CV</Link>
-        <Link to="/personal" onClick={() => setMenuOpen(false)}>Personal</Link>
+        <NavLink to="/about" className={aboutClass} onClick={() => setMenuOpen(false)}>About</NavLink>
+        <NavLink to="/publications" onClick={() => setMenuOpen(false)}>Publications</NavLink>
+        <NavLink to="/teaching" onClick={() => setMenuOpen(false)}>Teaching</NavLink>
+        <NavLink to="/service" onClick={() => setMenuOpen(false)}>Service</NavLink>
+        <NavLink to="/cv" onClick={() => setMenuOpen(false)}>CV</NavLink>
+        <NavLink to="/personal" onClick={() => setMenuOpen(false)}>Personal</NavLink>
       </div>
     </>
   );

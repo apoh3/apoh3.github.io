@@ -15,6 +15,9 @@
   --accent-primary: rgb(252, 196, 25);
   --accent-secondary: #fc5319;
   --link: rgb(25, 81, 252);
+
+  --radius-soft: 10px;
+  --link-dark: rgb(14, 57, 186);
 }
 
 body {
@@ -69,8 +72,19 @@ nav .links a {
   text-decoration: none;
 }
 
-nav .links a:hover {
+nav .links a:hover,
+nav .links a.active,
+.mobile-menu a:hover,
+.mobile-menu a.active {
   text-decoration: underline;
+  text-decoration-color: var(--readable-grey-faint);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+nav .links a.active,
+.mobile-menu a.active {
+  text-decoration-color: var(--accent-primary);
 }
 
 .menu-toggle {
@@ -157,10 +171,6 @@ nav .links a:hover {
   font-size: 1.1rem;
 }
 
-.mobile-menu a:hover {
-  text-decoration: underline;
-}
-
 @media (max-width: 768px) {
   .desktop-links {
     display: none;
@@ -212,7 +222,11 @@ main {
   margin-bottom: 1.5rem;
   margin-top: 2rem;
   background-color: var(--accent-primary);
-  padding-left: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-soft);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
 .publications h2:first-of-type,
@@ -287,7 +301,11 @@ main {
   font-weight: bold;
   margin-top: 2rem;
   background-color: var(--accent-primary);
-  padding-left: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-soft);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
 .about-interests ul,
@@ -366,24 +384,38 @@ main {
 
 .btn {
   display: inline-block;
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.4rem;
   border: none;
+  border-radius: var(--radius-soft);
   text-decoration: none;
   color: var(--background-white);
   background: var(--link);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(25, 81, 252, 0.2);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 8px 20px rgba(25, 81, 252, 0.28);
 }
 
 .btn:active {
-  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--accent-primary);
+  outline-offset: 2px;
 }
 
 .about-buttons {
@@ -400,22 +432,35 @@ main {
 
 .about-buttons .btn:hover {
   text-decoration: none;
+  background-color: var(--link-dark);
 }
 
 .about-buttons .btn:active {
   text-decoration: none;
-  background-color: rgb(14, 57, 186);
+  background-color: var(--link-dark);
 }
 
 .about-news .btn {
   display: block;
-  margin: 0.2rem auto;
-  padding: 0.3rem 0.7rem;
-  background-color: rgb(50, 50, 50);
+  width: fit-content;
+  margin: 0.75rem auto 0;
+  padding: 0.45rem 1.1rem;
+  color: var(--readable-grey);
+  background-color: white;
+  border: 1px solid var(--readable-grey-faint);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.about-news .btn:hover {
+  background-color: #f1f1f4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .about-news .btn:active {
-  background-color: var(--readable-grey);
+  background-color: #e6e6ea;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
 
@@ -540,6 +585,142 @@ main {
 /* PAGES - CV *****************************************/
 .contact-me {
   padding-bottom: 0.8rem;
+}
+
+/* PAGES - PERSONAL *********************************/
+.personal-blurb {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.race-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.race-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  font: inherit;
+  font-size: 0.9rem;
+  color: inherit;
+  background: white;
+  border: 1px solid var(--readable-grey-faint);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.race-stat:hover,
+.race-stat.is-active {
+  border-color: var(--stat-color);
+  background: #f7f7f9;
+}
+
+.type-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+img.type-icon {
+  border-radius: 0;
+}
+
+.type-icon-ultra {
+  border-radius: 1px;
+  transform: rotate(45deg) scale(0.85);
+}
+
+.race-map {
+  padding: 0;
+}
+
+.race-card {
+  background: white;
+  border: 1px solid var(--readable-grey-faint);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Tooltip is as wide as its longest line; nothing wraps */
+.race-card-tooltip .race-name,
+.race-card-tooltip .race-meta {
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.race-card-tooltip {
+  position: fixed;
+  z-index: 9999;
+  width: max-content;
+  pointer-events: none;
+}
+
+.race-card-inline {
+  margin-top: 1rem;
+  box-shadow: none;
+}
+
+.race-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid var(--readable-grey-faint);
+}
+
+.race-card-header span {
+  font-size: 0.8rem;
+  color: rgba(21, 21, 21, 0.6);
+}
+
+.race-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.race-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+}
+
+.race-list .type-icon {
+  margin-top: 0.3rem;
+}
+
+.race-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.race-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  color: rgba(21, 21, 21, 0.6);
+}
+
+.year-pill {
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: #f1f1f4;
+  color: var(--readable-grey);
+}
+
+.race-meta .year-pill:first-of-type {
+  margin-left: 0.25rem;
 }
 
 /* FOOTER *********************************************/

@@ -19,132 +19,177 @@ const STATE_ABBR = {
   "New Mexico": "NM", "New York": "NY", "North Carolina": "NC", "North Dakota": "ND", Ohio: "OH",
   Oklahoma: "OK", Oregon: "OR", Pennsylvania: "PA", "Rhode Island": "RI", "South Carolina": "SC",
   "South Dakota": "SD", Tennessee: "TN", Texas: "TX", Utah: "UT", Vermont: "VT",
-  Virginia: "VA", Washington: "WA", "West Virginia": "WV", Wisconsin: "WI", Wyoming: "WY",
-  "District of Columbia": "DC", "Puerto Rico": "PR"
+  Virginia: "VA", Washington: "WA", "West Virginia": "WV", Wisconsin: "WI", Wyoming: "WY"
 };
 
+const STATE_NAME = Object.fromEntries(
+  Object.entries(STATE_ABBR).map(([name, abbr]) => [abbr, name])
+);
+
+const TYPES = {
+  marathon: { label: "Marathons", color: "#0d9488" },
+  ultra: { label: "Ultras", color: "#7a1d6b" },
+  ironman: { label: "IRONMAN", color: "#e4002b" },
+};
+
+const RACES = [
+  // Marathons
+  { type: "marathon", race: "Walt Disney World Marathon", city: "Orlando", state: "FL", coordinates: [-81.3789, 28.5384], years: [2020, 2022, 2023, 2024, 2025] },
+  { type: "marathon", race: "Ocean State Marathon", city: "Narragansett", state: "RI", coordinates: [-71.4495, 41.4501], years: [2020] },
+  { type: "marathon", race: "Providence Marathon", city: "Providence", state: "RI", coordinates: [-71.4142, 41.8246], years: [2022, 2023] },
+  { type: "marathon", race: "Savin Rock Marathon", city: "West Haven", state: "CT", coordinates: [-72.9498, 41.2724], years: [2023] },
+  { type: "marathon", race: "Cape Cod Marathon", city: "Falmouth", state: "MA", coordinates: [-70.6129, 41.5522], years: [2023] },
+  { type: "marathon", race: "Manchester City Marathon", city: "Manchester", state: "NH", coordinates: [-71.4548, 42.9956], years: [2023] },
+  { type: "marathon", race: "BMW Dallas Marathon", city: "Dallas", state: "TX", coordinates: [-96.7970, 32.7767], years: [2023] },
+  { type: "marathon", race: "Hyannis Marathon", city: "Hyannis", state: "MA", coordinates: [-70.2881, 41.6525], years: [2024, 2025] },
+  { type: "marathon", race: "Maine Coast Marathon", city: "Wells", state: "ME", coordinates: [-70.5805, 43.3222], years: [2024] },
+  { type: "marathon", race: "Buffalo Marathon", city: "Buffalo", state: "NY", coordinates: [-78.8789, 42.8869], years: [2024] },
+  { type: "marathon", race: "Mad Marathon", city: "Mad River Valley", state: "VT", coordinates: [-72.7893, 44.2203], years: [2024] },
+  { type: "marathon", race: "Hartford Marathon", city: "Hartford", state: "CT", coordinates: [-72.6734, 41.7658], years: [2025] },
+  { type: "marathon", race: "NipMuck Trail Marathon", city: "Ashford", state: "CT", coordinates: [-72.1214, 41.8731], years: [2026] },
+  { type: "marathon", race: "Marine Corps Marathon", city: "Arlington", state: "VA", coordinates: [-77.1083, 38.8802], years: [2026] },
+
+  // Ultras
+  { type: "ultra", race: "Spring Fling 600 (10 hrs)", city: "Southington", state: "CT", coordinates: [-72.8776, 41.5965], years: [2024] },
+  { type: "ultra", race: "Anchor Down Ultra (24 hrs)", city: "Bristol", state: "RI", coordinates: [-71.2662, 41.6771], years: [2025, 2026] },
+
+  // IRONMAN
+  { type: "ironman", race: "IRONMAN 70.3 Western Massachusetts", city: "Springfield", state: "MA", coordinates: [-72.5893, 42.4400], years: [2025] },
+  { type: "ironman", race: "IRONMAN 70.3 Maine", city: "Augusta", state: "ME", coordinates: [-69.7800, 44.3106], years: [2026] },
+  { type: "ironman", race: "IRONMAN 140.6 Texas", city: "The Woodlands", state: "TX", coordinates: [-95.4611, 30.1658], years: [2026] },
+];
+
+// A state is colored only if I've run a marathon there
+const RACED_FILL = "#ffeebb";
+const EMPTY_FILL = "#e8e8e8";
+
+const racesByState = RACES.reduce((acc, r) => {
+  (acc[r.state] ??= []).push(r);
+  return acc;
+}, {});
+
+const finishes = (races) => races.reduce((sum, r) => sum + r.years.length, 0);
+const hasMarathon = (abbr) => (racesByState[abbr] || []).some((r) => r.type === "marathon");
+
+const totals = {
+  marathon: finishes(RACES.filter((r) => r.type === "marathon")),
+  ultra: finishes(RACES.filter((r) => r.type === "ultra")),
+  ironmanFull: finishes(RACES.filter((r) => r.type === "ironman" && r.race.includes("140.6"))),
+  ironmanHalf: finishes(RACES.filter((r) => r.type === "ironman" && r.race.includes("70.3"))),
+};
+
+function TypeIcon({ type, size = 12 }) {
+  if (type === "ironman") {
+    return <img src={ironmanLogo} alt="" className="type-icon" style={{ height: size + 4, width: "auto" }} />;
+  }
+  return (
+    <span
+      className={`type-icon type-icon-${type}`}
+      style={{ width: size, height: size, background: TYPES[type].color }}
+    />
+  );
+}
+
+function StateRaces({ abbr }) {
+  const races = racesByState[abbr] || [];
+  return (
+    <>
+      <div className="race-card-header">
+        <strong>{STATE_NAME[abbr]}</strong>
+      </div>
+      <ul className="race-list">
+        {races.map((r) => (
+          <li key={r.race}>
+            <TypeIcon type={r.type} size={10} />
+            <div>
+              <div className="race-name">{r.race}</div>
+              <div className="race-meta">
+                {r.city}
+                {r.years.map((y) => (
+                  <span key={y} className="year-pill">{y}</span>
+                ))}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
 function Personal() {
-  const marathons = [
-    { name: "Walt Disney World Marathon in Orlando, FL (2020, 2022, 2023, 2024, 2025)", coordinates: [-81.3789, 28.5384], state: "FL" },
-    { name: "Ocean State Marathon in Narragansett, RI (2020)", coordinates: [-71.4495, 41.4501], state: "RI" },
-    { name: "Providence Marathon in Providence, RI (2022, 2023)", coordinates: [-71.4142, 41.8246], state: "RI" },
-    { name: "Savin Rock Marathon in West Haven, CT (2023)", coordinates: [-72.9498, 41.2724], state: "CT" },
-    { name: "Cape Cod Marathon in Falmouth, MA (2023)", coordinates: [-70.6129, 41.5522], state: "MA" },
-    { name: "Manchester City Marathon in Manchester, NH (2023)", coordinates: [-71.4548, 42.9956], state: "NH" },
-    { name: "BMW Dallas Marathon in Dallas, TX (2023)", coordinates: [-96.7970, 32.7767], state: "TX" },
-    { name: "Hyannis Marathon in Hyannis, MA (2024, 2025)", coordinates: [-70.2881, 41.6525], state: "MA" },
-    { name: "Maine Coast Marathon in Wells, ME (2024)", coordinates: [-70.5805, 43.3222], state: "ME" },
-    { name: "Buffalo Marathon in Buffalo, NY (2024)", coordinates: [-78.8789, 42.8869], state: "NY" },
-    { name: "Mad Marathon in Mad River Valley, VT (2024)", coordinates: [-72.7893, 44.2203], state: "VT" },
-    { name: "Hartford Marathon in Hartford, CT (2025)", coordinates: [-72.6734, 41.7658], state: "CT" },
-    { name: "NipMuck Trail Marathon in Ashford, CT (2026)", coordinates: [-72.1214, 41.8731], state: "CT" }
-  ];
+  const [hover, setHover] = useState(null); // { abbr, x, y }
+  const [selected, setSelected] = useState(null); // tapped state on touch devices
+  const [activeType, setActiveType] = useState(null);
 
-  const ultras = [
-    { name: "Spring Fling 600 (10 Hrs) in Southington, CT (2024)", coordinates: [-72.8776, 41.5965], state: "CT" },
-    { name: "Anchor Down Ultra (24 Hrs) in Bristol, RI (2025, 2026)", coordinates: [-71.2662, 41.6771], state: "RI" },
-  ];
-
-  const ironmans = [
-    { name: "IRONMAN 70.3 Maine in Augusta, ME (2026)", coordinates: [-69.7800, 44.3106], state: "ME" },
-    { name: "IRONMAN 140.6 Texas in The Woodlands, TX (2026)", coordinates: [-95.4611, 30.1658], state: "TX" },
-    { name: "IRONMAN 70.3 Western Massachusetts in Springfield, MA (2025)", coordinates: [-72.5893, 42.4400], state: "MA" },
-  ];
-
-  const events = [
-    ...marathons.map(m => ({ ...m, type: "marathon" })),
-    ...ultras.map(u => ({ ...u, type: "ultra" })),
-    ...ironmans.map(u => ({ ...u, type: "ironman" })),
-  ];
-
-  const eventsByState = events.reduce((acc, ev) => {
-    const text = ev.name.replace(/ in .*?, [A-Z]{2}/, "");
-    (acc[ev.state] ??= []).push({ text, type: ev.type });
-    return acc;
-  }, {});
-
-  const runStates = Object.keys(eventsByState);
-
-  const [tooltip, setTooltip] = useState({
-    show: false,
-    x: 0,
-    y: 0,
-    state: "",
-    items: [],
-  });
-
-  const [isMobile, setIsMobile] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    const mq = window.matchMedia("(hover: none)");
+    const update = () => setIsTouch(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
   }, []);
 
-  const totalMarathons = marathons.reduce((sum, m) => {
-    const match = m.name.match(/\(([^)]+)\)\s*$/);
-    if (!match) return sum;
-    const parts = match[1].split(",").map(s => s.trim());
-    return sum + parts.length;
-  }, 0);
-
-  const totalUltras = ultras.reduce((sum, u) => {
-    const match = u.name.match(/\(([^)]+)\)\s*$/);
-    if (!match) return sum;
-    const parts = match[1].split(",").map(s => s.trim());
-    return sum + parts.length;
-  }, 0);
+  const handlers = (abbr) => ({
+    onMouseEnter: (e) => !isTouch && setHover({ abbr, x: e.clientX, y: e.clientY }),
+    onMouseMove: (e) => !isTouch && setHover({ abbr, x: e.clientX, y: e.clientY }),
+    onMouseLeave: () => setHover(null),
+    onClick: () => isTouch && setSelected((s) => (s === abbr ? null : abbr)),
+  });
 
   return (
-    <section className="teaching">
+    <section className="teaching personal">
       <h2>Personal</h2>
       <p className="personal-blurb">
-        <em>How do I stay sane in academia?</em> I run ... a lot 🏃‍♀️<br></br>
-        <br></br>
-        So far, I've completed{" "}
-        <span style={{ color: "#0eb154" }}>{totalMarathons} marathons</span>,{" "}
-        <span style={{ color: "#0078d7 " }}>{totalUltras} ultras</span>, and countless half marathons. More recently, I expanded into triathlons 🏊‍♀️🚴‍♀️🏃‍♀️ and completed my first full <span style={{ color: "#f00c0c" }}>IRONMAN</span>. If on desktop, hover below to see which races I've completed!<br></br>
-        <br></br>
-        <em>Please reach out if you have any race suggestions!</em>
+        Outside of academia, I love spending time outdoors. I'm usually training for some endurance race (at party pace, of course). Hover below to see which marathons, ultramarathons, and triathlons I've completed so far. And feel free to reach out with any race suggestions!
       </p>
 
-      <div className="w-full max-w-3xl">
+      <div className="race-map">
+        <div className="race-stats">
+          {Object.entries(TYPES).map(([type, { label }]) => (
+            <button
+              key={type}
+              type="button"
+              className={`race-stat${activeType === type ? " is-active" : ""}`}
+              style={{ "--stat-color": TYPES[type].color }}
+              onMouseEnter={() => !isTouch && setActiveType(type)}
+              onMouseLeave={() => !isTouch && setActiveType(null)}
+              onClick={() => isTouch && setActiveType((t) => (t === type ? null : type))}
+              aria-pressed={activeType === type}
+            >
+              <TypeIcon type={type} />
+              {type === "ironman" ? (
+                <>
+                  <strong>{totals.ironmanFull}</strong> 140.6 / <strong>{totals.ironmanHalf}</strong> 70.3
+                </>
+              ) : (
+                <>
+                  <strong>{totals[type]}</strong> {label}
+                </>
+              )}
+            </button>
+          ))}
+        </div>
         <ComposableMap projection="geoAlbersUsa">
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map((geo) => {
-                const stateName = geo.properties.name || geo.properties.NAME;
-                const abbr = STATE_ABBR[stateName];
-                const items = abbr ? eventsByState[abbr] || [] : [];
-                const isRunState = items.length > 0;
+                const abbr = STATE_ABBR[geo.properties.name];
+                const races = (abbr && racesByState[abbr]) || [];
+                const visited = races.length > 0;
 
                 return (
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    fill={isRunState ? "#ffe682" : "#eeeeee"}
-                    stroke="#111"
-                    onMouseEnter={(e) => {
-                      if (isMobile || items.length === 0) return;
-                      setTooltip({
-                        show: true,
-                        x: e.clientX,
-                        y: e.clientY,
-                        state: stateName,
-                        items,
-                      });
-                    }}
-                    onMouseMove={(e) => {
-                      if (isMobile) return;
-                      setTooltip((t) => ({ ...t, x: e.clientX, y: e.clientY }));
-                    }}
-                    onMouseLeave={() => {
-                      if (isMobile) return;
-                      setTooltip({ show: false, x: 0, y: 0, state: "", items: [] });
-                    }}
+                    fill={hasMarathon(abbr) ? RACED_FILL : EMPTY_FILL}
+                    stroke="#ffffff"
+                    strokeWidth={0.75}
+                    {...(visited ? handlers(abbr) : {})}
                     style={{
                       default: { outline: "none" },
-                      hover: { outline: "none" },
+                      hover: { outline: "none", cursor: visited ? "pointer" : "default" },
                       pressed: { outline: "none" },
                     }}
                   />
@@ -153,153 +198,57 @@ function Personal() {
             }
           </Geographies>
 
-          {events.map(({ name, coordinates, state, type }) => {
-            const markerProps = {
-              onMouseEnter: (e) => {
-                if (isMobile) return;
-
-                const fullState = Object.keys(STATE_ABBR).find(
-                  key => STATE_ABBR[key] === state
-                );
-
-                setTooltip({
-                  show: true,
-                  x: e.clientX,
-                  y: e.clientY,
-                  state: fullState,
-                  items: eventsByState[state] || [],
-                });
-              },
-
-              onMouseMove: (e) => {
-                if (isMobile) return;
-                setTooltip((t) => ({ ...t, x: e.clientX, y: e.clientY }));
-              },
-
-              onMouseLeave: () => {
-                if (isMobile) return;
-
-                setTooltip({
-                  show: false,
-                  x: 0,
-                  y: 0,
-                  state: "",
-                  items: [],
-                });
-              },
+          {RACES.map(({ race, coordinates, state, type }) => {
+            const dimmed = activeType && activeType !== type;
+            const style = {
+              opacity: dimmed ? 0.15 : 1,
+              transition: "opacity 0.2s ease",
+              cursor: "pointer",
             };
-
             return (
-              <Marker key={name} coordinates={coordinates}>
+              <Marker key={race} coordinates={coordinates} {...handlers(state)}>
                 {type === "ironman" ? (
-                  <image
-                    href={ironmanLogo}
-                    width={14}
-                    height={14}
-                    stroke="#fff"
-                    strokeWidth={1}
-                    x={-7}
-                    y={-7}
-                    style={{ cursor: "default" }}
-                    {...markerProps}
+                  <image href={ironmanLogo} width={14} height={14} x={-7} y={-7} style={style} />
+                ) : type === "ultra" ? (
+                  <rect
+                    width={7} height={7} x={-3.5} y={-3.5}
+                    transform="rotate(45)"
+                    fill={TYPES.ultra.color}
+                    stroke="#fff" strokeWidth={1.25}
+                    style={style}
                   />
                 ) : (
                   <circle
                     r={4}
-                    fill={type === "marathon" ? "#0eb154" : "#0078d7"}
-                    stroke="#fff"
-                    strokeWidth={1}
-                    style={{ cursor: "default" }}
-                    {...markerProps}
+                    fill={TYPES.marathon.color}
+                    stroke="#fff" strokeWidth={1.25}
+                    style={style}
                   />
                 )}
               </Marker>
             );
           })}
         </ComposableMap>
+
       </div>
 
-      {!isMobile && tooltip.show && (
-        <div
-          style={{
-            position: "fixed",
-            top: Math.min(tooltip.y + 15, window.innerHeight - 150),
-            left: Math.min(tooltip.x + 15, window.innerWidth - 320),
-            zIndex: 9999,
-            background: "white",
-            border: "1px solid black",
-            padding: "10px",
-            maxWidth: "360px",
-          }}
-        >
-          <strong className="block">{tooltip.state}</strong>
-
-          <ul className="space-y-1" style={{ listStyle: "none", paddingLeft: 0, marginTop: 10, marginBottom: 4}}>
-            {tooltip.items.map((it, i) => {
-              const match = it.text.match(/^(.*)\s*\(([^)]*)\)\s*$/);
-              if (!match) {
-                const icon =
-                  it.type === "marathon" ? (
-                    "🏅"
-                  ) : it.type === "ultra" ? (
-                    "🥇"
-                  ) : (
-                    <img
-                      src={ironmanLogo}
-                      alt="Ironman"
-                      style={{
-                        width: "14px",
-                        height: "14px",
-                        display: "inline-block",
-                        verticalAlign: "middle",
-                        marginLeft: "5px",
-                        marginRight: "4px"
-                      }}
-                    />
-                  );
-                return <li key={i}>{icon} {it.text}</li>;
-              }
-
-              const race = match[1].trim();
-              const yearsArr = match[2]
-                .split(",")
-                .map(y => `’${y.trim().slice(-2)}`);
-              const icon =
-                it.type === "marathon" ? (
-                  "🏅"
-                ) : it.type === "ultra" ? (
-                  "🥇"
-                ) : (
-                  <img
-                    src={ironmanLogo}
-                    alt="Ironman"
-                    style={{
-                      width: "14px",
-                      height: "14px",
-                      display: "inline-block",
-                      verticalAlign: "middle",
-                      marginLeft: "5px",
-                      marginRight: "4px"
-                    }}
-                  />
-                );
-
-              return (
-                <li key={i}>
-                  {Array.from({ length: Math.max(1, yearsArr.length) }).map((_, idx) => (
-                    <span key={idx}>
-                      {icon}
-                    </span>
-                  ))}
-                  {" "}
-                  {race} ({yearsArr.join(", ")})
-                </li>
-              );
-            })}
-          </ul>
+      {isTouch && selected && (
+        <div className="race-card race-card-inline">
+          <StateRaces abbr={selected} />
         </div>
       )}
 
+      {!isTouch && hover && (
+        <div
+          className="race-card race-card-tooltip"
+          style={{
+            top: Math.min(hover.y + 16, window.innerHeight - 220),
+            left: Math.min(hover.x + 16, window.innerWidth - 360),
+          }}
+        >
+          <StateRaces abbr={hover.abbr} />
+        </div>
+      )}
     </section>
   );
 }
