@@ -1,4 +1,8 @@
 import { FileText, SquarePlay } from "lucide-react";
+import paperMovementLearning from "../assets/papers/What Do Future Teachers Look for in Movement-Based Learning.pdf";
+import paperTeacherSupport from "../assets/papers/Enhancing Teacher Support in Learning Technologies.pdf";
+import paperEducatorsAI from "../assets/papers/Educators Evolving Attitudes Toward AI.pdf";
+import paperEmbodiedCognition from "../assets/papers/Aligning AIED Systems to Embodied Cognition and Learning Theories.pdf";
 
 function Publications() {
   const publications = [
@@ -6,7 +10,7 @@ function Publications() {
       title: "What Do Future Teachers Look For in Movement-Based Learning? Implications For Multimodal Systems",
       authors: "Allison Poh and Ivon Arroyo",
       venue: "AIED 2026",
-      link_paper: "https://osf.io/yng97/files/vpazx",
+      link_paper: paperMovementLearning,
       link_talk: null,
       type: "publications"
     },
@@ -14,7 +18,7 @@ function Publications() {
       title: "Enhancing Teacher Support in Learning Technologies: A Human-Centered Approach with WearableLearning",
       authors: "Allison Poh, Yuqian Shi, Francisco Castro and Ivon Arroyo",
       venue: "AIED 2025",
-      link_paper: "https://osf.io/7gn9p/files/suwr3",
+      link_paper: paperTeacherSupport,
       link_talk: null,
       type: "publications"
     },
@@ -30,7 +34,7 @@ function Publications() {
       title: "Educators' Evolving Attitudes Toward AI: Analysis of Discussions from r/Teachers and r/Professors",
       authors: "Allison Poh, Ari Dang* and Albert Young* (*contributed equally)",
       venue: "EDULEARN 2025",
-      link_paper: "https://osf.io/whz2p",
+      link_paper: paperEducatorsAI,
       link_talk: null,
       type: "publications"
     },
@@ -38,7 +42,7 @@ function Publications() {
       title: "Aligning AIED Systems to Embodied Cognition and Learning Theories",
       authors: "Ivon Arroyo, Injila Rasul, Danielle Crabtree, Francisco Castro, Allison Poh, Sai Gattupalli, William Lee, Hannah Smith and Matthew Micciolo",
       venue: "AIED 2024",
-      link_paper: "https://osf.io/7t86k/files/z6db9",
+      link_paper: paperEmbodiedCognition,
       link_talk: null,
       type: "publications"
     },
