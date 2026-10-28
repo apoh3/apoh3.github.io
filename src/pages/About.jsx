@@ -3,6 +3,10 @@ import profilePic from "../assets/profile.jpg";
 import researchInterests from "../assets/research.svg";
 import researchInterestsSmall from "../assets/research_small.svg";
 import pdf from "../assets/cv_apoh.pdf";
+import paperMovementLearning from "../assets/papers/What Do Future Teachers Look for in Movement-Based Learning.pdf";
+import paperTeacherSupport from "../assets/papers/Enhancing Teacher Support in Learning Technologies.pdf";
+import paperEducatorsAI from "../assets/papers/Educators Evolving Attitudes Toward AI.pdf";
+import paperEmbodiedCognition from "../assets/papers/Aligning AIED Systems to Embodied Cognition and Learning Theories.pdf";
 
 function About() {
   const [showAllNews, setShowAllNews] = useState(false);
@@ -12,7 +16,7 @@ function About() {
       date: "Mar. 2026",
       text: (
         <>
-          Our work <em><a href="https://osf.io/yng97/files/vpazx" target="_blank" rel="noopener noreferrer" className="link">"What Do Future Teachers Look For in Movement-Based Learning? Implications For Multimodal Systems"</a></em> was accepted to AIED 2026.
+          Our work <em><a href={paperMovementLearning} target="_blank" rel="noopener noreferrer" className="link">"What Do Future Teachers Look For in Movement-Based Learning? Implications For Multimodal Systems"</a></em> was accepted to AIED 2026.
         </>
       ),
     },
@@ -20,7 +24,7 @@ function About() {
       date: "May 2025",
       text: (
         <>
-          Our work <em><a href="https://osf.io/7gn9p/files/suwr3" target="_blank" rel="noopener noreferrer" className="link">"Enhancing Teacher Support in Learning Technologies: A Human-Centered Approach with WearableLearning"</a></em> was accepted to the Late-Breaking Results track at AIED 2025.
+          Our work <em><a href={paperTeacherSupport} target="_blank" rel="noopener noreferrer" className="link">"Enhancing Teacher Support in Learning Technologies: A Human-Centered Approach with WearableLearning"</a></em> was accepted to the Late-Breaking Results track at AIED 2025.
         </>
       ),
     },
@@ -36,7 +40,7 @@ function About() {
       date: "Apr. 2025",
       text: (
         <>
-          Our work <em><a href="https://osf.io/whz2p" target="_blank" rel="noopener noreferrer" className="link">"Educators' Evolving Attitudes Toward AI: Analysis of Discussions from r/Teachers and r/Professors"</a></em> was accepted to EDULEARN25.
+          Our work <em><a href={paperEducatorsAI} target="_blank" rel="noopener noreferrer" className="link">"Educators' Evolving Attitudes Toward AI: Analysis of Discussions from r/Teachers and r/Professors"</a></em> was accepted to EDULEARN25.
         </>
       ),
     },
@@ -68,7 +72,7 @@ function About() {
       date: "Apr. 2024",
       text: (
         <>
-          Our work <em><a href="https://osf.io/7t86k/files/z6db9" target="_blank" rel="noopener noreferrer" className="link">"Aligning AIED Systems to Embodied Cognition and Learning Theories"</a></em> was accepted to the BlueSky track at AIED 2024.
+          Our work <em><a href={paperEmbodiedCognition} target="_blank" rel="noopener noreferrer" className="link">"Aligning AIED Systems to Embodied Cognition and Learning Theories"</a></em> was accepted to the BlueSky track at AIED 2024.
         </>
       ),
     },
